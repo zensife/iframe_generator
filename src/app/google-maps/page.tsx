@@ -19,6 +19,7 @@ export default function GoogleMapsGenerator() {
     const [isResponsive, setIsResponsive] = useState(false);
     const [generatedCode, setGeneratedCode] = useState('');
     const [isLoadingLocation, setIsLoadingLocation] = useState(false);
+    const [addressError, setAddressError] = useState('');
 
     const setDeviceDimensions = (type: 'mobile' | 'tablet' | 'desktop') => {
         setWidthUnit('px');
@@ -41,11 +42,12 @@ export default function GoogleMapsGenerator() {
 
     const handleCurrentLocation = () => {
         if (!navigator.geolocation) {
-            alert('Geolocation is not supported by your browser');
+            setAddressError('Geolocation is not supported by your browser');
             return;
         }
 
         setIsLoadingLocation(true);
+        setAddressError('');
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
@@ -53,8 +55,14 @@ export default function GoogleMapsGenerator() {
                 setIsLoadingLocation(false);
             },
             (error) => {
-                console.error('Error getting location:', error);
-                alert('Unable to retrieve your location');
+                console.warn('Geolocation error:', error.message);
+                let msg = 'Unable to retrieve your location';
+                switch (error.code) {
+                    case 1: msg = 'Location permission denied'; break;
+                    case 2: msg = 'Location unavailable'; break;
+                    case 3: msg = 'Location request timed out'; break;
+                }
+                setAddressError(msg);
                 setIsLoadingLocation(false);
             }
         );
@@ -139,7 +147,11 @@ export default function GoogleMapsGenerator() {
                                 <Input
                                     placeholder="e.g. Times Square, New York"
                                     value={address}
-                                    onChange={(e) => setAddress(e.target.value)}
+                                    onChange={(e) => {
+                                        setAddress(e.target.value);
+                                        if (addressError) setAddressError('');
+                                    }}
+                                    error={addressError}
                                 />
                             </div>
 
