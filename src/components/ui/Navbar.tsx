@@ -13,19 +13,36 @@ export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        // Check system preference or localStorage
-        const isDarkMode = document.documentElement.classList.contains('dark') ||
-            window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setIsDark(isDarkMode);
+        // Check localStorage first, then system preference
+        const storedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        const shouldBeDark = storedTheme === 'dark' || (!storedTheme && systemDark);
+
+        setIsDark(shouldBeDark);
+
+        // Sync DOM immediately
+        if (shouldBeDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+        }
     }, []);
 
     const toggleTheme = () => {
         const newTheme = !isDark;
         setIsDark(newTheme);
+
         if (newTheme) {
             document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
         } else {
+            document.documentElement.classList.add('light');
             document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
         }
     };
 
