@@ -194,7 +194,7 @@ export default function GoogleMapsGenerator() {
                                     <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 0 }}>
                                         <Globe size={16} /> Dimensions
                                     </h4>
-                                    <div style={{ display: 'flex', gap: '0.25rem' }}>
+                                    <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
                                         <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('mobile')} title="Mobile">Mobile</Button>
                                         <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('tablet')} title="Tablet">Tablet</Button>
                                         <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('desktop')} title="Desktop">Desktop</Button>

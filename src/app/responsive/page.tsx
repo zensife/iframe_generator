@@ -148,7 +148,7 @@ export default function ResponsiveGenerator() {
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                     <Smartphone size={16} /> Max Width
                                 </h4>
-                                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
                                     <Button
                                         variant="outline"
                                         size="sm"
