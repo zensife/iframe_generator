@@ -1,0 +1,41 @@
+.container {
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+    background-color: hsl(var(--muted) / 0.5);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid hsl(var(--border));
+    background-color: hsl(var(--muted));
+}
+
+.language {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+}
+
+.copyButton {
+    height: 1.75rem;
+    font-size: 0.75rem;
+}
+
+.pre {
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: hsl(var(--foreground));
+}
+
+.code {
+    display: block;
+}

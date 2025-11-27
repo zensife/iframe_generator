@@ -1,0 +1,80 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    border-bottom: 1px solid hsl(var(--border));
+    background-color: hsl(var(--background) / 0.8);
+    backdrop-filter: blur(12px);
+}
+
+.container {
+    display: flex;
+    height: 3.5rem;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(280 80% 60%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.desktopNav {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .desktopNav {
+        display: flex;
+    }
+
+    .mobileMenuBtn {
+        display: none;
+    }
+}
+
+.link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: hsl(var(--foreground));
+}
+
+.active {
+    color: hsl(var(--foreground));
+    font-weight: 600;
+}
+
+.mobileNav {
+    border-top: 1px solid hsl(var(--border));
+    background-color: hsl(var(--background));
+    padding-bottom: 1rem;
+}
+
+.mobileLink {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+}
+
+.activeMobile {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--foreground));
+}
