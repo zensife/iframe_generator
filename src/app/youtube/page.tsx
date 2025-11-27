@@ -5,6 +5,7 @@ import styles from '../page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { CodeBlock } from '@/components/ui/CodeBlock';
+import { Button } from '@/components/ui/Button';
 import { Youtube, Play, Clock, ShieldCheck } from 'lucide-react';
 
 export default function YoutubeGenerator() {
@@ -16,12 +17,46 @@ export default function YoutubeGenerator() {
     const [controls, setControls] = useState(true);
     const [privacy, setPrivacy] = useState(true);
     const [startTime, setStartTime] = useState('');
+
+    // New Params
+    const [modestBranding, setModestBranding] = useState(false);
+    const [rel, setRel] = useState(true); // Default true (show related)
+    const [ccLoadPolicy, setCcLoadPolicy] = useState(false);
+
+    // Dimensions
+    const [width, setWidth] = useState('560');
+    const [widthUnit, setWidthUnit] = useState('px');
+    const [height, setHeight] = useState('315');
+    const [heightUnit, setHeightUnit] = useState('px');
+    const [isResponsive, setIsResponsive] = useState(false);
+
     const [generatedCode, setGeneratedCode] = useState('');
+    const [urlError, setUrlError] = useState('');
+
+    const setDeviceDimensions = (type: 'mobile' | 'tablet' | 'desktop') => {
+        setWidthUnit('px');
+        setHeightUnit('px');
+        switch (type) {
+            case 'mobile':
+                setWidth('375');
+                setHeight('667');
+                break;
+            case 'tablet':
+                setWidth('768');
+                setHeight('1024');
+                break;
+            case 'desktop':
+                setWidth('1024');
+                setHeight('768');
+                break;
+        }
+    };
 
     // Extract Video ID
     useEffect(() => {
         if (!url) {
             setVideoId('');
+            setUrlError('');
             return;
         }
 
@@ -43,7 +78,17 @@ export default function YoutubeGenerator() {
                 }
             }
         }
-        setVideoId(id);
+
+        if (id) {
+            setVideoId(id);
+            setUrlError('');
+        } else {
+            setVideoId('');
+            // Only show error if URL looks complete but invalid
+            if (url.length > 10) {
+                setUrlError('Invalid YouTube URL format');
+            }
+        }
     }, [url]);
 
     // Generate Code
@@ -66,11 +111,18 @@ export default function YoutubeGenerator() {
         if (!controls) params.push('controls=0');
         if (startTime) params.push(`start=${startTime}`);
 
+        if (modestBranding) params.push('modestbranding=1');
+        if (!rel) params.push('rel=0');
+        if (ccLoadPolicy) params.push('cc_load_policy=1');
+
         src += params.join('&');
 
-        const code = `<iframe
-  width="560"
-  height="315"
+        const widthAttr = widthUnit === 'px' ? width : `${width}%`;
+        const heightAttr = heightUnit === 'px' ? height : `${height}%`;
+
+        let iframeTag = `<iframe
+  width="${isResponsive ? '100%' : widthAttr}"
+  height="${isResponsive ? '100%' : heightAttr}"
   src="${src}"
   title="YouTube video player"
   frameborder="0"
@@ -78,8 +130,19 @@ export default function YoutubeGenerator() {
   allowfullscreen>
 </iframe>`;
 
-        setGeneratedCode(code);
-    }, [videoId, autoplay, mute, loop, controls, privacy, startTime]);
+        if (isResponsive) {
+            const w = parseFloat(width);
+            const h = parseFloat(height);
+            const ratio = (w && h) ? `${w}/${h}` : '16/9';
+
+            const wrapper = `<div style="position:relative;width:100%;aspect-ratio:${ratio};">
+  ${iframeTag.replace(/\n/g, '\n  ')}
+</div>`;
+            setGeneratedCode(wrapper);
+        } else {
+            setGeneratedCode(iframeTag);
+        }
+    }, [videoId, autoplay, mute, loop, controls, privacy, startTime, modestBranding, rel, ccLoadPolicy, width, widthUnit, height, heightUnit, isResponsive]);
 
     return (
         <main className={styles.main}>
@@ -106,7 +169,68 @@ export default function YoutubeGenerator() {
                                 placeholder="https://www.youtube.com/watch?v=..."
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
+                                error={urlError}
                             />
+
+                            <div>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                                    <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 0 }}>
+                                        <Youtube size={16} /> Dimensions
+                                    </h4>
+                                    <div style={{ display: 'flex', gap: '0.25rem' }}>
+                                        <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('mobile')} title="Mobile">Mobile</Button>
+                                        <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('tablet')} title="Tablet">Tablet</Button>
+                                        <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('desktop')} title="Desktop">Desktop</Button>
+                                    </div>
+                                </div>
+
+                                <div className={styles.row}>
+                                    <Input
+                                        label="Width"
+                                        value={width}
+                                        onChange={(e) => setWidth(e.target.value)}
+                                        type="number"
+                                    />
+                                    <select
+                                        className={styles.select}
+                                        value={widthUnit}
+                                        onChange={(e) => setWidthUnit(e.target.value)}
+                                        style={{ marginTop: '1.5rem', height: '2.5rem', borderRadius: '0.5rem' }}
+                                    >
+                                        <option value="px">px</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+                                <div className={styles.row} style={{ marginTop: '1rem' }}>
+                                    <Input
+                                        label="Height"
+                                        value={height}
+                                        onChange={(e) => setHeight(e.target.value)}
+                                        type="number"
+                                    />
+                                    <select
+                                        className={styles.select}
+                                        value={heightUnit}
+                                        onChange={(e) => setHeightUnit(e.target.value)}
+                                        style={{ marginTop: '1.5rem', height: '2.5rem', borderRadius: '0.5rem' }}
+                                    >
+                                        <option value="px">px</option>
+                                        <option value="%">%</option>
+                                    </select>
+                                </div>
+
+                                <div style={{ marginTop: '1rem' }}>
+                                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', cursor: 'pointer' }}>
+                                        <input
+                                            type="checkbox"
+                                            checked={isResponsive}
+                                            onChange={(e) => setIsResponsive(e.target.checked)}
+                                            style={{ width: '1rem', height: '1rem' }}
+                                        />
+                                        Make Responsive (Auto-resize)
+                                    </label>
+                                </div>
+                            </div>
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -128,6 +252,18 @@ export default function YoutubeGenerator() {
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={controls} onChange={(e) => setControls(e.target.checked)} />
                                         Show Player Controls
+                                    </label>
+                                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                        <input type="checkbox" checked={modestBranding} onChange={(e) => setModestBranding(e.target.checked)} />
+                                        Modest Branding (Less YouTube UI)
+                                    </label>
+                                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                        <input type="checkbox" checked={!rel} onChange={(e) => setRel(!e.target.checked)} />
+                                        Hide Related Videos
+                                    </label>
+                                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                        <input type="checkbox" checked={ccLoadPolicy} onChange={(e) => setCcLoadPolicy(e.target.checked)} />
+                                        Force Captions (CC)
                                     </label>
                                 </div>
                             </div>
@@ -172,9 +308,39 @@ export default function YoutubeGenerator() {
                                 {videoId ? (
                                     <div
                                         className={styles.iframeWrapper}
-                                        style={{ width: '100%', aspectRatio: '16/9' }}
-                                        dangerouslySetInnerHTML={{ __html: generatedCode }}
-                                    />
+                                        style={{
+                                            width: widthUnit === 'px' ? `${width}px` : `${width}%`,
+                                            height: heightUnit === 'px' ? `${height}px` : `${height}%`,
+                                            backgroundColor: 'white',
+                                        }}
+                                    >
+                                        <iframe
+                                            width="100%"
+                                            height="100%"
+                                            src={(() => {
+                                                const domain = privacy ? 'www.youtube-nocookie.com' : 'www.youtube.com';
+                                                let s = `https://${domain}/embed/${videoId}?`;
+                                                const p = [];
+                                                if (autoplay) p.push('autoplay=1');
+                                                if (mute) p.push('mute=1');
+                                                if (loop) {
+                                                    p.push('loop=1');
+                                                    p.push(`playlist=${videoId}`);
+                                                }
+                                                if (!controls) p.push('controls=0');
+                                                if (startTime) p.push(`start=${startTime}`);
+                                                if (modestBranding) p.push('modestbranding=1');
+                                                if (!rel) p.push('rel=0');
+                                                if (ccLoadPolicy) p.push('cc_load_policy=1');
+                                                return s + p.join('&');
+                                            })()}
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowFullScreen
+                                            style={{ display: 'block' }}
+                                        />
+                                    </div>
                                 ) : (
                                     <div className={styles.emptyState}>
                                         <Youtube size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
@@ -182,19 +348,26 @@ export default function YoutubeGenerator() {
                                     </div>
                                 )}
                             </div>
+                            <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', marginTop: '0.5rem', textAlign: 'center' }}>
+                                Note: If it says "Watch on YouTube", the video owner has disabled embedding.
+                            </p>
                         </CardContent>
                     </Card>
 
-                    {generatedCode && (
-                        <Card className="glass-card">
-                            <CardHeader>
-                                <CardTitle>Generated Code</CardTitle>
-                            </CardHeader>
-                            <CardContent>
+                    <Card className="glass-card">
+                        <CardHeader>
+                            <CardTitle>Generated Code</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            {generatedCode ? (
                                 <CodeBlock code={generatedCode} language="html" />
-                            </CardContent>
-                        </Card>
-                    )}
+                            ) : (
+                                <div style={{ padding: '1rem', textAlign: 'center', color: 'hsl(var(--muted-foreground))', border: '1px dashed hsl(var(--border))', borderRadius: 'var(--radius)' }}>
+                                    Paste a YouTube link to generate code
+                                </div>
+                            )}
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </main>
