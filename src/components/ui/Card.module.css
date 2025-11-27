@@ -4,10 +4,6 @@
     background-color: hsl(var(--card));
     color: hsl(var(--card-foreground));
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    min-width: 0;
-    /* Allow flex item to shrink below content size */
-    max-width: 100%;
-    /* Ensure it doesn't overflow */
 }
 
 .header {
@@ -27,6 +23,4 @@
 .content {
     padding: 1.5rem;
     padding-top: 0;
-    min-width: 0;
-    /* Allow flex item to shrink below content size */
 }
