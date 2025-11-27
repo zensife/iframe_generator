@@ -359,16 +359,15 @@ export default function Home() {
                     style={{
                       width: widthUnit === 'px' ? `${width}px` : `${width}%`,
                       height: heightUnit === 'px' ? `${height}px` : `${height}%`,
-                      maxWidth: '100%',
-                      maxHeight: '100%',
-                      overflow: 'auto'
+                      // Removed maxWidth/maxHeight/overflow to allow true-size preview on the canvas
+                      backgroundColor: 'white',
                     }}
                   >
                     <iframe
                       src={url.startsWith('http') ? url : `https://${url}`}
                       width="100%"
                       height="100%"
-                      style={{ border: border === '0' ? 'none' : border, overflow: 'hidden' }}
+                      style={{ border: border === '0' ? 'none' : border, overflow: 'hidden', display: 'block' }}
                       scrolling={scrolling}
                     // Note: Sandbox might break preview for some sites, but we apply it to show effect if possible.
                     // However, for a generator preview, it's often safer NOT to sandbox the preview itself to avoid breaking the tool UI,
