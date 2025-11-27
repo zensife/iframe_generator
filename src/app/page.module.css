@@ -40,6 +40,14 @@
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: 350px 1fr;
+    align-items: start;
+    /* Prevent columns from stretching to same height */
+  }
+
+  .previewContainer {
+    position: sticky;
+    top: 5rem;
+    /* Adjust based on navbar height */
   }
 }
 
@@ -68,10 +76,10 @@
 }
 
 .previewCard {
-  flex: 1;
+  /* Removed flex: 1 to prevent unwanted stretching */
   display: flex;
   flex-direction: column;
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .previewFrame {
