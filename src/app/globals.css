@@ -44,7 +44,8 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 263.4 70% 50.4%;
+    --primary: 263.4 80% 65%;
+    /* Brighter, neon purple */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 240 3.7% 15.9%;
@@ -76,7 +77,8 @@
   --popover: 240 10% 3.9%;
   --popover-foreground: 0 0% 98%;
 
-  --primary: 263.4 70% 50.4%;
+  --primary: 263.4 80% 65%;
+  /* Brighter, neon purple */
   --primary-foreground: 210 40% 98%;
 
   --secondary: 240 3.7% 15.9%;
@@ -193,12 +195,13 @@ body .glass-card {
 
 /* Dark mode adjustments for glass */
 body.dark .glass-card {
-  background: hsl(var(--card) / 0.4);
-  border: 1px solid hsl(var(--border) / 0.3);
+  background: hsl(var(--card) / 0.3);
+  border: 1px solid hsl(var(--border) / 0.4);
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.2),
-    0 10px 15px -3px rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  /* Stronger inner glow */
 }
 
 /* Aurora Background */
@@ -233,17 +236,17 @@ body.dark .glass-card {
 }
 
 .dark .gradient-bg {
-  background-color: #000000;
+  background-color: #050505;
   background-image:
-    radial-gradient(at 40% 20%, hsla(260, 60%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, hsla(189, 60%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(340, 60%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, hsla(356, 60%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, hsla(22, 60%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, hsla(240, 60%, 20%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(340, 60%, 20%, 1) 0px, transparent 50%);
-  filter: blur(60px);
-  opacity: 0.6;
+    radial-gradient(at 40% 20%, hsla(263, 70%, 25%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(189, 70%, 20%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(340, 70%, 25%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(356, 70%, 25%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(22, 70%, 20%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(240, 70%, 25%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(340, 70%, 20%, 1) 0px, transparent 50%);
+  filter: blur(80px);
+  opacity: 0.8;
 }
 
 /* Scrollbar */

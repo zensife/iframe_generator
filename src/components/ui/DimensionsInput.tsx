@@ -38,7 +38,8 @@ export function DimensionsInput({
                         padding: '0.5rem',
                         borderRadius: '0.5rem',
                         border: '1px solid hsl(var(--border))',
-                        backgroundColor: 'hsl(var(--background))',
+                        backgroundColor: 'transparent',
+                        color: 'hsl(var(--foreground))',
                         fontSize: '0.875rem',
                         cursor: 'pointer'
                     }}
