@@ -7,6 +7,8 @@ import { Input } from '@/components/ui/Input';
 import { CodeBlock } from '@/components/ui/CodeBlock';
 import { Button } from '@/components/ui/Button';
 import { Youtube, Settings, Smartphone, Maximize2, Minimize2, Play, Clock, ShieldCheck } from 'lucide-react';
+import { DimensionsInput } from '@/components/ui/DimensionsInput';
+import { DeviceSelector } from '@/components/ui/DeviceSelector';
 
 export default function YoutubeGenerator() {
     const [url, setUrl] = useState('');
@@ -200,50 +202,31 @@ export default function YoutubeGenerator() {
                             />
 
                             <div>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                                     <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 0 }}>
                                         <Youtube size={16} /> Dimensions
                                     </h4>
-                                    <div style={{ display: 'flex', gap: '0.25rem' }}>
-                                        <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('mobile')} title="Mobile">Mobile</Button>
-                                        <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('tablet')} title="Tablet">Tablet</Button>
-                                        <Button size="sm" variant="ghost" onClick={() => setDeviceDimensions('desktop')} title="Desktop">Desktop</Button>
-                                    </div>
                                 </div>
 
-                                <div className={styles.row}>
-                                    <Input
+                                <div style={{ marginBottom: '1.5rem' }}>
+                                    <DeviceSelector onSelect={setDeviceDimensions} />
+                                </div>
+
+                                <div className={styles.row} style={{ gap: '1rem' }}>
+                                    <DimensionsInput
                                         label="Width"
                                         value={width}
-                                        onChange={(e) => setWidth(e.target.value)}
-                                        type="number"
+                                        onChange={setWidth}
+                                        unit={widthUnit}
+                                        onUnitChange={setWidthUnit}
                                     />
-                                    <select
-                                        className={styles.select}
-                                        value={widthUnit}
-                                        onChange={(e) => setWidthUnit(e.target.value)}
-                                        style={{ marginTop: '1.5rem', height: '2.5rem', borderRadius: '0.5rem' }}
-                                    >
-                                        <option value="px">px</option>
-                                        <option value="%">%</option>
-                                    </select>
-                                </div>
-                                <div className={styles.row} style={{ marginTop: '1rem' }}>
-                                    <Input
+                                    <DimensionsInput
                                         label="Height"
                                         value={height}
-                                        onChange={(e) => setHeight(e.target.value)}
-                                        type="number"
+                                        onChange={setHeight}
+                                        unit={heightUnit}
+                                        onUnitChange={setHeightUnit}
                                     />
-                                    <select
-                                        className={styles.select}
-                                        value={heightUnit}
-                                        onChange={(e) => setHeightUnit(e.target.value)}
-                                        style={{ marginTop: '1.5rem', height: '2.5rem', borderRadius: '0.5rem' }}
-                                    >
-                                        <option value="px">px</option>
-                                        <option value="%">%</option>
-                                    </select>
                                 </div>
 
                                 <div style={{ marginTop: '1rem' }}>
