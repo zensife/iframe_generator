@@ -197,7 +197,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.gradientBg} />
+      <div className="gradient-bg" />
 
       <section className={styles.hero}>
         <h1 className={styles.title}>Iframe Generator</h1>

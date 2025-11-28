@@ -175,7 +175,7 @@ export default function YoutubeGenerator() {
 
     return (
         <main className={styles.main}>
-            <div className={styles.gradientBg} />
+            <div className="gradient-bg" />
 
             <section className={styles.hero}>
                 <h1 className={styles.title}>YouTube Iframe Generator</h1>

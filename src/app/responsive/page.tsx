@@ -61,7 +61,7 @@ export default function ResponsiveGenerator() {
 
     return (
         <main className={styles.main}>
-            <div className={styles.gradientBg} />
+            <div className="gradient-bg" />
 
             <section className={styles.hero}>
                 <h1 className={styles.title}>Responsive Iframe Generator</h1>

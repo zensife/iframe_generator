@@ -143,7 +143,7 @@ export default function GoogleMapsGenerator() {
 
     return (
         <main className={styles.main}>
-            <div className={styles.gradientBg} />
+            <div className="gradient-bg" />
 
             <section className={styles.hero}>
                 <h1 className={styles.title}>Google Maps Generator</h1>
