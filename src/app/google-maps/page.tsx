@@ -195,7 +195,7 @@ export default function GoogleMapsGenerator() {
                                     max="20"
                                     value={zoom}
                                     onChange={(e) => setZoom(e.target.value)}
-                                    style={{ width: '100%', accentColor: 'hsl(300, 60%, 70%)', cursor: 'pointer' }}
+                                    style={{ width: '100%', accentColor: 'hsl(262, 60%, 75%)', cursor: 'pointer' }}
                                 />
                                 <div style={{ textAlign: 'right', fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
                                     Level: {zoom}
