@@ -209,7 +209,7 @@ export default function YoutubeGenerator() {
                                 </div>
 
                                 <div style={{ marginBottom: '1.5rem' }}>
-                                    <DeviceSelector onSelect={setDeviceDimensions} />
+                                    <DeviceSelector onSelect={setDeviceDimensions} currentWidth={width} currentHeight={height} />
                                 </div>
 
                                 <div className={styles.row} style={{ gap: '1rem' }}>
