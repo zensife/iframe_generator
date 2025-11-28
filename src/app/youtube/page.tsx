@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from '../page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { CodeBlock } from '@/components/ui/CodeBlock';
 import { Button } from '@/components/ui/Button';
-import { Youtube, Play, Clock, ShieldCheck } from 'lucide-react';
+import { Youtube, Settings, Smartphone, Maximize2, Minimize2, Play, Clock, ShieldCheck } from 'lucide-react';
 
 export default function YoutubeGenerator() {
     const [url, setUrl] = useState('');
@@ -29,9 +29,13 @@ export default function YoutubeGenerator() {
     const [height, setHeight] = useState('315');
     const [heightUnit, setHeightUnit] = useState('px');
     const [isResponsive, setIsResponsive] = useState(false);
-
     const [generatedCode, setGeneratedCode] = useState('');
-    const [urlError, setUrlError] = useState('');
+    const [error, setError] = useState('');
+
+    // Mobile preview scaling
+    const [useScaledPreview, setUseScaledPreview] = useState(true);
+    const previewContainerRef = useRef<HTMLDivElement>(null);
+    const [scaleFactor, setScaleFactor] = useState(1);
 
     const setDeviceDimensions = (type: 'mobile' | 'tablet' | 'desktop') => {
         setWidthUnit('px');
@@ -56,7 +60,7 @@ export default function YoutubeGenerator() {
     useEffect(() => {
         if (!url) {
             setVideoId('');
-            setUrlError('');
+            setError('');
             return;
         }
 
@@ -81,12 +85,12 @@ export default function YoutubeGenerator() {
 
         if (id) {
             setVideoId(id);
-            setUrlError('');
+            setError('');
         } else {
             setVideoId('');
             // Only show error if URL looks complete but invalid
             if (url.length > 10) {
-                setUrlError('Invalid YouTube URL format');
+                setError('Invalid YouTube URL format');
             }
         }
     }, [url]);
@@ -144,6 +148,29 @@ export default function YoutubeGenerator() {
         }
     }, [videoId, autoplay, mute, loop, controls, privacy, startTime, modestBranding, rel, ccLoadPolicy, width, widthUnit, height, heightUnit, isResponsive]);
 
+    // Calculate scale factor for mobile preview
+    useEffect(() => {
+        const calculateScale = () => {
+            if (!previewContainerRef.current || typeof window === 'undefined') return;
+
+            const containerWidth = previewContainerRef.current.offsetWidth;
+            const iframeWidth = widthUnit === 'px' ? parseFloat(width) : (containerWidth * parseFloat(width) / 100);
+
+            // Only scale on mobile and when iframe is wider than container
+            const isMobile = window.innerWidth < 1024;
+            if (isMobile && iframeWidth > containerWidth - 100) {
+                const scale = Math.max(0.2, Math.min(1, (containerWidth - 100) / iframeWidth));
+                setScaleFactor(scale);
+            } else {
+                setScaleFactor(1);
+            }
+        };
+
+        calculateScale();
+        window.addEventListener('resize', calculateScale);
+        return () => window.removeEventListener('resize', calculateScale);
+    }, [width, widthUnit, height, heightUnit, isResponsive]);
+
     return (
         <main className={styles.main}>
             <div className={styles.gradientBg} />
@@ -169,7 +196,7 @@ export default function YoutubeGenerator() {
                                 placeholder="https://www.youtube.com/watch?v=..."
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
-                                error={urlError}
+                                error={error}
                             />
 
                             <div>
@@ -298,48 +325,82 @@ export default function YoutubeGenerator() {
                 </div>
 
                 {/* Preview */}
-                <div className={styles.previewContainer}>
+                <div className={styles.previewContainer} ref={previewContainerRef}>
                     <Card className={`glass-card ${styles.previewCard}`}>
                         <CardHeader>
-                            <CardTitle>Preview</CardTitle>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <CardTitle>Preview</CardTitle>
+                                {scaleFactor < 1 && (
+                                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                        <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
+                                            📱 {useScaledPreview ? `Scaled ${Math.round(scaleFactor * 100)}%` : 'Actual Size'}
+                                        </span>
+                                        <Button
+                                            size="sm"
+                                            variant="ghost"
+                                            onClick={() => setUseScaledPreview(!useScaledPreview)}
+                                            style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', height: 'auto' }}
+                                        >
+                                            {useScaledPreview ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
+                                            {useScaledPreview ? ' Actual' : ' Scale'}
+                                        </Button>
+                                    </div>
+                                )}
+                            </div>
                         </CardHeader>
                         <CardContent style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className={styles.previewFrame}>
                                 {videoId ? (
                                     <div
-                                        className={styles.iframeWrapper}
                                         style={{
-                                            width: widthUnit === 'px' ? `${width}px` : `${width}%`,
-                                            height: heightUnit === 'px' ? `${height}px` : `${height}%`,
-                                            backgroundColor: 'white',
+                                            width: useScaledPreview && scaleFactor < 1
+                                                ? `${(widthUnit === 'px' ? parseFloat(width) : 560) * scaleFactor}px`
+                                                : (widthUnit === 'px' ? `${width}px` : `${width}%`),
+                                            height: useScaledPreview && scaleFactor < 1
+                                                ? `${(heightUnit === 'px' ? parseFloat(height) : 315) * scaleFactor}px`
+                                                : (heightUnit === 'px' ? `${height}px` : `${height}%`),
+                                            margin: '0 auto',
+                                            position: 'relative',
                                         }}
                                     >
-                                        <iframe
-                                            width="100%"
-                                            height="100%"
-                                            src={(() => {
-                                                const domain = privacy ? 'www.youtube-nocookie.com' : 'www.youtube.com';
-                                                let s = `https://${domain}/embed/${videoId}?`;
-                                                const p = [];
-                                                if (autoplay) p.push('autoplay=1');
-                                                if (mute) p.push('mute=1');
-                                                if (loop) {
-                                                    p.push('loop=1');
-                                                    p.push(`playlist=${videoId}`);
-                                                }
-                                                if (!controls) p.push('controls=0');
-                                                if (startTime) p.push(`start=${startTime}`);
-                                                if (modestBranding) p.push('modestbranding=1');
-                                                if (!rel) p.push('rel=0');
-                                                if (ccLoadPolicy) p.push('cc_load_policy=1');
-                                                return s + p.join('&');
-                                            })()}
-                                            title="YouTube video player"
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowFullScreen
-                                            style={{ display: 'block' }}
-                                        />
+                                        <div
+                                            className={styles.iframeWrapper}
+                                            style={{
+                                                width: widthUnit === 'px' ? `${width}px` : `${width}%`,
+                                                height: heightUnit === 'px' ? `${height}px` : `${height}%`,
+                                                backgroundColor: 'white',
+                                                transform: useScaledPreview && scaleFactor < 1 ? `scale(${scaleFactor})` : 'none',
+                                                transformOrigin: 'top left',
+                                                transition: 'transform 0.3s ease',
+                                            }}
+                                        >
+                                            <iframe
+                                                width="100%"
+                                                height="100%"
+                                                src={(() => {
+                                                    const domain = privacy ? 'www.youtube-nocookie.com' : 'www.youtube.com';
+                                                    let s = `https://${domain}/embed/${videoId}?`;
+                                                    const p = [];
+                                                    if (autoplay) p.push('autoplay=1');
+                                                    if (mute) p.push('mute=1');
+                                                    if (loop) {
+                                                        p.push('loop=1');
+                                                        p.push(`playlist=${videoId}`);
+                                                    }
+                                                    if (!controls) p.push('controls=0');
+                                                    if (startTime) p.push(`start=${startTime}`);
+                                                    if (modestBranding) p.push('modestbranding=1');
+                                                    if (!rel) p.push('rel=0');
+                                                    if (ccLoadPolicy) p.push('cc_load_policy=1');
+                                                    return s + p.join('&');
+                                                })()}
+                                                title="YouTube video player"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowFullScreen
+                                                style={{ display: 'block' }}
+                                            />
+                                        </div>
                                     </div>
                                 ) : (
                                     <div className={styles.emptyState}>
