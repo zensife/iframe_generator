@@ -37,6 +37,13 @@
   width: 100%;
 }
 
+/* Mobile: Force grid columns to shrink below content size */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: 350px 1fr;
@@ -67,12 +74,27 @@
 .row {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
 .previewContainer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+/* Mobile: Constrain preview container to viewport */
+@media (max-width: 1023px) {
+  .previewContainer {
+    min-width: 0;
+    max-width: 100%;
+  }
 }
 
 .previewCard {
@@ -105,6 +127,14 @@
   border: 1px solid hsl(var(--border));
   padding: 2rem;
   /* Add padding so iframe doesn't touch edges */
+}
+
+/* Mobile: Enable internal scrolling, reduce padding */
+@media (max-width: 1023px) {
+  .previewFrame {
+    min-width: 0;
+    padding: 1rem;
+  }
 }
 
 .iframeWrapper {

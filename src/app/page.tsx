@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { CodeBlock } from '@/components/ui/CodeBlock';
-import { Settings, Smartphone, Monitor } from 'lucide-react';
+import { Settings, Smartphone, Monitor, Maximize2, Minimize2 } from 'lucide-react';
 
 export default function Home() {
   const [url, setUrl] = useState('');
@@ -27,6 +27,11 @@ export default function Home() {
   const [allow, setAllow] = useState<string[]>([]);
 
   const [generatedCode, setGeneratedCode] = useState('');
+
+  // Mobile preview scaling
+  const [useScaledPreview, setUseScaledPreview] = useState(true);
+  const previewContainerRef = useRef<HTMLDivElement>(null);
+  const [scaleFactor, setScaleFactor] = useState(1);
 
   const sandboxOptions = [
     { value: 'allow-scripts', label: 'Allow Scripts' },
@@ -164,6 +169,29 @@ export default function Home() {
       setUrlError('');
     }
   };
+
+  // Calculate scale factor for mobile preview
+  useEffect(() => {
+    const calculateScale = () => {
+      if (!previewContainerRef.current || typeof window === 'undefined') return;
+
+      const containerWidth = previewContainerRef.current.offsetWidth;
+      const iframeWidth = widthUnit === 'px' ? parseFloat(width) : (containerWidth * parseFloat(width) / 100);
+
+      // Only scale on mobile and when iframe is wider than container
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile && iframeWidth > containerWidth - 100) { // -100 for padding
+        const scale = Math.max(0.2, Math.min(1, (containerWidth - 100) / iframeWidth));
+        setScaleFactor(scale);
+      } else {
+        setScaleFactor(1);
+      }
+    };
+
+    calculateScale();
+    window.addEventListener('resize', calculateScale);
+    return () => window.removeEventListener('resize', calculateScale);
+  }, [width, widthUnit, height, heightUnit]);
 
   return (
     <main className={styles.main}>
@@ -377,36 +405,63 @@ export default function Home() {
         </div>
 
         {/* Preview & Code Section */}
-        <div className={styles.previewContainer}>
+        <div className={styles.previewContainer} ref={previewContainerRef}>
           <Card className={`glass-card ${styles.previewCard}`}>
             <CardHeader>
-              <CardTitle>Preview</CardTitle>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <CardTitle>Preview</CardTitle>
+                {scaleFactor < 1 && (
+                  <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                    <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
+                      📱 {useScaledPreview ? `Scaled ${Math.round(scaleFactor * 100)}%` : 'Actual Size'}
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setUseScaledPreview(!useScaledPreview)}
+                      style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', height: 'auto' }}
+                    >
+                      {useScaledPreview ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
+                      {useScaledPreview ? ' Actual' : ' Scale'}
+                    </Button>
+                  </div>
+                )}
+              </div>
             </CardHeader>
             <CardContent style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div className={styles.previewFrame}>
                 {url ? (
                   <div
-                    className={styles.iframeWrapper}
                     style={{
-                      width: widthUnit === 'px' ? `${width}px` : `${width}%`,
-                      height: heightUnit === 'px' ? `${height}px` : `${height}%`,
-                      // Removed maxWidth/maxHeight/overflow to allow true-size preview on the canvas
-                      backgroundColor: 'white',
+                      width: useScaledPreview && scaleFactor < 1
+                        ? `${(widthUnit === 'px' ? parseFloat(width) : 600) * scaleFactor}px`
+                        : (widthUnit === 'px' ? `${width}px` : `${width}%`),
+                      height: useScaledPreview && scaleFactor < 1
+                        ? `${(heightUnit === 'px' ? parseFloat(height) : 400) * scaleFactor}px`
+                        : (heightUnit === 'px' ? `${height}px` : `${height}%`),
+                      margin: '0 auto', // Center the preview
+                      position: 'relative',
                     }}
                   >
-                    <iframe
-                      src={url.startsWith('http') ? url : `https://${url}`}
-                      width="100%"
-                      height="100%"
-                      style={{ border: border === '0' ? 'none' : border, overflow: 'hidden', display: 'block' }}
-                      scrolling={scrolling}
-                    // Note: Sandbox might break preview for some sites, but we apply it to show effect if possible.
-                    // However, for a generator preview, it's often safer NOT to sandbox the preview itself to avoid breaking the tool UI,
-                    // or apply a minimal set. Let's apply it but be aware.
-                    // Actually, applying sandbox to the preview might block the content if 'allow-scripts' etc are missing.
-                    // For now, we will NOT apply sandbox to the preview iframe to ensure the user can see the content,
-                    // but the generated code WILL have it.
-                    />
+                    <div
+                      className={styles.iframeWrapper}
+                      style={{
+                        width: widthUnit === 'px' ? `${width}px` : `${width}%`,
+                        height: heightUnit === 'px' ? `${height}px` : `${height}%`,
+                        backgroundColor: 'white',
+                        transform: useScaledPreview && scaleFactor < 1 ? `scale(${scaleFactor})` : 'none',
+                        transformOrigin: 'top left',
+                        transition: 'transform 0.3s ease',
+                      }}
+                    >
+                      <iframe
+                        src={url.startsWith('http') ? url : `https://${url}`}
+                        width="100%"
+                        height="100%"
+                        style={{ border: border === '0' ? 'none' : border, overflow: 'hidden', display: 'block' }}
+                        scrolling={scrolling}
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className={styles.emptyState}>
@@ -431,6 +486,6 @@ export default function Home() {
           </Card>
         </div>
       </div>
-    </main>
+    </main >
   );
 }

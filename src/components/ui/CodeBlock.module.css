@@ -4,6 +4,8 @@
     background-color: hsl(var(--muted) / 0.5);
     overflow: hidden;
     margin-top: 1rem;
+    max-width: 100%;
+    /* Ensure code block never overflows parent */
 }
 
 .header {
