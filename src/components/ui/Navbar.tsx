@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
+import { Logo } from './Logo';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from './Button';
 import styles from './Navbar.module.css';
@@ -59,9 +59,9 @@ export const Navbar = () => {
             <div className={styles.container}>
                 <Link href="/" className={styles.logo}>
                     <div className={styles.logoIcon}>
-                        <Image src="/logo.png" alt="IframeGen Logo" width={28} height={28} style={{ objectFit: 'contain' }} />
+                        <Logo size={24} />
                     </div>
-                    <span>IframeGen</span>
+                    <span>Iframe Generator</span>
                 </Link>
 
                 {/* Desktop Nav */}

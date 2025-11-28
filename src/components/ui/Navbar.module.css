@@ -40,9 +40,8 @@
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    background: hsl(var(--primary) / 0.1);
-    border-radius: 0.75rem;
-    border: 1px solid hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
+    /* Inherit primary color for SVG */
 }
 
 .logo span {
