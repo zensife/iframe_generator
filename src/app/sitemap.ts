@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.iframe-generator.com'; // TODO: Update with actual domain
+    const baseUrl = 'https://www.iframegenerator.org'; // TODO: Update with actual domain
 
     return [
         {
