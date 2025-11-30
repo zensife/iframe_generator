@@ -87,8 +87,8 @@ export const googleMapsContent = {
     {
       title: "Introduction",
       content: `
-        <p>Embedding a <strong>Google Map</strong> is essential for businesses to help customers find their physical location. While Google Maps provides a basic embed option, our <strong>Google Maps Iframe Generator</strong> gives you more control without needing an API key.</p>
-        <p>It allows you to quickly generate code for responsive maps, custom zoom levels, and specific map types (satellite, terrain) to match your website's needs.</p>
+        <p>Embedding a <strong>Google Map</strong> is essential for businesses to help customers find their physical location. While Google Maps provides a basic embed option, our <strong>Google Maps Iframe Generator</strong> gives you more control <strong>without needing an API key</strong>.</p>
+        <p>Many custom map solutions require a complex Google Cloud setup and billing account. Our tool bypasses this by generating standard HTML embed codes that are free, secure, and require <strong>no API key</strong> or credit card.</p>
       `
     },
     {
