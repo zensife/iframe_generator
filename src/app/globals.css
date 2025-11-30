@@ -267,3 +267,34 @@ body.dark .glass-card {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.5);
 }
+
+/* Content Links */
+.glass-card a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.glass-card a:hover {
+  color: hsl(var(--primary) / 0.8);
+  text-decoration: underline;
+}
+
+/* FAQ Animation */
+details[open] .chevron-icon {
+  transform: rotate(180deg) !important;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Softer text for content to prevent glare in dark mode */
+.content-text {
+  color: hsl(var(--foreground) / 0.9);
+}
+
+.dark .content-text {
+  color: hsl(var(--foreground) / 0.8);
+}

@@ -233,7 +233,7 @@ export const responsiveContent = {
       content: `
         <ol>
           <li><strong>Choose Method:</strong> Select "Modern CSS" for cleaner code or "Legacy Hack" for maximum compatibility.</li>
-          <li><strong>Set Aspect Ratio:</strong> Common ratios are 16:9 (video), 4:3 (standard), or 1:1 (square).</li>
+          <li><strong>Set Aspect Ratio:</strong> Common ratios are 16:9 (video), 4:3 (standard), 1:1 (square), or 21:9 (ultrawide).</li>
           <li><strong>Max Width:</strong> Optionally set a maximum width (e.g., 800px) to prevent the iframe from getting too large on desktop screens.</li>
           <li><strong>Test:</strong> Use the preview to see how it behaves on different screen sizes.</li>
         </ol>
@@ -246,6 +246,7 @@ export const responsiveContent = {
           <li><strong>16:9:</strong> The standard for YouTube videos and most modern media.</li>
           <li><strong>4:3:</strong> Common for older videos, presentations, or standard documents.</li>
           <li><strong>1:1:</strong> Perfect for Instagram posts, maps, or square widgets.</li>
+          <li><strong>21:9:</strong> Ultrawide format, great for cinematic content.</li>
         </ul>
       `
     },

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { ChevronDown } from 'lucide-react';
 
 type FAQItem = {
     question: string;
@@ -37,6 +38,7 @@ export function FAQSection({ items }: FAQSectionProps) {
                         {items.map((item, index) => (
                             <details
                                 key={index}
+                                className="group"
                                 style={{
                                     borderBottom: index < items.length - 1 ? '1px solid hsl(var(--border))' : 'none',
                                     paddingBottom: index < items.length - 1 ? '1rem' : '0',
@@ -51,13 +53,22 @@ export function FAQSection({ items }: FAQSectionProps) {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'space-between',
+                                        padding: '0.5rem 0',
                                     }}
                                 >
                                     {item.question}
-                                    <span style={{ opacity: 0.5 }}>+</span>
+                                    <ChevronDown
+                                        size={20}
+                                        style={{
+                                            opacity: 0.5,
+                                            transition: 'transform 0.2s ease',
+                                        }}
+                                        className="chevron-icon"
+                                    />
                                 </summary>
                                 <div
-                                    style={{ marginTop: '0.75rem', opacity: 0.9, lineHeight: '1.6' }}
+                                    className="content-text"
+                                    style={{ marginTop: '0.5rem', lineHeight: '1.6' }}
                                     dangerouslySetInnerHTML={{ __html: item.answer }}
                                 />
                             </details>

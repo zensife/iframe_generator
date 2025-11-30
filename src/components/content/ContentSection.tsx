@@ -14,7 +14,7 @@ export function ContentSection({ title, children, id }: ContentSectionProps) {
                 <CardHeader>
                     <CardTitle as="h2" style={{ fontSize: '1.5rem' }}>{title}</CardTitle>
                 </CardHeader>
-                <CardContent style={{ lineHeight: '1.7', color: 'hsl(var(--foreground))' }}>
+                <CardContent className="content-text" style={{ lineHeight: '1.7' }}>
                     {children}
                 </CardContent>
             </Card>
