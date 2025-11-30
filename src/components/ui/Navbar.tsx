@@ -49,9 +49,9 @@ export const Navbar = () => {
 
     const navItems = [
         { name: 'General', path: '/' },
-        { name: 'Google Maps', path: '/google-maps' },
-        { name: 'YouTube', path: '/youtube' },
-        { name: 'Responsive', path: '/responsive' },
+        { name: 'Google Maps', path: '/google-maps-iframe-generator' },
+        { name: 'YouTube', path: '/youtube-iframe-generator' },
+        { name: 'Responsive', path: '/responsive-iframe-generator' },
     ];
 
     return (

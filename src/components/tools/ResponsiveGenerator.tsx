@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import styles from '../page.module.css';
+import React, { useState, useEffect, useRef } from 'react';
+import styles from '@/app/page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { CodeBlock } from '@/components/ui/CodeBlock';
-import { Smartphone, Monitor, Layout, Code, Tablet, Laptop } from 'lucide-react';
+import { Smartphone, Monitor, Layout, Code, Tablet, Laptop, Maximize2, Minimize2 } from 'lucide-react';
 
 export default function ResponsiveGenerator() {
     const [url, setUrl] = useState('');
@@ -16,6 +16,11 @@ export default function ResponsiveGenerator() {
     const [generatedCode, setGeneratedCode] = useState('');
     const [error, setError] = useState('');
 
+    // Mobile preview scaling
+    const [useScaledPreview, setUseScaledPreview] = useState(true);
+    const previewContainerRef = useRef<HTMLDivElement>(null);
+    const [scaleFactor, setScaleFactor] = useState(1);
+
     useEffect(() => {
         // Default to example.com if URL is empty
         const effectiveUrl = url.trim() || 'https://example.com';
@@ -23,10 +28,6 @@ export default function ResponsiveGenerator() {
         // Simple validation for the effective URL (skip if it's the default)
         if (url && url.includes(' ')) {
             setError('URL cannot contain spaces');
-            // We still generate code for the invalid URL to show feedback, or we could stop. 
-            // But usually we might want to show what it looks like. 
-            // However, let's stick to the previous logic: if error, maybe show default or nothing?
-            // Let's show the code for the *input* URL but keep error state.
         } else {
             setError('');
         }
@@ -58,6 +59,40 @@ export default function ResponsiveGenerator() {
 
         setGeneratedCode(code);
     }, [url, aspectRatio, method, maxWidth]);
+
+    // Calculate scale factor for mobile preview
+    useEffect(() => {
+        const calculateScale = () => {
+            if (!previewContainerRef.current || typeof window === 'undefined') return;
+
+            const containerWidth = previewContainerRef.current.offsetWidth;
+            // For responsive iframe, the width is 100% of container, so we don't need scaling unless we want to simulate a wider screen?
+            // Actually, for responsive iframes, they adapt to the container. 
+            // But if the user wants to see how it looks on a "Desktop" size while on mobile, scaling might be useful?
+            // However, the current logic for other tools was based on fixed pixel widths.
+            // For responsive, let's just keep it simple: it fills the container.
+            // But if maxWidth is set to something larger than container, we might want to scale?
+
+            // Let's implement scaling if maxWidth is in pixels and larger than container
+            if (maxWidth.endsWith('px')) {
+                const targetWidth = parseFloat(maxWidth);
+                const isMobile = window.innerWidth < 1024;
+                if (isMobile && targetWidth > containerWidth - 100) {
+                    const scale = Math.max(0.2, Math.min(1, (containerWidth - 100) / targetWidth));
+                    setScaleFactor(scale);
+                } else {
+                    setScaleFactor(1);
+                }
+            } else {
+                setScaleFactor(1);
+            }
+        };
+
+        calculateScale();
+        window.addEventListener('resize', calculateScale);
+        return () => window.removeEventListener('resize', calculateScale);
+    }, [maxWidth]);
+
 
     return (
         <main className={styles.main}>
@@ -186,10 +221,28 @@ export default function ResponsiveGenerator() {
                 </div>
 
                 {/* Preview */}
-                <div className={styles.previewContainer}>
+                <div className={styles.previewContainer} ref={previewContainerRef}>
                     <Card className={`glass-card ${styles.previewCard}`}>
                         <CardHeader>
-                            <CardTitle>Preview</CardTitle>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <CardTitle>Preview</CardTitle>
+                                {scaleFactor < 1 && (
+                                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                        <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
+                                            📱 {useScaledPreview ? `Scaled ${Math.round(scaleFactor * 100)}%` : 'Actual Size'}
+                                        </span>
+                                        <Button
+                                            size="sm"
+                                            variant="ghost"
+                                            onClick={() => setUseScaledPreview(!useScaledPreview)}
+                                            style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', height: 'auto' }}
+                                        >
+                                            {useScaledPreview ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
+                                            {useScaledPreview ? ' Actual' : ' Scale'}
+                                        </Button>
+                                    </div>
+                                )}
+                            </div>
                         </CardHeader>
                         <CardContent style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                             <div className={styles.previewFrame}>
@@ -197,8 +250,12 @@ export default function ResponsiveGenerator() {
                                     key={aspectRatio} // Force re-render to ensure aspect-ratio change is applied reliably
                                     className={styles.iframeWrapper}
                                     style={{
-                                        width: '100%',
-                                        maxWidth: maxWidth,
+                                        width: useScaledPreview && scaleFactor < 1 && maxWidth.endsWith('px')
+                                            ? `${parseFloat(maxWidth) * scaleFactor}px`
+                                            : '100%',
+                                        maxWidth: useScaledPreview && scaleFactor < 1 && maxWidth.endsWith('px')
+                                            ? `${parseFloat(maxWidth) * scaleFactor}px`
+                                            : maxWidth,
                                         aspectRatio: aspectRatio.replace(':', '/'),
                                         margin: '0 auto',
                                         backgroundColor: 'white',
@@ -206,7 +263,9 @@ export default function ResponsiveGenerator() {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         overflow: 'hidden',
-                                        transition: 'none' // Disable transition to prevent layout glitches during resize
+                                        transition: 'none',
+                                        transform: useScaledPreview && scaleFactor < 1 ? `scale(${scaleFactor})` : 'none',
+                                        transformOrigin: 'top left',
                                     }}
                                 >
                                     {url && !error ? (
