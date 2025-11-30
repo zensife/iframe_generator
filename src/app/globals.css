@@ -290,6 +290,110 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
+/* PrismJS Custom Theme (Nord/Pastel Inspired for Softness) */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #e2e8f0;
+  /* Slate 200 - Softer than pure white */
+  text-shadow: none;
+  /* Remove shadow for cleaner look */
+  font-family: 'Fira Code', 'Consolas', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  /* Increased line height for breathability */
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Token Colors - Pastel Palette */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #94a3b8;
+  /* Slate 400 - Muted comment */
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #cbd5e1;
+  /* Slate 300 */
+}
+
+.token.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f9a8d4;
+  /* Pastel Pink */
+}
+
+.token.boolean,
+.token.number {
+  color: #c4b5fd;
+  /* Pastel Purple */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #86efac;
+  /* Pastel Green */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #e2e8f0;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #fcd34d;
+  /* Pastel Amber/Yellow */
+}
+
+.token.keyword {
+  color: #93c5fd;
+  /* Pastel Blue */
+}
+
+.token.regex,
+.token.important {
+  color: #fdba74;
+  /* Pastel Orange */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
 /* Softer text for content to prevent glare in dark mode */
 .content-text {
   color: hsl(var(--foreground) / 0.9);

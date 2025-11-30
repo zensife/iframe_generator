@@ -30,12 +30,15 @@
 }
 
 .pre {
-    padding: 1rem;
+    padding: 1.25rem;
     overflow-x: auto;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Fira Code', 'Consolas', monospace;
     font-size: 0.875rem;
-    line-height: 1.5;
-    color: hsl(var(--foreground));
+    line-height: 1.6;
+    color: #e2e8f0;
+    /* Soft white */
+    background-color: #1e1e2ee6;
+    /* Dark background always */
 }
 
 .code {
