@@ -49,19 +49,19 @@ export const Footer = () => {
                             <li className={styles.linkItem}>
                                 <Link href="/google-maps-iframe-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Google Maps Embed
+                                    Google Maps Iframe Generator
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/youtube-iframe-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    YouTube Embed
+                                    YouTube Iframe Generator
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/responsive-iframe-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Responsive Check
+                                    Responsive Iframe Generator
                                 </Link>
                             </li>
                         </ul>
