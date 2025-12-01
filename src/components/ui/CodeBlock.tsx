@@ -14,9 +14,12 @@ interface CodeBlockProps {
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'html' }) => {
     const [copied, setCopied] = useState(false);
+    const codeRef = React.useRef<HTMLElement>(null);
 
     useEffect(() => {
-        Prism.highlightAll();
+        if (codeRef.current) {
+            Prism.highlightElement(codeRef.current);
+        }
     }, [code, language]);
 
     const handleCopy = async () => {
@@ -34,8 +37,14 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = 'html' })
                     {copied ? 'Copied!' : 'Copy Code'}
                 </Button>
             </div>
-            <pre className={styles.pre}>
-                <code className={`language-${language} ${styles.code}`}>{code}</code>
+            <pre className={styles.pre} suppressHydrationWarning>
+                <code
+                    ref={codeRef}
+                    className={`language-${language} ${styles.code}`}
+                    suppressHydrationWarning
+                >
+                    {code}
+                </code>
             </pre>
         </div>
     );
