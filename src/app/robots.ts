@@ -1,13 +1,17 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://www.iframegenerator.org'; // TODO: Update with actual domain
+    const baseUrl = 'https://www.iframegenerator.org';
 
     return {
         rules: {
-            userAgent: '*',
+            userAgent: '*',  // Applies to all search engines (Google, Bing, Yandex, Baidu, etc.)
             allow: '/',
-            disallow: '/private/',
+            disallow: [
+                '/api/',       // Block API routes
+                '/_next/',     // Block Next.js internal files
+                '/private/',   // Block private directory if exists
+            ],
         },
         sitemap: `${baseUrl}/sitemap.xml`,
     };

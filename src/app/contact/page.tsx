@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { ContentSection } from '@/components/content/ContentSection';
 import { Card, CardContent } from '@/components/ui/Card';
-import { Mail, MessageSquare } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Contact Us - Iframe Generator',
@@ -19,39 +19,21 @@ export default function ContactPage() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                    <Card className="hover:border-primary/50 transition-colors">
-                        <CardContent className="flex flex-col items-center justify-center p-8 text-center h-full">
-                            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
-                                <Mail size={24} />
+                <div className="flex justify-center">
+                    <Card className="hover:border-primary/50 transition-colors max-w-md w-full">
+                        <CardContent className="flex flex-col items-center justify-center p-8 text-center">
+                            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                                <Mail size={32} />
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">Email Support</h3>
-                            <p className="text-muted-foreground mb-4">
-                                For general inquiries and support.
+                            <h3 className="text-2xl font-semibold mb-2">Email Us</h3>
+                            <p className="text-muted-foreground mb-6 leading-relaxed">
+                                For support, feedback, feature requests, and general inquiries.
                             </p>
                             <a
                                 href="mailto:support@iframegenerator.org"
-                                className="text-primary hover:underline font-medium"
+                                className="text-primary hover:underline font-medium text-lg"
                             >
                                 support@iframegenerator.org
-                            </a>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="hover:border-primary/50 transition-colors">
-                        <CardContent className="flex flex-col items-center justify-center p-8 text-center h-full">
-                            <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4 text-secondary-foreground">
-                                <MessageSquare size={24} />
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">Feedback</h3>
-                            <p className="text-muted-foreground mb-4">
-                                Have a feature request? Let us know!
-                            </p>
-                            <a
-                                href="mailto:feedback@iframegenerator.org"
-                                className="text-secondary-foreground hover:underline font-medium"
-                            >
-                                feedback@iframegenerator.org
                             </a>
                         </CardContent>
                     </Card>

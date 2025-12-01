@@ -71,7 +71,8 @@ export const Footer = () => {
                     <div className={styles.section}>
                         <h3 className={styles.sectionTitle}>Resources</h3>
                         <ul className={styles.linkList}>
-                            <li className={styles.linkItem}>
+                            {/* Blog links - commented out until content is ready */}
+                            {/* <li className={styles.linkItem}>
                                 <Link href="/blog" className={styles.link}>
                                     <span className={styles.bullet}></span>
                                     Blog & Guides
@@ -88,7 +89,7 @@ export const Footer = () => {
                                     <span className={styles.bullet}></span>
                                     Maps No API Key
                                 </Link>
-                            </li>
+                            </li> */}
                             <li className={styles.linkItem}>
                                 <Link href="/about" className={styles.link}>
                                     <span className={styles.bullet}></span>
