@@ -6,7 +6,7 @@ import { googleMapsContent } from '@/data/seo-content';
 
 export const metadata: Metadata = {
     title: 'Google Maps Iframe Generator - Embed Google Maps for Free',
-    description: 'Create custom Google Maps embed codes for your website. Search addresses, adjust zoom levels, and generate responsive maps instantly.',
+    description: 'Create custom Google Maps embed codes for your website. Search addresses, adjust zoom levels, and generate responsive maps instantly. Free tool.',
     keywords: 'google maps embed, google maps iframe, map generator, embed map in website, responsive google map',
     alternates: {
         canonical: '/google-maps-iframe-generator',

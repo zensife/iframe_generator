@@ -6,7 +6,7 @@ import { responsiveContent } from '@/data/seo-content';
 
 export const metadata: Metadata = {
     title: 'Responsive Iframe Generator - Mobile-Friendly Embed Code',
-    description: 'Create responsive iframe embed codes that automatically adapt to any screen size. Support for modern CSS aspect-ratio and legacy padding-bottom methods. Free tool with live preview.',
+    description: 'Create responsive iframe codes that adapt to any screen size. Modern CSS aspect-ratio and legacy padding-bottom methods. Free tool with live preview.',
     keywords: 'responsive iframe generator, responsive iframe code generator, iframe responsive generator, mobile-friendly iframe',
     alternates: {
         canonical: '/responsive-iframe-generator',

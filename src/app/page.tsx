@@ -6,7 +6,7 @@ import { homeContent } from '@/data/seo-content';
 
 export const metadata: Metadata = {
   title: 'Iframe Generator - Free Online Embed Code Tools',
-  description: 'Generate responsive iframe codes for websites, Google Maps, and YouTube videos. Free, SEO-friendly, and easy to use.',
+  description: 'Generate responsive iframe codes for websites, Google Maps, and YouTube videos. Free, SEO-friendly embed code generator with live preview.',
   keywords: 'iframe generator, google maps embed, youtube embed code, responsive iframe, embed code generator',
   alternates: {
     canonical: '/',

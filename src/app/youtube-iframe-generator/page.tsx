@@ -6,7 +6,7 @@ import { youtubeContent } from '@/data/seo-content';
 
 export const metadata: Metadata = {
     title: 'YouTube Iframe Generator - Embed YouTube Videos with Advanced Options',
-    description: 'Generate advanced YouTube embed codes with autoplay, loop, mute, and privacy-enhanced mode. Fully responsive and SEO-friendly.',
+    description: 'Generate YouTube embed codes with autoplay, loop, mute, and privacy-enhanced mode. Fully responsive and SEO-friendly. Free online tool with live preview.',
     keywords: 'youtube embed generator, youtube iframe, embed youtube video, youtube autoplay code, responsive youtube embed',
     alternates: {
         canonical: '/youtube-iframe-generator',
