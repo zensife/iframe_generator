@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Logo } from './Logo';
-import { Github, Twitter, Mail } from 'lucide-react';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
@@ -23,17 +22,6 @@ export const Footer = () => {
                         <p className={styles.brandDescription}>
                             The modern standard for generating responsive, SEO-friendly embed codes. Built for developers and creators.
                         </p>
-                        <div className={styles.socialLinks}>
-                            <a href="#" className={styles.socialLink} aria-label="GitHub">
-                                <Github size={20} />
-                            </a>
-                            <a href="#" className={styles.socialLink} aria-label="Twitter">
-                                <Twitter size={20} />
-                            </a>
-                            <a href="mailto:support@iframegenerator.org" className={styles.socialLink} aria-label="Email">
-                                <Mail size={20} />
-                            </a>
-                        </div>
                     </div>
 
                     {/* Tools Column */}
