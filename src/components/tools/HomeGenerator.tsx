@@ -282,6 +282,7 @@ export default function HomeGenerator() {
                                     <select
                                         value={scrolling}
                                         onChange={(e) => setScrolling(e.target.value)}
+                                        aria-label="Scrolling behavior"
                                         style={{ padding: '0.25rem', borderRadius: '0.25rem' }}
                                     >
                                         <option value="yes">Yes</option>
@@ -294,6 +295,7 @@ export default function HomeGenerator() {
                                     <select
                                         value={border}
                                         onChange={(e) => setBorder(e.target.value)}
+                                        aria-label="Border style"
                                         style={{ padding: '0.25rem', borderRadius: '0.25rem' }}
                                     >
                                         <option value="0">None</option>
@@ -372,6 +374,7 @@ export default function HomeGenerator() {
                                         <select
                                             value={referrerPolicy}
                                             onChange={(e) => setReferrerPolicy(e.target.value)}
+                                            aria-label="Referrer policy"
                                             style={{ width: '100%', padding: '0.5rem', borderRadius: '0.5rem' }}
                                         >
                                             <option value="no-referrer">no-referrer</option>
@@ -441,6 +444,7 @@ export default function HomeGenerator() {
                                                 src={url.startsWith('http') ? url : `https://${url}`}
                                                 width="100%"
                                                 height="100%"
+                                                title="Iframe preview"
                                                 style={{ border: border === '0' ? 'none' : border, overflow: 'hidden', display: 'block' }}
                                                 scrolling={scrolling}
                                             />

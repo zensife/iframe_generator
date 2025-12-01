@@ -195,6 +195,7 @@ export default function GoogleMapsGenerator() {
                                     max="20"
                                     value={zoom}
                                     onChange={(e) => setZoom(e.target.value)}
+                                    aria-label="Zoom level"
                                     style={{ width: '100%', accentColor: 'hsl(262, 60%, 75%)', cursor: 'pointer' }}
                                 />
                                 <div style={{ textAlign: 'right', fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
@@ -210,6 +211,7 @@ export default function GoogleMapsGenerator() {
                                     className={styles.select}
                                     value={mapType}
                                     onChange={(e) => setMapType(e.target.value)}
+                                    aria-label="Map type"
                                     style={{ width: '100%', height: '2.5rem', borderRadius: '0.5rem', padding: '0.5rem' }}
                                 >
                                     <option value="roadmap">Roadmap (Standard)</option>
@@ -317,6 +319,7 @@ export default function GoogleMapsGenerator() {
                                             <iframe
                                                 width="100%"
                                                 height="100%"
+                                                title="Google Maps preview"
                                                 style={{ border: 0, display: 'block' }}
                                                 loading="lazy"
                                                 allowFullScreen

@@ -75,7 +75,7 @@ export const Navbar = () => {
                             {item.name}
                         </Link>
                     ))}
-                    <Button variant="ghost" size="icon" onClick={toggleTheme}>
+                    <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
                         {isDark ? <Sun size={20} /> : <Moon size={20} />}
                     </Button>
                 </div>

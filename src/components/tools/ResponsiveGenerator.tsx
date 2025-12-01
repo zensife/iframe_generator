@@ -273,6 +273,7 @@ export default function ResponsiveGenerator() {
                                             src={url.startsWith('http') ? url : `https://${url}`}
                                             width="100%"
                                             height="100%"
+                                            title="Responsive iframe preview"
                                             style={{ border: 0 }}
                                         />
                                     ) : (
