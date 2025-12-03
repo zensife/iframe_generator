@@ -178,9 +178,9 @@ export default function YoutubeGenerator() {
             <div className="gradient-bg" />
 
             <section className={styles.hero}>
-                <h1 className={styles.title}>YouTube Iframe Generator</h1>
+                <h1 className={styles.title}>YouTube Embed Code Generator</h1>
                 <p className={styles.subtitle}>
-                    Generate advanced YouTube embed codes with autoplay, loop, and privacy-enhanced mode.
+                    Generate custom YouTube embed code with autoplay, loop, privacy-enhanced mode, and responsive iframe output.
                 </p>
             </section>
 

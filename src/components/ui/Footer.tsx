@@ -41,9 +41,9 @@ export const Footer = () => {
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
-                                <Link href="/youtube-iframe-generator" className={styles.link}>
+                                <Link href="/youtube-embed-code-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    YouTube Iframe Generator
+                                    YouTube Embed Code Generator
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>

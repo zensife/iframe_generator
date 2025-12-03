@@ -50,7 +50,7 @@ export const Navbar = () => {
     const navItems = [
         { name: 'Iframe Generator', path: '/' },
         { name: 'Google Maps', path: '/google-maps-iframe-generator' },
-        { name: 'YouTube', path: '/youtube-iframe-generator' },
+        { name: 'YouTube Embed Code', path: '/youtube-embed-code-generator' },
         { name: 'Responsive', path: '/responsive-iframe-generator' },
     ];
 

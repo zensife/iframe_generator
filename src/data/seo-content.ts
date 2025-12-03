@@ -72,7 +72,7 @@ export const homeContent = {
     },
     {
       question: "Can I embed YouTube videos with this?",
-      answer: "Yes, but for the best experience, we recommend using our dedicated <a href='/youtube'>YouTube Iframe Generator</a> which offers specific options like autoplay and loop."
+      answer: "Yes, but for the best experience, we recommend using our dedicated <a href='/youtube-embed-code-generator'>YouTube Embed Code Generator</a> which offers specific options like autoplay and loop."
     },
     {
       question: "Is it SEO friendly?",
@@ -145,65 +145,103 @@ export const googleMapsContent = {
 };
 
 export const youtubeContent = {
-  title: "How to Embed YouTube Videos on Your Website",
+  title: "YouTube Embed Code Generator Guide",
   sections: [
     {
-      title: "Why Embed YouTube Videos?",
+      title: "How to Get YouTube Embed Code",
       content: `
-        <p>Embedding videos keeps visitors on your site longer, reducing bounce rates and signaling quality to search engines. Using a <strong>YouTube Iframe Generator</strong> is better than uploading videos directly because:</p>
-        <ul>
-          <li>It saves your server bandwidth and storage.</li>
-          <li>YouTube's global CDN ensures fast playback anywhere.</li>
-          <li>It's fully compatible with all modern browsers and devices.</li>
-        </ul>
+        <p>Getting the right <strong>YouTube embed code</strong> is easy with our YouTube embed code generator. Paste your video URL, customize player options, and instantly get a clean, responsive iframe you can drop into any site.</p>
+        <p>This page focuses on the primary keyword <strong>youtube embed code generator</strong> and the secondary terms "youtube embed code" and "embed youtube video" so you can quickly match search intent while using the tool.</p>
       `
     },
     {
-      title: "Quick Start Guide",
+      title: "Quick Steps to Embed YouTube Videos",
       content: `
         <ol>
-          <li><strong>Paste URL:</strong> Copy the link of the YouTube video you want to embed.</li>
-          <li><strong>Configure Player:</strong> Choose options like <strong>Autoplay</strong>, <strong>Loop</strong>, or <strong>Mute</strong>.</li>
-          <li><strong>Privacy:</strong> Enable "Privacy-Enhanced Mode" to prevent YouTube from tracking visitors unless they play the video.</li>
-          <li><strong>Generate:</strong> Get your optimized embed code instantly.</li>
+          <li><strong>Paste URL:</strong> Copy your YouTube video link into the generator.</li>
+          <li><strong>Customize:</strong> Set dimensions, autoplay, loop, mute, privacy mode, and start time.</li>
+          <li><strong>Generate:</strong> Click to get your optimized <strong>YouTube embed code</strong> instantly.</li>
+          <li><strong>Copy & Paste:</strong> Add the iframe code to your website HTML wherever you want the video to appear.</li>
         </ol>
       `
     },
     {
-      title: "Customization Options",
+      title: "YouTube Embed Code Features",
       content: `
-        <p>Our tool unlocks advanced YouTube player parameters:</p>
+        <h3>Responsive iframe Design</h3>
+        <p>Every embed is responsive by default so your YouTube video fits desktop, tablet, and mobile screens. No extra CSS needed.</p>
+        <h3>Advanced Player Parameters</h3>
         <ul>
-          <li><strong>Autoplay & Mute:</strong> Modern browsers require videos to be muted to autoplay. Our tool handles this logic for you.</li>
-          <li><strong>Loop:</strong> Automatically replay the video when it ends. Great for background videos.</li>
-          <li><strong>Start Time:</strong> Skip intros by specifying exactly when the video should begin (in seconds).</li>
-          <li><strong>Modest Branding:</strong> Remove the YouTube logo from the control bar for a cleaner look.</li>
+          <li><strong>Autoplay & Mute:</strong> Autoplay pairs with mute for better browser support.</li>
+          <li><strong>Loop Video:</strong> Automatically replay when the video ends.</li>
+          <li><strong>Custom Start Time:</strong> Skip intros by starting at the exact second you want.</li>
+          <li><strong>Modest Branding:</strong> Reduce YouTube UI for a cleaner embed.</li>
+          <li><strong>Privacy-Enhanced Mode:</strong> Use youtube-nocookie.com to improve GDPR compliance.</li>
         </ul>
       `
     },
     {
-      title: "Privacy & GDPR",
+      title: "Why Use a YouTube Embed Code Generator?",
       content: `
-        <p>For GDPR and privacy compliance, use the <strong>Privacy-Enhanced Mode</strong>. This changes the domain to <code>youtube-nocookie.com</code>, ensuring no cookies are set on your user's device until they interact with the video.</p>
+        <p>While YouTube provides a basic iframe, the <strong>youtube embed code generator</strong> here combines multiple parameters automatically:</p>
+        <ul>
+          <li>One-click privacy-enhanced mode.</li>
+          <li>Responsive sizing without manual CSS.</li>
+          <li>Autoplay, loop, mute, and branding options in one place.</li>
+          <li>Clean iframe code ready to paste.</li>
+        </ul>
+      `
+    },
+    {
+      title: "How to Embed YouTube Video in HTML",
+      content: `
+        <p>To embed a YouTube video in HTML, use the iframe generated by this tool. A basic example looks like this:</p>
+        <pre><code>&lt;iframe width="560" height="315"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+        <p>The generator upgrades this snippet with responsive sizing, privacy-enhanced mode, and combined player parameters so you always get the best <strong>youtube embed code</strong>.</p>
+      `
+    },
+    {
+      title: "Privacy & GDPR Compliance",
+      content: `
+        <p>Enable privacy-enhanced mode to switch the domain to <code>youtube-nocookie.com</code>. This keeps tracking off until a visitor plays the video, helping your site stay compliant while still delivering the embed.</p>
+      `
+    },
+    {
+      title: "Embedding YouTube Videos in PowerPoint",
+      content: `
+        <p>PowerPoint users search for "embed YouTube video in PowerPoint" even though the intent differs from this tool. In PowerPoint, go to Insert &gt; Video &gt; Online Video and paste your YouTube URL. For websites, rely on this <strong>youtube embed code generator</strong> to get the iframe you need.</p>
+      `
+    },
+    {
+      title: "Common YouTube Embed Code Issues",
+      content: `
+        <h3>Video Says "Watch on YouTube"</h3>
+        <p>The video owner disabled embedding. You cannot override this restriction.</p>
+        <h3>Autoplay Not Working</h3>
+        <p>Modern browsers block unmuted autoplay. Use autoplay + mute together in the generator.</p>
+        <h3>Video Not Responsive</h3>
+        <p>Select the responsive option to output an iframe that scales on every device.</p>
       `
     }
   ],
   faq: [
     {
-      question: "How do I make the video autoplay?",
-      answer: "Check the 'Autoplay' box. Note that you must also check 'Mute' for autoplay to work reliably in most modern browsers (Chrome, Safari, Edge)."
+      question: "How do I get a YouTube embed code?",
+      answer: "Use the YouTube embed code generator: paste your video URL, pick options like autoplay, loop, and privacy-enhanced mode, then copy the generated iframe code."
     },
     {
-      question: "Can I hide the YouTube logo?",
-      answer: "Yes, select 'Modest Branding' to minimize YouTube branding in the player controls."
+      question: "What is the difference between YouTube embed code and iframe?",
+      answer: "They are the same thing. A YouTube embed code is an iframe snippet that loads your video inside a web page."
     },
     {
-      question: "What is Privacy-Enhanced Mode?",
-      answer: "It uses the 'youtube-nocookie.com' domain, which prevents YouTube from storing information about visitors on your website unless they play the video."
+      question: "Can I customize YouTube embed code parameters?",
+      answer: "Yes. Customize autoplay, mute, loop, start time, modest branding, related videos, and privacy mode directly in the generator before copying the code."
     },
     {
-      question: "Does this work for YouTube Shorts?",
-      answer: "Yes, simply paste the URL of the Short, and our generator will handle it correctly."
+      question: "Is the YouTube embed code generator free?",
+      answer: "Yes. The generator is completely free with unlimited use for creating responsive YouTube embed codes."
     }
   ]
 };

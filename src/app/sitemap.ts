@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/youtube-iframe-generator`,
+            url: `${baseUrl}/youtube-embed-code-generator`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,
