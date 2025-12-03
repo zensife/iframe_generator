@@ -82,64 +82,161 @@ export const homeContent = {
 };
 
 export const googleMapsContent = {
-  title: "How to Embed Google Maps on Your Website",
+  title: "Google Map Embed Generator Guide",
   sections: [
     {
-      title: "Introduction",
+      title: "How to Embed Google Maps on Your Website",
       content: `
-        <p>Embedding a <strong>Google Map</strong> is essential for businesses to help customers find their physical location. While Google Maps provides a basic embed option, our <strong>Google Maps Iframe Generator</strong> gives you more control <strong>without needing an API key</strong>.</p>
-        <p>Many custom map solutions require a complex Google Cloud setup and billing account. Our tool bypasses this by generating standard HTML embed codes that are free, secure, and require <strong>no API key</strong> or credit card.</p>
+        <p>Embedding a <strong>Google Map</strong> helps customers find your location faster. The <strong>Google Map embed generator</strong> on this page outputs clean iframe code without an API key, so you can add maps to any site in seconds.</p>
+        <p>We focus on the primary keyword <strong>google map embed</strong> and the tool intent for <strong>google maps embed generator</strong> to match what people actually search for while keeping the workflow simple.</p>
       `
     },
     {
-      title: "Step-by-Step Guide",
+      title: "Quick Steps to Embed Google Map",
       content: `
         <ol>
-          <li><strong>Enter Location:</strong> Type your address, business name, or coordinates into the search bar. You can also use the "Current Location" button.</li>
-          <li><strong>Customize Map:</strong> Adjust the <strong>zoom level</strong> to show more detail or a broader area. Choose between Roadmap, Satellite, or Hybrid views.</li>
-          <li><strong>Set Dimensions:</strong> Select a preset device size or enter custom width/height. Enable "Responsive" to ensure it looks good on mobile.</li>
-          <li><strong>Get Code:</strong> Copy the generated HTML code and paste it into your website's contact page or footer.</li>
+          <li><strong>Enter Location:</strong> Type your business address, name, or coordinates.</li>
+          <li><strong>Customize Map:</strong> Adjust zoom level (10-18) and choose Roadmap, Satellite, or Hybrid map types.</li>
+          <li><strong>Set Dimensions:</strong> Pick presets or set custom width/height for responsive embeds.</li>
+          <li><strong>Copy Code:</strong> Copy your Google Map embed code and paste it into your website HTML.</li>
         </ol>
       `
     },
     {
-      title: "Customization Options",
+      title: "Google Map Embed Code Features",
       content: `
-        <p>Fine-tune your map for the best user experience:</p>
+        <h3>No API Key Required</h3>
+        <p>The generator outputs a standard iframe, so you avoid Google Cloud billing and API setup.</p>
+        <h3>Responsive Map Embed</h3>
+        <p>Enable the responsive option to output a fluid-width iframe that scales on mobile, tablet, and desktop.</p>
+        <h3>Custom Zoom and Map Type</h3>
         <ul>
-          <li><strong>Zoom Level:</strong> Use a high zoom (15-18) for specific buildings and a lower zoom (10-12) for city-wide context.</li>
-          <li><strong>Map Type:</strong> 'Roadmap' is best for navigation, while 'Satellite' is great for showing real-world surroundings.</li>
-          <li><strong>Responsive Design:</strong> Always recommended. It ensures the map resizes dynamically, preventing horizontal scrolling on phones.</li>
+          <li><strong>Zoom 15-18:</strong> Show specific buildings and entrances.</li>
+          <li><strong>Zoom 10-12:</strong> Give city or district context.</li>
+          <li><strong>Roadmap / Satellite / Hybrid:</strong> Pick the map style that matches your use case.</li>
         </ul>
       `
     },
     {
-      title: "Best Practices",
+      title: "Why Use Our Google Maps Embed Generator?",
       content: `
-        <p>To maintain your site's performance and SEO:</p>
+        <p>Google's "Share > Embed a map" is basic. Our <strong>google maps embed generator</strong> adds:</p>
         <ul>
-          <li><strong>Lazy Loading:</strong> Our generator adds <code>loading="lazy"</code> automatically. This stops the map from loading until the user scrolls to it, speeding up your initial page load.</li>
-          <li><strong>Accessibility:</strong> The generated code includes a title attribute, helping screen readers understand that a map is present.</li>
+          <li><strong>No API key:</strong> Ship maps fast without billing setup.</li>
+          <li><strong>Custom dimensions:</strong> Presets for mobile/tablet/desktop or manual sizing.</li>
+          <li><strong>Responsive embed:</strong> One-click responsive option for all screens.</li>
+          <li><strong>Lazy loading:</strong> <code>loading="lazy"</code> added for better performance.</li>
+          <li><strong>Clean code:</strong> Optimized iframe ready to paste.</li>
         </ul>
+      `
+    },
+    {
+      title: "Embed Google Map vs Google Maps Embed API",
+      content: `
+        <h3>When to Use the Generator (Free)</h3>
+        <ul>
+          <li>Single locations on contact or footer pages.</li>
+          <li>Small sites that need a quick embed without developer help.</li>
+          <li>Projects that don't require custom markers or styling.</li>
+        </ul>
+        <h3>When to Use the Embed API (Paid)</h3>
+        <ul>
+          <li>Multiple markers, heavy customization, or custom colors.</li>
+          <li>High-traffic sites needing quotas and usage monitoring.</li>
+          <li>Advanced features like routes and directions.</li>
+        </ul>
+      `
+    },
+    {
+      title: "How to Get Google Map Embed Code",
+      content: `
+        <h3>Method 1: Use This Generator (Recommended)</h3>
+        <p>Enter your address, set zoom and dimensions, then copy the <strong>google map embed code</strong> instantly.</p>
+        <h3>Method 2: Google Maps Share Button</h3>
+        <ol>
+          <li>Open Google Maps and search for your location.</li>
+          <li>Click "Share" > "Embed a map".</li>
+          <li>Choose Small/Medium/Large and copy the iframe HTML.</li>
+        </ol>
+        <p>The built-in option is limited. The generator adds responsive sizing, lazy loading, and custom map types.</p>
+      `
+    },
+    {
+      title: "Embed Google Map in HTML",
+      content: `
+        <p>Place the iframe where you want the map to appear. A basic example looks like this:</p>
+        <pre><code>&lt;iframe 
+  src="https://maps.google.com/maps?q=YOUR_LOCATION&amp;output=embed" 
+  width="600" 
+  height="450" 
+  style="border:0;" 
+  loading="lazy" 
+  allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+        <p>The generator enhances this with responsive sizing and custom zoom for better embeds.</p>
+      `
+    },
+    {
+      title: "Google Maps Embed Best Practices",
+      content: `
+        <h3>Use Lazy Loading</h3>
+        <p><code>loading="lazy"</code> keeps your page fast until users scroll to the map.</p>
+        <h3>Make It Responsive</h3>
+        <p>Select the responsive option so the <strong>google map embed</strong> fits every screen.</p>
+        <h3>Choose the Right Zoom</h3>
+        <ul>
+          <li><strong>15-18:</strong> Storefronts and points of interest.</li>
+          <li><strong>12-14:</strong> Neighborhoods and districts.</li>
+          <li><strong>10-11:</strong> City-wide or regional context.</li>
+        </ul>
+        <h3>Add Context Text</h3>
+        <p>Include your address in plain text near the map for accessibility and SEO.</p>
+      `
+    },
+    {
+      title: "Embed Google Maps on Different Platforms",
+      content: `
+        <h3>Embed Google Map in WordPress</h3>
+        <p>Copy the iframe code and paste it into a Custom HTML block or the HTML editor. Most themes support it without plugins.</p>
+        <h3>Embed Google Map on Website (HTML)</h3>
+        <p>For custom sites, paste the code into your contact page or footer. It works anywhere HTML is accepted.</p>
+        <h3>Embed Google Maps in Notion</h3>
+        <p>Create an Embed block and paste the Google Maps URL. For full control on external sites, use this <strong>google maps embed generator</strong>.</p>
+        <p>Need video embeds too? Check our <a href="/youtube-embed-code-generator">YouTube embed code generator</a> for a complementary tool.</p>
+      `
+    },
+    {
+      title: "Common Google Map Embed Issues",
+      content: `
+        <h3>Map Not Showing (Blank Space)</h3>
+        <p>Confirm the iframe is complete, the location is correct, and your site allows iframes.</p>
+        <h3>Map Not Responsive on Mobile</h3>
+        <p>Enable the responsive option so the embed scales to different screen sizes.</p>
+        <h3>"This Page Can't Load Google Maps Correctly"</h3>
+        <p>This error appears with the Embed API when an API key is missing. Our iframe method avoids this by not requiring keys.</p>
       `
     }
   ],
   faq: [
     {
-      question: "Do I need a Google Maps API key?",
-      answer: "No. This tool generates standard embed codes that do not require an API key for basic usage."
+      question: "How do I embed a Google Map on my website?",
+      answer: "Use the Google Map embed generator: enter your location, pick zoom and size, then copy the iframe code. Paste it into your site HTML—no API key required."
     },
     {
-      question: "Is the generated map responsive?",
-      answer: "Yes, if you select the 'Make Responsive' option, the map will automatically adjust to fit the width of its container on any device."
+      question: "Do I need an API key to embed Google Maps?",
+      answer: "No. Standard iframe embeds from this generator do not require API keys or billing, so they work immediately."
     },
     {
-      question: "Can I show satellite view?",
-      answer: "Yes, simply select 'Satellite' or 'Hybrid' from the Map Type dropdown menu before generating the code."
+      question: "How do I get Google Map embed code?",
+      answer: "Enter your address, adjust zoom and dimensions, and click copy. You can also use Google Maps \"Share > Embed a map,\" but the generator adds responsive design and lazy loading."
     },
     {
-      question: "Why is the map not showing the correct address?",
-      answer: "Try to be as specific as possible with the address (include city and zip code) or use latitude/longitude coordinates for exact precision."
+      question: "Is embedding Google Maps free?",
+      answer: "Yes. Using iframe embed code is free and does not need an API key. Our tool remains free with unlimited use."
+    },
+    {
+      question: "How do I make my embedded Google Map responsive?",
+      answer: "Enable the responsive option in the generator so the iframe automatically adapts to mobile, tablet, and desktop widths."
     }
   ]
 };

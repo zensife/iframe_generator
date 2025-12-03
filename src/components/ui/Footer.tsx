@@ -37,7 +37,7 @@ export const Footer = () => {
                             <li className={styles.linkItem}>
                                 <Link href="/google-maps-iframe-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Google Maps Iframe Generator
+                                    Google Map Embed Generator
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>

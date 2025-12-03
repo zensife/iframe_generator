@@ -146,9 +146,9 @@ export default function GoogleMapsGenerator() {
             <div className="gradient-bg" />
 
             <section className={styles.hero}>
-                <h1 className={styles.title}>Google Maps Generator</h1>
+                <h1 className={styles.title}>Google Map Embed Generator</h1>
                 <p className={styles.subtitle}>
-                    Create custom Google Maps embeds for your website with address search and styling options.
+                    Embed Google Maps without an API key. Generate responsive iframe code with custom zoom, map type, and lazy loading.
                 </p>
             </section>
 
