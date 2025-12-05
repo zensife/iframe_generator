@@ -55,7 +55,11 @@
         "scaled": "Scaled",
         "actualSize": "Actual Size",
         "actual": "Actual",
-        "scale": "Scale"
+        "scale": "Scale",
+        "iframeNamePlaceholder": "iframe name",
+        "scrollingYes": "Yes",
+        "scrollingNo": "No",
+        "scrollingAuto": "Auto"
     },
     "googleMaps": {
         "title": "Google Map Embed Generator",
@@ -66,7 +70,13 @@
         "mapType": "Map Type",
         "roadmap": "Roadmap",
         "satellite": "Satellite",
-        "zoom": "Zoom Level"
+        "hybrid": "Hybrid",
+        "terrain": "Terrain",
+        "zoom": "Zoom Level",
+        "mapSettings": "Map Settings",
+        "locating": "Locating...",
+        "useCurrentLocation": "Use Current Location",
+        "enterLocationHint": "Enter a location to generate code"
     },
     "youtube": {
         "title": "YouTube Embed Code Generator",
@@ -83,7 +93,14 @@
         "branding": "Show YouTube Branding",
         "privacy": "Privacy",
         "videoSettings": "Video Settings",
-        "emptyState": "Paste a YouTube link to preview"
+        "emptyState": "Paste a YouTube link to preview",
+        "modestBranding": "Modest Branding (Less YouTube UI)",
+        "hideRelatedVideos": "Hide Related Videos",
+        "forceCaptions": "Force Captions (CC)",
+        "startTimePlaceholder": "e.g. 60 (seconds)",
+        "privacyModeHint": "Uses youtube-nocookie.com domain.",
+        "embedDisabledNote": "Note: If it says \"Watch on YouTube\", the video owner has disabled embedding.",
+        "pasteYoutubeHint": "Paste a YouTube link to generate code"
     },
     "responsive": {
         "title": "Responsive Iframe Generator",
@@ -100,6 +117,9 @@
         "paddingWrapper": "padding-bottom wrapper",
         "maxWidth": "Max Width",
         "emptyState": "Enter a URL to test responsiveness"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions"
     },
     "footer": {
         "description": "Free online tools for generating optimized iframe embed codes.",

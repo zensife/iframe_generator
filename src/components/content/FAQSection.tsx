@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { ChevronDown } from 'lucide-react';
@@ -13,6 +14,7 @@ type FAQSectionProps = {
 };
 
 export function FAQSection({ items }: FAQSectionProps) {
+    const t = useTranslations('faq');
     const schema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -31,7 +33,7 @@ export function FAQSection({ items }: FAQSectionProps) {
             <StructuredData data={schema} />
             <Card className="glass-card">
                 <CardHeader>
-                    <CardTitle as="h2" style={{ fontSize: '1.5rem' }}>Frequently Asked Questions</CardTitle>
+                    <CardTitle as="h2" style={{ fontSize: '1.5rem' }}>{t('title')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

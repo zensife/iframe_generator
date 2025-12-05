@@ -55,7 +55,11 @@
         "scaled": "Escalado",
         "actualSize": "Tamaño Real",
         "actual": "Real",
-        "scale": "Escalar"
+        "scale": "Escalar",
+        "iframeNamePlaceholder": "nombre del iframe",
+        "scrollingYes": "Sí",
+        "scrollingNo": "No",
+        "scrollingAuto": "Automático"
     },
     "googleMaps": {
         "title": "Generador de Inserción de Google Maps",
@@ -66,7 +70,13 @@
         "mapType": "Tipo de Mapa",
         "roadmap": "Mapa de Calles",
         "satellite": "Satélite",
-        "zoom": "Nivel de Zoom"
+        "hybrid": "Híbrido",
+        "terrain": "Terreno",
+        "zoom": "Nivel de Zoom",
+        "mapSettings": "Configuración del Mapa",
+        "locating": "Localizando...",
+        "useCurrentLocation": "Usar Ubicación Actual",
+        "enterLocationHint": "Ingresa una ubicación para generar código"
     },
     "youtube": {
         "title": "Generador de Código de YouTube",
@@ -80,7 +90,17 @@
         "controls": "Mostrar Controles",
         "privacyMode": "Modo de Privacidad Mejorada (sin cookies)",
         "startTime": "Tiempo de Inicio (segundos)",
-        "branding": "Mostrar Marca de YouTube"
+        "branding": "Mostrar Marca de YouTube",
+        "privacy": "Privacidad",
+        "videoSettings": "Configuración de Video",
+        "emptyState": "Pega un enlace de YouTube para previsualizar",
+        "modestBranding": "Marca Modesta (Menos UI de YouTube)",
+        "hideRelatedVideos": "Ocultar Videos Relacionados",
+        "forceCaptions": "Forzar Subtítulos (CC)",
+        "startTimePlaceholder": "ej. 60 (segundos)",
+        "privacyModeHint": "Usa el dominio youtube-nocookie.com.",
+        "embedDisabledNote": "Nota: Si dice \"Ver en YouTube\", el propietario del video ha deshabilitado la inserción.",
+        "pasteYoutubeHint": "Pega un enlace de YouTube para generar código"
     },
     "responsive": {
         "title": "Generador de Iframe Responsivo",
@@ -88,7 +108,18 @@
         "pasteCode": "Pegar Código Iframe",
         "pasteCodePlaceholder": "Pega tu código iframe existente aquí...",
         "aspectRatio": "Relación de Aspecto",
-        "custom": "Personalizado"
+        "custom": "Personalizado",
+        "settings": "Configuración Responsiva",
+        "method": "Método de Implementación",
+        "modernCSS": "CSS Moderno",
+        "aspectRatioProperty": "propiedad aspect-ratio",
+        "legacyHack": "Hack Heredado",
+        "paddingWrapper": "contenedor padding-bottom",
+        "maxWidth": "Ancho Máximo",
+        "emptyState": "Ingresa una URL para probar la responsividad"
+    },
+    "faq": {
+        "title": "Preguntas Frecuentes"
     },
     "footer": {
         "description": "Herramientas en línea gratuitas para generar códigos de inserción iframe optimizados.",

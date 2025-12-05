@@ -55,7 +55,11 @@
         "scaled": "已缩放",
         "actualSize": "实际大小",
         "actual": "实际",
-        "scale": "缩放"
+        "scale": "缩放",
+        "iframeNamePlaceholder": "iframe名称",
+        "scrollingYes": "是",
+        "scrollingNo": "否",
+        "scrollingAuto": "自动"
     },
     "googleMaps": {
         "title": "Google 地图嵌入生成器",
@@ -66,7 +70,13 @@
         "mapType": "地图类型",
         "roadmap": "道路地图",
         "satellite": "卫星地图",
-        "zoom": "缩放级别"
+        "hybrid": "混合视图",
+        "terrain": "地形图",
+        "zoom": "缩放级别",
+        "mapSettings": "地图设置",
+        "locating": "定位中...",
+        "useCurrentLocation": "使用当前位置",
+        "enterLocationHint": "输入位置以生成代码"
     },
     "youtube": {
         "title": "YouTube 嵌入代码生成器",
@@ -83,7 +93,14 @@
         "branding": "显示 YouTube 品牌",
         "privacy": "隐私",
         "videoSettings": "视频设置",
-        "emptyState": "粘贴 YouTube 链接以预览"
+        "emptyState": "粘贴 YouTube 链接以预览",
+        "modestBranding": "简化品牌（减少YouTube UI）",
+        "hideRelatedVideos": "隐藏相关视频",
+        "forceCaptions": "强制显示字幕（CC）",
+        "startTimePlaceholder": "例如：60（秒）",
+        "privacyModeHint": "使用youtube-nocookie.com域名。",
+        "embedDisabledNote": "注意：如果显示\"在YouTube上观看\"，说明视频所有者已禁用嵌入功能。",
+        "pasteYoutubeHint": "粘贴YouTube链接以生成代码"
     },
     "responsive": {
         "title": "响应式 Iframe 生成器",
@@ -100,6 +117,9 @@
         "paddingWrapper": "padding-bottom 包装器",
         "maxWidth": "最大宽度",
         "emptyState": "输入 URL 以测试响应式"
+    },
+    "faq": {
+        "title": "常见问题"
     },
     "footer": {
         "description": "免费在线工具，用于生成优化的 iframe 嵌入代码。",

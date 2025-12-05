@@ -55,7 +55,11 @@
         "scaled": "Mis à l'Échelle",
         "actualSize": "Taille Réelle",
         "actual": "Réel",
-        "scale": "Échelle"
+        "scale": "Échelle",
+        "iframeNamePlaceholder": "nom de l'iframe",
+        "scrollingYes": "Oui",
+        "scrollingNo": "Non",
+        "scrollingAuto": "Automatique"
     },
     "googleMaps": {
         "title": "Générateur d'Intégration Google Maps",
@@ -66,7 +70,13 @@
         "mapType": "Type de Carte",
         "roadmap": "Plan",
         "satellite": "Satellite",
-        "zoom": "Niveau de Zoom"
+        "hybrid": "Hybride",
+        "terrain": "Terrain",
+        "zoom": "Niveau de zoom",
+        "mapSettings": "Paramètres de la carte",
+        "locating": "Localisation...",
+        "useCurrentLocation": "Utiliser la position actuelle",
+        "enterLocationHint": "Entrez un emplacement pour générer le code"
     },
     "youtube": {
         "title": "Générateur de Code d'Intégration YouTube",
@@ -80,7 +90,17 @@
         "controls": "Afficher les Contrôles",
         "privacyMode": "Mode de Confidentialité Améliorée (sans cookies)",
         "startTime": "Temps de Départ (secondes)",
-        "branding": "Afficher la Marque YouTube"
+        "branding": "Afficher la Marque YouTube",
+        "privacy": "Confidentialité",
+        "videoSettings": "Paramètres Vidéo",
+        "emptyState": "Collez un lien YouTube pour prévisualiser",
+        "modestBranding": "Branding modeste (Moins d'interface YouTube)",
+        "hideRelatedVideos": "Masquer les vidéos associées",
+        "forceCaptions": "Forcer les sous-titres (CC)",
+        "startTimePlaceholder": "ex. 60 (secondes)",
+        "privacyModeHint": "Utilise le domaine youtube-nocookie.com.",
+        "embedDisabledNote": "Remarque : Si vous voyez \"Regarder sur YouTube\", le propriétaire de la vidéo a désactivé l'intégration.",
+        "pasteYoutubeHint": "Collez un lien YouTube pour générer le code"
     },
     "responsive": {
         "title": "Générateur d'Iframe Réactif",
@@ -88,7 +108,18 @@
         "pasteCode": "Coller le Code Iframe",
         "pasteCodePlaceholder": "Collez votre code iframe existant ici...",
         "aspectRatio": "Ratio d'Aspect",
-        "custom": "Personnalisé"
+        "custom": "Personnalisé",
+        "settings": "Paramètres Responsifs",
+        "method": "Méthode d'Implémentation",
+        "modernCSS": "CSS Moderne",
+        "aspectRatioProperty": "propriété aspect-ratio",
+        "legacyHack": "Hack Hérité",
+        "paddingWrapper": "enveloppe padding-bottom",
+        "maxWidth": "Largeur Maximale",
+        "emptyState": "Entrez une URL pour tester la réactivité"
+    },
+    "faq": {
+        "title": "Questions Fréquemment Posées"
     },
     "footer": {
         "description": "Outils en ligne gratuits pour générer des codes d'intégration iframe optimisés.",

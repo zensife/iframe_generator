@@ -268,15 +268,15 @@ export default function YoutubeGenerator() {
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={modestBranding} onChange={(e) => setModestBranding(e.target.checked)} />
-                                        Modest Branding (Less YouTube UI)
+                                        {t('modestBranding')}
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={!rel} onChange={(e) => setRel(!e.target.checked)} />
-                                        Hide Related Videos
+                                        {t('hideRelatedVideos')}
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={ccLoadPolicy} onChange={(e) => setCcLoadPolicy(e.target.checked)} />
-                                        Force Captions (CC)
+                                        {t('forceCaptions')}
                                     </label>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@ export default function YoutubeGenerator() {
                                     <Clock size={16} /> {t('startTime')}
                                 </h4>
                                 <Input
-                                    placeholder="e.g. 60 (seconds)"
+                                    placeholder={t('startTimePlaceholder')}
                                     value={startTime}
                                     onChange={(e) => setStartTime(e.target.value)}
                                     type="number"
@@ -302,7 +302,7 @@ export default function YoutubeGenerator() {
                                     {t('privacyMode')}
                                 </label>
                                 <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', marginTop: '0.25rem' }}>
-                                    Uses youtube-nocookie.com domain.
+                                    {t('privacyModeHint')}
                                 </p>
                             </div>
 
@@ -319,7 +319,7 @@ export default function YoutubeGenerator() {
                                 {scaleFactor < 1 && (
                                     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                         <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
-                                            📱 {useScaledPreview ? `Scaled ${Math.round(scaleFactor * 100)}%` : 'Actual Size'}
+                                            📱 {useScaledPreview ? `${tHome('scaled')} ${Math.round(scaleFactor * 100)}%` : tHome('actualSize')}
                                         </span>
                                         <Button
                                             size="sm"
@@ -328,7 +328,7 @@ export default function YoutubeGenerator() {
                                             style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', height: 'auto' }}
                                         >
                                             {useScaledPreview ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
-                                            {useScaledPreview ? ' Actual' : ' Scale'}
+                                            {useScaledPreview ? ` ${tHome('actual')}` : ` ${tHome('scale')}`}
                                         </Button>
                                     </div>
                                 )}
@@ -396,7 +396,7 @@ export default function YoutubeGenerator() {
                                 )}
                             </div>
                             <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', marginTop: '0.5rem', textAlign: 'center' }}>
-                                Note: If it says "Watch on YouTube", the video owner has disabled embedding.
+                                {t('embedDisabledNote')}
                             </p>
                         </CardContent>
                     </Card>
@@ -410,7 +410,7 @@ export default function YoutubeGenerator() {
                                 <CodeBlock code={generatedCode} language="html" />
                             ) : (
                                 <div style={{ padding: '1rem', textAlign: 'center', color: 'hsl(var(--muted-foreground))', border: '1px dashed hsl(var(--border))', borderRadius: 'var(--radius)' }}>
-                                    Paste a YouTube link to generate code
+                                    {t('pasteYoutubeHint')}
                                 </div>
                             )}
                         </CardContent>

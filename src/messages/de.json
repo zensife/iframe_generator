@@ -55,7 +55,11 @@
         "scaled": "Skaliert",
         "actualSize": "Tatsächliche Größe",
         "actual": "Tatsächlich",
-        "scale": "Skalieren"
+        "scale": "Skalieren",
+        "iframeNamePlaceholder": "iframe-Name",
+        "scrollingYes": "Ja",
+        "scrollingNo": "Nein",
+        "scrollingAuto": "Automatisch"
     },
     "googleMaps": {
         "title": "Google Maps Einbettungsgenerator",
@@ -66,7 +70,13 @@
         "mapType": "Kartentyp",
         "roadmap": "Straßenkarte",
         "satellite": "Satellit",
-        "zoom": "Zoomstufe"
+        "hybrid": "Hybrid",
+        "terrain": "Gelände",
+        "zoom": "Zoomstufe",
+        "mapSettings": "Karteneinstellungen",
+        "locating": "Lokalisierung...",
+        "useCurrentLocation": "Aktuellen Standort verwenden",
+        "enterLocationHint": "Geben Sie einen Standort ein, um Code zu generieren"
     },
     "youtube": {
         "title": "YouTube Einbettungscode Generator",
@@ -80,7 +90,17 @@
         "controls": "Steuerelemente anzeigen",
         "privacyMode": "Erweiterter Datenschutzmodus (keine Cookies)",
         "startTime": "Startzeit (Sekunden)",
-        "branding": "YouTube-Branding anzeigen"
+        "branding": "YouTube-Branding anzeigen",
+        "privacy": "Datenschutz",
+        "videoSettings": "Video-Einstellungen",
+        "emptyState": "Fügen Sie einen YouTube-Link zur Vorschau ein",
+        "modestBranding": "Bescheidenes Branding (Weniger YouTube UI)",
+        "hideRelatedVideos": "Verwandte Videos ausblenden",
+        "forceCaptions": "Untertitel erzwingen (CC)",
+        "startTimePlaceholder": "z.B. 60 (Sekunden)",
+        "privacyModeHint": "Verwendet die youtube-nocookie.com-Domain.",
+        "embedDisabledNote": "Hinweis: Wenn \"Auf YouTube ansehen\" angezeigt wird, hat der Videobesitzer das Einbetten deaktiviert.",
+        "pasteYoutubeHint": "Fügen Sie einen YouTube-Link ein, um Code zu generieren"
     },
     "responsive": {
         "title": "Responsiver Iframe Generator",
@@ -88,7 +108,18 @@
         "pasteCode": "Iframe-Code einfügen",
         "pasteCodePlaceholder": "Fügen Sie hier Ihren vorhandenen Iframe-Code ein...",
         "aspectRatio": "Seitenverhältnis",
-        "custom": "Benutzerdefiniert"
+        "custom": "Benutzerdefiniert",
+        "settings": "Responsive Einstellungen",
+        "method": "Implementierungsmethode",
+        "modernCSS": "Modernes CSS",
+        "aspectRatioProperty": "aspect-ratio Eigenschaft",
+        "legacyHack": "Legacy Hack",
+        "paddingWrapper": "padding-bottom Wrapper",
+        "maxWidth": "Maximale Breite",
+        "emptyState": "Geben Sie eine URL ein, um die Responsivität zu testen"
+    },
+    "faq": {
+        "title": "Häufig gestellte Fragen"
     },
     "footer": {
         "description": "Kostenlose Online-Tools zur Generierung optimierter Iframe-Einbettungscodes.",

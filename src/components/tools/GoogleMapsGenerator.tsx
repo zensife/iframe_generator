@@ -160,7 +160,7 @@ export default function GoogleMapsGenerator() {
                 <div className={styles.controls}>
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Map Settings</CardTitle>
+                            <CardTitle>{t('mapSettings')}</CardTitle>
                         </CardHeader>
                         <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
@@ -174,7 +174,7 @@ export default function GoogleMapsGenerator() {
                                         disabled={isLoadingLocation}
                                         style={{ fontSize: '0.75rem', height: 'auto', padding: '0.25rem 0.5rem' }}
                                     >
-                                        {isLoadingLocation ? 'Locating...' : '📍 Use Current Location'}
+                                        {isLoadingLocation ? t('locating') : `📍 ${t('useCurrentLocation')}`}
                                     </Button>
                                 </div>
                                 <Input
@@ -219,8 +219,8 @@ export default function GoogleMapsGenerator() {
                                 >
                                     <option value="roadmap">{t('roadmap')}</option>
                                     <option value="satellite">{t('satellite')}</option>
-                                    <option value="hybrid">Hybrid</option>
-                                    <option value="terrain">Terrain</option>
+                                    <option value="hybrid">{t('hybrid')}</option>
+                                    <option value="terrain">{t('terrain')}</option>
                                 </select>
                             </div>
 
@@ -278,7 +278,7 @@ export default function GoogleMapsGenerator() {
                                 {scaleFactor < 1 && (
                                     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                         <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
-                                            📱 {useScaledPreview ? `Scaled ${Math.round(scaleFactor * 100)}%` : 'Actual Size'}
+                                            📱 {useScaledPreview ? `${tHome('scaled')} ${Math.round(scaleFactor * 100)}%` : tHome('actualSize')}
                                         </span>
                                         <Button
                                             size="sm"
@@ -287,7 +287,7 @@ export default function GoogleMapsGenerator() {
                                             style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', height: 'auto' }}
                                         >
                                             {useScaledPreview ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
-                                            {useScaledPreview ? ' Actual' : ' Scale'}
+                                            {useScaledPreview ? ` ${tHome('actual')}` : ` ${tHome('scale')}`}
                                         </Button>
                                     </div>
                                 )}
@@ -352,7 +352,7 @@ export default function GoogleMapsGenerator() {
                                 <CodeBlock code={generatedCode} language="html" />
                             ) : (
                                 <div style={{ padding: '1rem', textAlign: 'center', color: 'hsl(var(--muted-foreground))', border: '1px dashed hsl(var(--border))', borderRadius: 'var(--radius)' }}>
-                                    Enter a location to generate code
+                                    {t('enterLocationHint')}
                                 </div>
                             )}
                         </CardContent>

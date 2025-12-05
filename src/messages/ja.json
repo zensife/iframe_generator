@@ -55,7 +55,11 @@
         "scaled": "スケール済み",
         "actualSize": "実際のサイズ",
         "actual": "実際",
-        "scale": "スケール"
+        "scale": "スケール",
+        "iframeNamePlaceholder": "iframe名",
+        "scrollingYes": "はい",
+        "scrollingNo": "いいえ",
+        "scrollingAuto": "自動"
     },
     "googleMaps": {
         "title": "Googleマップ埋め込みジェネレーター",
@@ -66,7 +70,13 @@
         "mapType": "地図タイプ",
         "roadmap": "道路地図",
         "satellite": "衛星",
-        "zoom": "ズームレベル"
+        "zoom": "ズームレベル",
+        "hybrid": "ハイブリッド",
+        "terrain": "地形",
+        "mapSettings": "地図設定",
+        "locating": "位置情報を取得中...",
+        "useCurrentLocation": "現在地を使用",
+        "enterLocationHint": "場所を入力してコードを生成"
     },
     "youtube": {
         "title": "YouTube埋め込みコードジェネレーター",
@@ -80,7 +90,17 @@
         "controls": "コントロールを表示",
         "privacyMode": "プライバシー強化モード（Cookieなし）",
         "startTime": "開始時間（秒）",
-        "branding": "YouTubeブランドを表示"
+        "branding": "YouTubeブランドを表示",
+        "privacy": "プライバシー",
+        "videoSettings": "動画設定",
+        "emptyState": "プレビューするにはYouTubeリンクを貼り付けてください",
+        "modestBranding": "控えめなブランディング（YouTube UIを減らす）",
+        "hideRelatedVideos": "関連動画を非表示",
+        "forceCaptions": "字幕を強制表示（CC）",
+        "startTimePlaceholder": "例：60（秒）",
+        "privacyModeHint": "youtube-nocookie.comドメインを使用します。",
+        "embedDisabledNote": "注意：「YouTubeで視聴」と表示される場合、動画の所有者が埋め込みを無効にしています。",
+        "pasteYoutubeHint": "YouTubeリンクを貼り付けてコードを生成"
     },
     "responsive": {
         "title": "レスポンシブIframeジェネレーター",
@@ -88,7 +108,15 @@
         "pasteCode": "Iframeコードを貼り付け",
         "pasteCodePlaceholder": "既存のiframeコードをここに貼り付け...",
         "aspectRatio": "アスペクト比",
-        "custom": "カスタム"
+        "custom": "カスタム",
+        "settings": "レスポンシブ設定",
+        "method": "実装方法",
+        "modernCSS": "モダンCSS",
+        "aspectRatioProperty": "aspect-ratio プロパティ",
+        "legacyHack": "レガシーハック",
+        "paddingWrapper": "padding-bottom ラッパー",
+        "maxWidth": "最大幅",
+        "emptyState": "レスポンシブ性をテストするにはURLを入力してください"
     },
     "footer": {
         "description": "最適化されたiframe埋め込みコードを生成するための無料オンラインツール。",
@@ -111,5 +139,8 @@
         "youtubeDescription": "カスタムオプション付きのYouTube埋め込みコードを生成。プライバシーモード、自動再生、レスポンシブデザイン対応の無料ツール。",
         "responsiveTitle": "レスポンシブIframeジェネレーター - 自動スケーリング埋め込みコードツール",
         "responsiveDescription": "任意のiframeをレスポンシブデザインに変換。すべてのデバイスで完璧にスケールするiframeを作成する無料ツール。"
+    },
+    "faq": {
+        "title": "よくある質問"
     }
 }

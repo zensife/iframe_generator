@@ -287,9 +287,9 @@ export default function HomeGenerator() {
                                         aria-label="Scrolling behavior"
                                         style={{ padding: '0.25rem', borderRadius: '0.25rem' }}
                                     >
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
-                                        <option value="auto">Auto</option>
+                                        <option value="yes">{t('scrollingYes')}</option>
+                                        <option value="no">{t('scrollingNo')}</option>
+                                        <option value="auto">{t('scrollingAuto')}</option>
                                     </select>
                                 </div>
                                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '0.5rem' }}>
@@ -316,7 +316,7 @@ export default function HomeGenerator() {
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                     <Input
                                         label={t('name')}
-                                        placeholder="iframe name"
+                                        placeholder={t('iframeNamePlaceholder')}
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
