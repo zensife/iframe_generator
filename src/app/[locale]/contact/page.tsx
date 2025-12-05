@@ -2,20 +2,33 @@ import { Metadata } from 'next';
 import { ContentSection } from '@/components/content/ContentSection';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Mail } from 'lucide-react';
+import { getContactContent } from '@/data/static-content';
+import { Locale } from '@/i18n/config';
 
-export const metadata: Metadata = {
-    title: 'Contact Us - Iframe Generator',
-    description: 'Get in touch with the Iframe Generator team for support, feedback, or inquiries.',
+type Props = {
+    params: Promise<{ locale: string }>;
 };
 
-export default function ContactPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const content = getContactContent(locale as Locale);
+
+    return {
+        title: `${content.title} - Iframe Generator`,
+        description: content.description,
+    };
+}
+
+export default async function ContactPage({ params }: Props) {
+    const { locale } = await params;
+    const content = getContactContent(locale as Locale);
+
     return (
         <div className="container mx-auto px-4 max-w-4xl py-8">
-            <ContentSection title="Contact Us">
+            <ContentSection title={content.title}>
                 <div className="prose dark:prose-invert max-w-none mb-8">
                     <p className="text-lg">
-                        Have a question, suggestion, or found a bug? We'd love to hear from you!
-                        While we are a small team, we try our best to respond to all inquiries within 24-48 hours.
+                        {content.intro}
                     </p>
                 </div>
 
@@ -25,9 +38,9 @@ export default function ContactPage() {
                             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
                                 <Mail size={32} />
                             </div>
-                            <h3 className="text-2xl font-semibold mb-2">Email Us</h3>
+                            <h3 className="text-2xl font-semibold mb-2">{content.email.title}</h3>
                             <p className="text-muted-foreground mb-6 leading-relaxed">
-                                For support, feedback, feature requests, and general inquiries.
+                                {content.email.description}
                             </p>
                             <a
                                 href="mailto:support@iframegenerator.org"
