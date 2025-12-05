@@ -20,7 +20,7 @@ export function DimensionsInput({
 }: DimensionsInputProps) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
                 <div style={{ flex: 1 }}>
                     <Input
                         label={label}
@@ -36,13 +36,15 @@ export function DimensionsInput({
                     aria-label={`${label} unit`}
                     style={{
                         width: '80px',
-                        padding: '0.5rem',
+                        height: '2.5rem',
+                        padding: '0.5rem 0.75rem',
                         borderRadius: '0.5rem',
                         border: '1px solid hsl(var(--border))',
                         backgroundColor: 'transparent',
                         color: 'hsl(var(--foreground))',
                         fontSize: '0.875rem',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
+                        outline: 'none'
                     }}
                 >
                     <option value="px">px</option>
