@@ -72,39 +72,6 @@ export default async function Page({ params }: Props) {
         <>
             <StructuredData data={webAppSchema} />
             <GoogleMapsGenerator />
-            <nav
-                aria-label="Breadcrumb"
-                className="container mx-auto px-4 max-w-4xl"
-                itemScope
-                itemType="https://schema.org/BreadcrumbList"
-                style={{ marginTop: '2rem', marginBottom: '1rem' }}
-            >
-                <ol
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        fontSize: '0.9rem',
-                        color: 'hsl(var(--muted-foreground))',
-                    }}
-                >
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <a
-                            itemProp="item"
-                            href="/"
-                            style={{ color: 'inherit', textDecoration: 'none' }}
-                        >
-                            <span itemProp="name">Iframe Generator</span>
-                        </a>
-                        <meta itemProp="position" content="1" />
-                    </li>
-                    <span aria-hidden="true">/</span>
-                    <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                        <span itemProp="name">Google Map Embed Generator</span>
-                        <meta itemProp="position" content="2" />
-                    </li>
-                </ol>
-            </nav>
             <div className="container mx-auto px-4 max-w-4xl">
                 <ContentSection title={content.title}>
                     {content.sections.map((section, index) => (
