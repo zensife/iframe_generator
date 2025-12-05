@@ -3,9 +3,10 @@ import { setRequestLocale } from 'next-intl/server';
 import YoutubeGenerator from '@/components/tools/YoutubeGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
-import { youtubeContent } from '@/data/seo-content';
+import { getYoutubeContent } from '@/data/seo-content';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { routing } from '@/i18n/routing';
+import { Locale } from '@/i18n/config';
 
 const pageUrl = 'https://www.iframegenerator.org/youtube-embed-code-generator';
 
@@ -66,6 +67,8 @@ export default async function Page({ params }: Props) {
     const { locale } = await params;
     setRequestLocale(locale);
 
+    const content = getYoutubeContent(locale as Locale);
+
     return (
         <>
             <StructuredData data={webAppSchema} />
@@ -106,15 +109,15 @@ export default async function Page({ params }: Props) {
             </nav>
 
             <div className="container mx-auto px-4 max-w-4xl">
-                <ContentSection title={youtubeContent.title}>
-                    {youtubeContent.sections.map((section, index) => (
+                <ContentSection title={content.title}>
+                    {content.sections.map((section, index) => (
                         <div key={index} className="mb-8">
                             <h3 className="text-xl font-semibold mb-3">{section.title}</h3>
                             <div dangerouslySetInnerHTML={{ __html: section.content }} />
                         </div>
                     ))}
                 </ContentSection>
-                <FAQSection items={youtubeContent.faq} />
+                <FAQSection items={content.faq} />
             </div>
         </>
     );

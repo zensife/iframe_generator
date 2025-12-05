@@ -3,8 +3,9 @@ import { setRequestLocale } from 'next-intl/server';
 import HomeGenerator from '@/components/tools/HomeGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
-import { homeContent } from '@/data/seo-content';
+import { getHomeContent } from '@/data/seo-content';
 import { routing } from '@/i18n/routing';
+import { Locale } from '@/i18n/config';
 
 export const metadata: Metadata = {
   title: 'Iframe Generator - Free Online Embed Code Tools',
@@ -27,19 +28,21 @@ export default async function Page({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const content = getHomeContent(locale as Locale);
+
   return (
     <>
       <HomeGenerator />
       <div className="container mx-auto px-4 max-w-4xl">
-        <ContentSection title={homeContent.title}>
-          {homeContent.sections.map((section, index) => (
+        <ContentSection title={content.title}>
+          {content.sections.map((section, index) => (
             <div key={index} className="mb-8">
               <h3 className="text-xl font-semibold mb-3">{section.title}</h3>
               <div dangerouslySetInnerHTML={{ __html: section.content }} />
             </div>
           ))}
         </ContentSection>
-        <FAQSection items={homeContent.faq} />
+        <FAQSection items={content.faq} />
       </div>
     </>
   );

@@ -3,8 +3,9 @@ import { setRequestLocale } from 'next-intl/server';
 import ResponsiveGenerator from '@/components/tools/ResponsiveGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
-import { responsiveContent } from '@/data/seo-content';
+import { getResponsiveContent } from '@/data/seo-content';
 import { routing } from '@/i18n/routing';
+import { Locale } from '@/i18n/config';
 
 export const metadata: Metadata = {
     title: 'Responsive Iframe Generator - Mobile-Friendly Embed Code',
@@ -32,19 +33,21 @@ export default async function Page({ params }: Props) {
     const { locale } = await params;
     setRequestLocale(locale);
 
+    const content = getResponsiveContent(locale as Locale);
+
     return (
         <>
             <ResponsiveGenerator />
             <div className="container mx-auto px-4 max-w-4xl">
-                <ContentSection title={responsiveContent.title}>
-                    {responsiveContent.sections.map((section, index) => (
+                <ContentSection title={content.title}>
+                    {content.sections.map((section, index) => (
                         <div key={index} className="mb-8">
                             <h3 className="text-xl font-semibold mb-3">{section.title}</h3>
                             <div dangerouslySetInnerHTML={{ __html: section.content }} />
                         </div>
                     ))}
                 </ContentSection>
-                <FAQSection items={responsiveContent.faq} />
+                <FAQSection items={content.faq} />
             </div>
         </>
     );
