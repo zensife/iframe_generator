@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import styles from '@/styles/page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
@@ -9,6 +10,8 @@ import { CodeBlock } from '@/components/ui/CodeBlock';
 import { Smartphone, Monitor, Layout, Code, Tablet, Laptop, Maximize2, Minimize2 } from 'lucide-react';
 
 export default function ResponsiveGenerator() {
+    const t = useTranslations('responsive');
+    const tHome = useTranslations('home');
     const [url, setUrl] = useState('');
     const [aspectRatio, setAspectRatio] = useState('16/9');
     const [method, setMethod] = useState('modern'); // modern (aspect-ratio), legacy (padding-bottom)
@@ -99,9 +102,9 @@ export default function ResponsiveGenerator() {
             <div className="gradient-bg" />
 
             <section className={styles.hero}>
-                <h1 className={styles.title}>Responsive Iframe Generator</h1>
+                <h1 className={styles.title}>{t('title')}</h1>
                 <p className={styles.subtitle}>
-                    Make any iframe responsive. Choose between modern CSS aspect-ratio or the classic padding-bottom hack.
+                    {t('subtitle')}
                 </p>
             </section>
 
@@ -110,12 +113,12 @@ export default function ResponsiveGenerator() {
                 <div className={styles.controls}>
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Responsive Settings</CardTitle>
+                            <CardTitle>{t('settings')}</CardTitle>
                         </CardHeader>
                         <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
                             <Input
-                                label="Source URL"
+                                label={tHome('sourceUrl')}
                                 placeholder="https://example.com"
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
@@ -124,7 +127,7 @@ export default function ResponsiveGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Layout size={16} /> Aspect Ratio
+                                    <Layout size={16} /> {t('aspectRatio')}
                                 </h4>
                                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
                                     {['16/9', '4/3', '1/1', '21/9'].map((ratio) => (
@@ -147,7 +150,7 @@ export default function ResponsiveGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Code size={16} /> Implementation Method
+                                    <Code size={16} /> {t('method')}
                                 </h4>
                                 <div style={{ display: 'flex', gap: '1rem' }}>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
@@ -159,8 +162,8 @@ export default function ResponsiveGenerator() {
                                             onChange={() => setMethod('modern')}
                                         />
                                         <div>
-                                            <span style={{ display: 'block', fontWeight: 500 }}>Modern CSS</span>
-                                            <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>aspect-ratio property</span>
+                                            <span style={{ display: 'block', fontWeight: 500 }}>{t('modernCSS')}</span>
+                                            <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>{t('aspectRatioProperty')}</span>
                                         </div>
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
@@ -172,8 +175,8 @@ export default function ResponsiveGenerator() {
                                             onChange={() => setMethod('legacy')}
                                         />
                                         <div>
-                                            <span style={{ display: 'block', fontWeight: 500 }}>Legacy Hack</span>
-                                            <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>padding-bottom wrapper</span>
+                                            <span style={{ display: 'block', fontWeight: 500 }}>{t('legacyHack')}</span>
+                                            <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>{t('paddingWrapper')}</span>
                                         </div>
                                     </label>
                                 </div>
@@ -181,7 +184,7 @@ export default function ResponsiveGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Smartphone size={16} /> Max Width
+                                    <Smartphone size={16} /> {t('maxWidth')}
                                 </h4>
                                 <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
                                     <Button
@@ -225,7 +228,7 @@ export default function ResponsiveGenerator() {
                     <Card className={`glass-card ${styles.previewCard}`}>
                         <CardHeader>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <CardTitle>Preview</CardTitle>
+                                <CardTitle>{tHome('preview')}</CardTitle>
                                 {scaleFactor < 1 && (
                                     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                         <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
@@ -279,7 +282,7 @@ export default function ResponsiveGenerator() {
                                     ) : (
                                         <div className={styles.emptyState} style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                                             <Monitor size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
-                                            <p>Enter a URL to test responsiveness</p>
+                                            <p>{t('emptyState')}</p>
                                         </div>
                                     )}
                                 </div>
@@ -289,7 +292,7 @@ export default function ResponsiveGenerator() {
 
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Generated Code</CardTitle>
+                            <CardTitle>{tHome('generatedCode')}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <CodeBlock code={generatedCode} language="html" />

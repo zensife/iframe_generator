@@ -76,19 +76,30 @@
         "playerOptions": "Player Options",
         "autoplay": "Autoplay",
         "loop": "Loop Video",
-        "mute": "Start Muted",
-        "controls": "Show Controls",
+        "mute": "Mute (Required for Autoplay)",
+        "controls": "Show Player Controls",
         "privacyMode": "Privacy-Enhanced Mode (no cookies)",
-        "startTime": "Start Time (seconds)",
-        "branding": "Show YouTube Branding"
+        "startTime": "Start Time",
+        "branding": "Show YouTube Branding",
+        "privacy": "Privacy",
+        "videoSettings": "Video Settings",
+        "emptyState": "Paste a YouTube link to preview"
     },
     "responsive": {
         "title": "Responsive Iframe Generator",
-        "subtitle": "Convert any iframe code to responsive design.",
+        "subtitle": "Make any iframe responsive. Choose between modern CSS aspect-ratio or the classic padding-bottom hack.",
         "pasteCode": "Paste Iframe Code",
         "pasteCodePlaceholder": "Paste your existing iframe code here...",
         "aspectRatio": "Aspect Ratio",
-        "custom": "Custom"
+        "custom": "Custom",
+        "settings": "Responsive Settings",
+        "method": "Implementation Method",
+        "modernCSS": "Modern CSS",
+        "aspectRatioProperty": "aspect-ratio property",
+        "legacyHack": "Legacy Hack",
+        "paddingWrapper": "padding-bottom wrapper",
+        "maxWidth": "Max Width",
+        "emptyState": "Enter a URL to test responsiveness"
     },
     "footer": {
         "description": "Free online tools for generating optimized iframe embed codes.",

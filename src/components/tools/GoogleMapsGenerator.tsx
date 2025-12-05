@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import styles from '@/styles/page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
@@ -11,6 +12,8 @@ import { DimensionsInput } from '@/components/ui/DimensionsInput';
 import { DeviceSelector } from '@/components/ui/DeviceSelector';
 
 export default function GoogleMapsGenerator() {
+    const t = useTranslations('googleMaps');
+    const tHome = useTranslations('home');
     const [address, setAddress] = useState('Eiffel Tower, Paris');
     const [zoom, setZoom] = useState('14');
     const [mapType, setMapType] = useState('roadmap'); // roadmap, satellite, hybrid, terrain
@@ -146,9 +149,9 @@ export default function GoogleMapsGenerator() {
             <div className="gradient-bg" />
 
             <section className={styles.hero}>
-                <h1 className={styles.title}>Google Map Embed Generator</h1>
+                <h1 className={styles.title}>{t('title')}</h1>
                 <p className={styles.subtitle}>
-                    Embed Google Maps without an API key. Generate responsive iframe code with custom zoom, map type, and lazy loading.
+                    {t('subtitle')}
                 </p>
             </section>
 
@@ -163,7 +166,7 @@ export default function GoogleMapsGenerator() {
 
                             <div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                                    <label className={styles.label} style={{ marginBottom: 0 }}>Location / Address</label>
+                                    <label className={styles.label} style={{ marginBottom: 0 }}>{t('location')}</label>
                                     <Button
                                         size="sm"
                                         variant="ghost"
@@ -187,7 +190,7 @@ export default function GoogleMapsGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <ZoomIn size={16} /> Zoom Level
+                                    <ZoomIn size={16} /> {t('zoom')}
                                 </h4>
                                 <input
                                     type="range"
@@ -205,7 +208,7 @@ export default function GoogleMapsGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Layers size={16} /> Map Type
+                                    <Layers size={16} /> {t('mapType')}
                                 </h4>
                                 <select
                                     className={styles.select}
@@ -214,8 +217,8 @@ export default function GoogleMapsGenerator() {
                                     aria-label="Map type"
                                     style={{ width: '100%', height: '2.5rem', borderRadius: '0.5rem', padding: '0.5rem' }}
                                 >
-                                    <option value="roadmap">Roadmap (Standard)</option>
-                                    <option value="satellite">Satellite</option>
+                                    <option value="roadmap">{t('roadmap')}</option>
+                                    <option value="satellite">{t('satellite')}</option>
                                     <option value="hybrid">Hybrid</option>
                                     <option value="terrain">Terrain</option>
                                 </select>
@@ -224,7 +227,7 @@ export default function GoogleMapsGenerator() {
                             <div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                                     <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 0 }}>
-                                        <Globe size={16} /> Dimensions
+                                        <Globe size={16} /> {tHome('dimensions')}
                                     </h4>
                                 </div>
 
@@ -234,14 +237,14 @@ export default function GoogleMapsGenerator() {
 
                                 <div className={styles.row} style={{ gap: '1rem' }}>
                                     <DimensionsInput
-                                        label="Width"
+                                        label={tHome('width')}
                                         value={width}
                                         onChange={setWidth}
                                         unit={widthUnit}
                                         onUnitChange={setWidthUnit}
                                     />
                                     <DimensionsInput
-                                        label="Height"
+                                        label={tHome('height')}
                                         value={height}
                                         onChange={setHeight}
                                         unit={heightUnit}
@@ -257,7 +260,7 @@ export default function GoogleMapsGenerator() {
                                             onChange={(e) => setIsResponsive(e.target.checked)}
                                             style={{ width: '1rem', height: '1rem' }}
                                         />
-                                        Make Responsive (Auto-resize)
+                                        {tHome('makeResponsive')}
                                     </label>
                                 </div>
                             </div>
@@ -271,7 +274,7 @@ export default function GoogleMapsGenerator() {
                     <Card className={`glass-card ${styles.previewCard}`}>
                         <CardHeader>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <CardTitle>Preview</CardTitle>
+                                <CardTitle>{tHome('preview')}</CardTitle>
                                 {scaleFactor < 1 && (
                                     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                         <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
@@ -333,7 +336,7 @@ export default function GoogleMapsGenerator() {
                                 ) : (
                                     <div className={styles.emptyState}>
                                         <MapPin size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
-                                        <p>Enter a location to see the map</p>
+                                        <p>{t('locationPlaceholder')}</p>
                                     </div>
                                 )}
                             </div>
@@ -342,7 +345,7 @@ export default function GoogleMapsGenerator() {
 
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Generated Code</CardTitle>
+                            <CardTitle>{tHome('generatedCode')}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             {generatedCode ? (

@@ -76,19 +76,30 @@
         "playerOptions": "播放器选项",
         "autoplay": "自动播放",
         "loop": "循环播放",
-        "mute": "静音开始",
-        "controls": "显示控制栏",
+        "mute": "静音（自动播放需要）",
+        "controls": "显示播放器控件",
         "privacyMode": "增强隐私模式（无 Cookie）",
-        "startTime": "开始时间（秒）",
-        "branding": "显示 YouTube 品牌"
+        "startTime": "开始时间",
+        "branding": "显示 YouTube 品牌",
+        "privacy": "隐私",
+        "videoSettings": "视频设置",
+        "emptyState": "粘贴 YouTube 链接以预览"
     },
     "responsive": {
         "title": "响应式 Iframe 生成器",
-        "subtitle": "将任何 iframe 代码转换为响应式设计。",
+        "subtitle": "使任何 iframe 响应式。选择现代 CSS aspect-ratio 或经典 padding-bottom 方案。",
         "pasteCode": "粘贴 Iframe 代码",
         "pasteCodePlaceholder": "在此粘贴您现有的 iframe 代码...",
         "aspectRatio": "宽高比",
-        "custom": "自定义"
+        "custom": "自定义",
+        "settings": "响应式设置",
+        "method": "实现方法",
+        "modernCSS": "现代 CSS",
+        "aspectRatioProperty": "aspect-ratio 属性",
+        "legacyHack": "传统方案",
+        "paddingWrapper": "padding-bottom 包装器",
+        "maxWidth": "最大宽度",
+        "emptyState": "输入 URL 以测试响应式"
     },
     "footer": {
         "description": "免费在线工具，用于生成优化的 iframe 嵌入代码。",

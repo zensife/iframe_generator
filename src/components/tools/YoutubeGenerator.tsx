@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import styles from '@/styles/page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
@@ -11,6 +12,8 @@ import { DimensionsInput } from '@/components/ui/DimensionsInput';
 import { DeviceSelector } from '@/components/ui/DeviceSelector';
 
 export default function YoutubeGenerator() {
+    const t = useTranslations('youtube');
+    const tHome = useTranslations('home');
     const [url, setUrl] = useState('');
     const [videoId, setVideoId] = useState('');
     const [autoplay, setAutoplay] = useState(false);
@@ -178,9 +181,9 @@ export default function YoutubeGenerator() {
             <div className="gradient-bg" />
 
             <section className={styles.hero}>
-                <h1 className={styles.title}>YouTube Embed Code Generator</h1>
+                <h1 className={styles.title}>{t('title')}</h1>
                 <p className={styles.subtitle}>
-                    Generate custom YouTube embed code with autoplay, loop, privacy-enhanced mode, and responsive iframe output.
+                    {t('subtitle')}
                 </p>
             </section>
 
@@ -189,13 +192,13 @@ export default function YoutubeGenerator() {
                 <div className={styles.controls}>
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Video Settings</CardTitle>
+                            <CardTitle>{t('videoSettings')}</CardTitle>
                         </CardHeader>
                         <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
                             <Input
-                                label="YouTube URL"
-                                placeholder="https://www.youtube.com/watch?v=..."
+                                label={t('videoUrl')}
+                                placeholder={t('videoUrlPlaceholder')}
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
                                 error={error}
@@ -204,7 +207,7 @@ export default function YoutubeGenerator() {
                             <div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                                     <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 0 }}>
-                                        <Youtube size={16} /> Dimensions
+                                        <Youtube size={16} /> {tHome('dimensions')}
                                     </h4>
                                 </div>
 
@@ -214,14 +217,14 @@ export default function YoutubeGenerator() {
 
                                 <div className={styles.row} style={{ gap: '1rem' }}>
                                     <DimensionsInput
-                                        label="Width"
+                                        label={tHome('width')}
                                         value={width}
                                         onChange={setWidth}
                                         unit={widthUnit}
                                         onUnitChange={setWidthUnit}
                                     />
                                     <DimensionsInput
-                                        label="Height"
+                                        label={tHome('height')}
                                         value={height}
                                         onChange={setHeight}
                                         unit={heightUnit}
@@ -237,31 +240,31 @@ export default function YoutubeGenerator() {
                                             onChange={(e) => setIsResponsive(e.target.checked)}
                                             style={{ width: '1rem', height: '1rem' }}
                                         />
-                                        Make Responsive (Auto-resize)
+                                        {tHome('makeResponsive')}
                                     </label>
                                 </div>
                             </div>
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Play size={16} /> Player Options
+                                    <Play size={16} /> {t('playerOptions')}
                                 </h4>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={autoplay} onChange={(e) => setAutoplay(e.target.checked)} />
-                                        Autoplay
+                                        {t('autoplay')}
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={mute} onChange={(e) => setMute(e.target.checked)} />
-                                        Mute (Required for Autoplay)
+                                        {t('mute')}
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={loop} onChange={(e) => setLoop(e.target.checked)} />
-                                        Loop Video
+                                        {t('loop')}
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={controls} onChange={(e) => setControls(e.target.checked)} />
-                                        Show Player Controls
+                                        {t('controls')}
                                     </label>
                                     <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                         <input type="checkbox" checked={modestBranding} onChange={(e) => setModestBranding(e.target.checked)} />
@@ -280,7 +283,7 @@ export default function YoutubeGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Clock size={16} /> Start Time
+                                    <Clock size={16} /> {t('startTime')}
                                 </h4>
                                 <Input
                                     placeholder="e.g. 60 (seconds)"
@@ -292,11 +295,11 @@ export default function YoutubeGenerator() {
 
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <ShieldCheck size={16} /> Privacy
+                                    <ShieldCheck size={16} /> {t('privacy')}
                                 </h4>
                                 <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
                                     <input type="checkbox" checked={privacy} onChange={(e) => setPrivacy(e.target.checked)} />
-                                    Enable Privacy-Enhanced Mode
+                                    {t('privacyMode')}
                                 </label>
                                 <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', marginTop: '0.25rem' }}>
                                     Uses youtube-nocookie.com domain.
@@ -312,7 +315,7 @@ export default function YoutubeGenerator() {
                     <Card className={`glass-card ${styles.previewCard}`}>
                         <CardHeader>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <CardTitle>Preview</CardTitle>
+                                <CardTitle>{tHome('preview')}</CardTitle>
                                 {scaleFactor < 1 && (
                                     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                         <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
@@ -388,7 +391,7 @@ export default function YoutubeGenerator() {
                                 ) : (
                                     <div className={styles.emptyState}>
                                         <Youtube size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
-                                        <p>Paste a YouTube link to preview</p>
+                                        <p>{t('emptyState')}</p>
                                     </div>
                                 )}
                             </div>
@@ -400,7 +403,7 @@ export default function YoutubeGenerator() {
 
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Generated Code</CardTitle>
+                            <CardTitle>{tHome('generatedCode')}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             {generatedCode ? (
