@@ -178,6 +178,7 @@ export default function GoogleMapsGenerator() {
                                     </Button>
                                 </div>
                                 <Input
+                                    id="input-location"
                                     placeholder="e.g. Times Square, New York"
                                     value={address}
                                     onChange={(e) => {
@@ -237,6 +238,7 @@ export default function GoogleMapsGenerator() {
 
                                 <div className={styles.row} style={{ gap: '1rem' }}>
                                     <DimensionsInput
+                                        id="input-width"
                                         label={tHome('width')}
                                         value={width}
                                         onChange={setWidth}
@@ -244,6 +246,7 @@ export default function GoogleMapsGenerator() {
                                         onUnitChange={setWidthUnit}
                                     />
                                     <DimensionsInput
+                                        id="input-height"
                                         label={tHome('height')}
                                         value={height}
                                         onChange={setHeight}

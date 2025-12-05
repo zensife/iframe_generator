@@ -197,6 +197,7 @@ export default function YoutubeGenerator() {
                         <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
                             <Input
+                                id="input-video-url"
                                 label={t('videoUrl')}
                                 placeholder={t('videoUrlPlaceholder')}
                                 value={url}
@@ -217,6 +218,7 @@ export default function YoutubeGenerator() {
 
                                 <div className={styles.row} style={{ gap: '1rem' }}>
                                     <DimensionsInput
+                                        id="input-width"
                                         label={tHome('width')}
                                         value={width}
                                         onChange={setWidth}
@@ -224,6 +226,7 @@ export default function YoutubeGenerator() {
                                         onUnitChange={setWidthUnit}
                                     />
                                     <DimensionsInput
+                                        id="input-height"
                                         label={tHome('height')}
                                         value={height}
                                         onChange={setHeight}
@@ -286,6 +289,7 @@ export default function YoutubeGenerator() {
                                     <Clock size={16} /> {t('startTime')}
                                 </h4>
                                 <Input
+                                    id="input-start-time"
                                     placeholder={t('startTimePlaceholder')}
                                     value={startTime}
                                     onChange={(e) => setStartTime(e.target.value)}

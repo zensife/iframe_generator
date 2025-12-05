@@ -4,39 +4,39 @@ import YoutubeGenerator from '@/components/tools/YoutubeGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
 import { getYoutubeContent } from '@/data/seo-content';
+import { getYoutubeMetadata } from '@/data/seo-metadata';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
 
-const pageUrl = 'https://www.iframegenerator.org/youtube-embed-code-generator';
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const metadata = getYoutubeMetadata(locale as Locale);
+    const baseUrl = 'https://www.iframegenerator.org';
+    const path = '/youtube-embed-code-generator';
+    const canonicalUrl = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
 
-export const metadata: Metadata = {
-    title: 'YouTube Embed Code Generator - Free iframe Tool',
-    description: 'Generate YouTube embed code instantly. Free generator with autoplay, loop, privacy mode, custom start times, and responsive iframe code for any website.',
-    keywords: [
-        'youtube embed code generator',
-        'youtube embed code',
-        'embed youtube video',
-        'get youtube embed code',
-        'youtube iframe generator',
-        'youtube embed code tool',
-    ],
-    alternates: {
-        canonical: pageUrl,
-    },
-    openGraph: {
-        title: 'YouTube Embed Code Generator - Free iframe Tool',
-        description: 'Create custom YouTube embed codes with autoplay, loop, privacy-enhanced mode, and responsive iframe options.',
-        url: pageUrl,
-        type: 'website',
-    },
-};
+    return {
+        title: metadata.title,
+        description: metadata.description,
+        keywords: metadata.keywords,
+        alternates: {
+            canonical: canonicalUrl,
+        },
+        openGraph: {
+            title: metadata.openGraph.title,
+            description: metadata.openGraph.description,
+            url: canonicalUrl,
+            type: 'website',
+        },
+    };
+}
 
 const webAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'YouTube Embed Code Generator',
-    url: pageUrl,
+    url: 'https://www.iframegenerator.org/youtube-embed-code-generator',
     description: 'Generate custom YouTube embed codes with autoplay, loop, privacy mode, and responsive iframe settings.',
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Any',

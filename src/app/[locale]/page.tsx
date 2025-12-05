@@ -4,17 +4,31 @@ import HomeGenerator from '@/components/tools/HomeGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
 import { getHomeContent } from '@/data/seo-content';
+import { getHomeMetadata } from '@/data/seo-metadata';
 import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
 
-export const metadata: Metadata = {
-  title: 'Iframe Generator - Free Online Embed Code Tools',
-  description: 'Generate responsive iframe codes for websites, Google Maps, and YouTube videos. Free, SEO-friendly embed code generator with live preview.',
-  keywords: 'iframe generator, google maps embed, youtube embed code, responsive iframe, embed code generator',
-  alternates: {
-    canonical: '/',
-  },
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = getHomeMetadata(locale as Locale);
+  const baseUrl = 'https://www.iframegenerator.org';
+  const canonicalUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+    keywords: metadata.keywords,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: metadata.openGraph.title,
+      description: metadata.openGraph.description,
+      url: canonicalUrl,
+      type: 'website',
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

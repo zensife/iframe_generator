@@ -4,39 +4,39 @@ import GoogleMapsGenerator from '@/components/tools/GoogleMapsGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
 import { getGoogleMapsContent } from '@/data/seo-content';
+import { getGoogleMapsMetadata } from '@/data/seo-metadata';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
 
-const pageUrl = 'https://www.iframegenerator.org/google-maps-iframe-generator';
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    const metadata = getGoogleMapsMetadata(locale as Locale);
+    const baseUrl = 'https://www.iframegenerator.org';
+    const path = '/google-maps-iframe-generator';
+    const canonicalUrl = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
 
-export const metadata: Metadata = {
-    title: 'Google Map Embed Generator - Free iframe Code Tool (No API Key)',
-    description: 'Generate Google Map embed code instantly. Free tool to embed Google Maps on your website without API key. Create responsive iframe codes with custom zoom and map types.',
-    keywords: [
-        'google map embed',
-        'google maps embed generator',
-        'embed google map',
-        'google map embed code generator',
-        'embed google map on website',
-        'google map iframe code',
-    ],
-    alternates: {
-        canonical: pageUrl,
-    },
-    openGraph: {
-        title: 'Google Map Embed Generator - Free iframe Code Tool (No API Key)',
-        description: 'Create custom Google Maps embed codes without an API key. Responsive iframe generator with zoom and map type options.',
-        url: pageUrl,
-        type: 'website',
-    },
-};
+    return {
+        title: metadata.title,
+        description: metadata.description,
+        keywords: metadata.keywords,
+        alternates: {
+            canonical: canonicalUrl,
+        },
+        openGraph: {
+            title: metadata.openGraph.title,
+            description: metadata.openGraph.description,
+            url: canonicalUrl,
+            type: 'website',
+        },
+    };
+}
 
 const webAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Google Map Embed Generator',
-    url: pageUrl,
+    url: 'https://www.iframegenerator.org/google-maps-iframe-generator',
     description: 'Free tool to embed Google Maps on websites without API key. Generate responsive iframe code with custom zoom and map types.',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any',

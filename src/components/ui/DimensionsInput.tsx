@@ -16,13 +16,15 @@ export function DimensionsInput({
     onChange,
     unit,
     onUnitChange,
-    type = 'number'
-}: DimensionsInputProps) {
+    type = 'number',
+    id
+}: DimensionsInputProps & { id?: string }) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end' }}>
                 <div style={{ flex: 1 }}>
                     <Input
+                        id={id}
                         label={label}
                         value={value}
                         onChange={(e) => onChange(e.target.value)}

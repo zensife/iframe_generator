@@ -118,6 +118,7 @@ export default function ResponsiveGenerator() {
                         <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
                             <Input
+                                id="input-source-url"
                                 label={tHome('sourceUrl')}
                                 placeholder="https://example.com"
                                 value={url}
@@ -142,6 +143,7 @@ export default function ResponsiveGenerator() {
                                     ))}
                                 </div>
                                 <Input
+                                    id="input-aspect-ratio"
                                     value={aspectRatio}
                                     onChange={(e) => setAspectRatio(e.target.value)}
                                     placeholder="e.g. 16/9"
@@ -213,6 +215,7 @@ export default function ResponsiveGenerator() {
                                     </Button>
                                 </div>
                                 <Input
+                                    id="input-max-width"
                                     value={maxWidth}
                                     onChange={(e) => setMaxWidth(e.target.value)}
                                     placeholder="e.g. 100% or 800px"
