@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '@/app/page.module.css';
+import { useTranslations } from 'next-intl';
+import styles from '@/styles/page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
@@ -11,6 +12,7 @@ import { DimensionsInput } from '@/components/ui/DimensionsInput';
 import { DeviceSelector } from '@/components/ui/DeviceSelector';
 
 export default function HomeGenerator() {
+    const t = useTranslations('home');
     const [url, setUrl] = useState('');
     const [width, setWidth] = useState('600');
     const [widthUnit, setWidthUnit] = useState('px');
@@ -36,19 +38,19 @@ export default function HomeGenerator() {
     const [scaleFactor, setScaleFactor] = useState(1);
 
     const sandboxOptions = [
-        { value: 'allow-scripts', label: 'Allow Scripts' },
-        { value: 'allow-forms', label: 'Allow Forms' },
-        { value: 'allow-popups', label: 'Allow Popups' },
-        { value: 'allow-same-origin', label: 'Allow Same Origin' },
-        { value: 'allow-top-navigation', label: 'Allow Top Navigation' },
+        { value: 'allow-scripts', label: t('allowScripts') },
+        { value: 'allow-forms', label: t('allowForms') },
+        { value: 'allow-popups', label: t('allowPopups') },
+        { value: 'allow-same-origin', label: t('allowSameOrigin') },
+        { value: 'allow-top-navigation', label: t('allowTopNavigation') },
     ];
 
     const allowOptions = [
-        { value: 'autoplay', label: 'Autoplay' },
-        { value: 'fullscreen', label: 'Fullscreen' },
-        { value: 'picture-in-picture', label: 'Picture in Picture' },
-        { value: 'camera', label: 'Camera' },
-        { value: 'microphone', label: 'Microphone' },
+        { value: 'autoplay', label: t('autoplay') },
+        { value: 'fullscreen', label: t('fullscreen') },
+        { value: 'picture-in-picture', label: t('pictureInPicture') },
+        { value: 'camera', label: t('camera') },
+        { value: 'microphone', label: t('microphone') },
     ];
 
     const toggleOption = (value: string, current: string[], setter: (val: string[]) => void) => {
@@ -200,9 +202,9 @@ export default function HomeGenerator() {
             <div className="gradient-bg" />
 
             <section className={styles.hero}>
-                <h1 className={styles.title}>Iframe Generator</h1>
+                <h1 className={styles.title}>{t('title')}</h1>
                 <p className={styles.subtitle}>
-                    The easiest way to generate responsive, SEO-friendly iframe embed codes for your website.
+                    {t('subtitle')}
                 </p>
             </section>
 
@@ -211,13 +213,13 @@ export default function HomeGenerator() {
                 <div className={styles.controls}>
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Settings</CardTitle>
+                            <CardTitle>{t('settings')}</CardTitle>
                         </CardHeader>
                         <CardContent style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
                             {/* URL Input */}
                             <Input
-                                label="Source URL"
+                                label={t('sourceUrl')}
                                 placeholder="https://example.com"
                                 value={url}
                                 onChange={handleUrlChange}
@@ -228,7 +230,7 @@ export default function HomeGenerator() {
                             <div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                                     <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: 0 }}>
-                                        <Smartphone size={16} /> Dimensions
+                                        <Smartphone size={16} /> {t('dimensions')}
                                     </h4>
                                 </div>
 
@@ -238,14 +240,14 @@ export default function HomeGenerator() {
 
                                 <div className={styles.row} style={{ gap: '1rem' }}>
                                     <DimensionsInput
-                                        label="Width"
+                                        label={t('width')}
                                         value={width}
                                         onChange={setWidth}
                                         unit={widthUnit}
                                         onUnitChange={setWidthUnit}
                                     />
                                     <DimensionsInput
-                                        label="Height"
+                                        label={t('height')}
                                         value={height}
                                         onChange={setHeight}
                                         unit={heightUnit}
@@ -257,7 +259,7 @@ export default function HomeGenerator() {
                             {/* Basic Options */}
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Settings size={16} /> Basic Options
+                                    <Settings size={16} /> {t('basicOptions')}
                                 </h4>
 
                                 <div style={{ marginBottom: '1rem' }}>
@@ -268,17 +270,17 @@ export default function HomeGenerator() {
                                             onChange={(e) => setIsResponsive(e.target.checked)}
                                             style={{ width: '1rem', height: '1rem' }}
                                         />
-                                        Make Responsive (Auto-resize)
+                                        {t('makeResponsive')}
                                     </label>
                                     {isResponsive && (
                                         <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', marginLeft: '1.5rem', marginTop: '0.25rem' }}>
-                                            Generates a container with <code>aspect-ratio</code> based on current dimensions.
+                                            {t('responsiveHint')}
                                         </p>
                                     )}
                                 </div>
 
                                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                                    <label style={{ fontSize: '0.875rem' }}>Scrolling:</label>
+                                    <label style={{ fontSize: '0.875rem' }}>{t('scrolling')}:</label>
                                     <select
                                         value={scrolling}
                                         onChange={(e) => setScrolling(e.target.value)}
@@ -291,16 +293,16 @@ export default function HomeGenerator() {
                                     </select>
                                 </div>
                                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '0.5rem' }}>
-                                    <label style={{ fontSize: '0.875rem' }}>Border:</label>
+                                    <label style={{ fontSize: '0.875rem' }}>{t('border')}:</label>
                                     <select
                                         value={border}
                                         onChange={(e) => setBorder(e.target.value)}
                                         aria-label="Border style"
                                         style={{ padding: '0.25rem', borderRadius: '0.25rem' }}
                                     >
-                                        <option value="0">None</option>
-                                        <option value="1px solid #ccc">Thin</option>
-                                        <option value="2px solid #000">Thick</option>
+                                        <option value="0">{t('borderNone')}</option>
+                                        <option value="1px solid #ccc">{t('borderThin')}</option>
+                                        <option value="2px solid #000">{t('borderThick')}</option>
                                     </select>
                                 </div>
                             </div>
@@ -308,37 +310,37 @@ export default function HomeGenerator() {
                             {/* Advanced Options */}
                             <div>
                                 <h4 className={styles.sectionTitle} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                    <Settings size={16} /> Advanced Options
+                                    <Settings size={16} /> {t('advancedOptions')}
                                 </h4>
 
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                     <Input
-                                        label="Name"
+                                        label={t('name')}
                                         placeholder="iframe name"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
                                     <Input
-                                        label="Title"
-                                        placeholder="Description for accessibility"
+                                        label={t('titleAttr')}
+                                        placeholder={t('titlePlaceholder')}
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
                                     />
 
                                     <div>
-                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>Loading Strategy</label>
+                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>{t('loadingStrategy')}</label>
                                         <div style={{ display: 'flex', gap: '1rem' }}>
                                             <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                <input type="radio" checked={loading === 'eager'} onChange={() => setLoading('eager')} /> Eager
+                                                <input type="radio" checked={loading === 'eager'} onChange={() => setLoading('eager')} /> {t('eager')}
                                             </label>
                                             <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                                <input type="radio" checked={loading === 'lazy'} onChange={() => setLoading('lazy')} /> Lazy
+                                                <input type="radio" checked={loading === 'lazy'} onChange={() => setLoading('lazy')} /> {t('lazy')}
                                             </label>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>Sandbox</label>
+                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>{t('sandbox')}</label>
                                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                                             {sandboxOptions.map(opt => (
                                                 <label key={opt.value} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem' }}>
@@ -354,7 +356,7 @@ export default function HomeGenerator() {
                                     </div>
 
                                     <div>
-                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>Allow Features</label>
+                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>{t('allowFeatures')}</label>
                                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                                             {allowOptions.map(opt => (
                                                 <label key={opt.value} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem' }}>
@@ -370,7 +372,7 @@ export default function HomeGenerator() {
                                     </div>
 
                                     <div>
-                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>Referrer Policy</label>
+                                        <label style={{ fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', display: 'block' }}>{t('referrerPolicy')}</label>
                                         <select
                                             value={referrerPolicy}
                                             onChange={(e) => setReferrerPolicy(e.target.value)}
@@ -395,11 +397,11 @@ export default function HomeGenerator() {
                     <Card className={`glass-card ${styles.previewCard}`}>
                         <CardHeader>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <CardTitle>Preview</CardTitle>
+                                <CardTitle>{t('preview')}</CardTitle>
                                 {scaleFactor < 1 && (
                                     <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                         <span style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))' }}>
-                                            📱 {useScaledPreview ? `Scaled ${Math.round(scaleFactor * 100)}%` : 'Actual Size'}
+                                            📱 {useScaledPreview ? `${t('scaled')} ${Math.round(scaleFactor * 100)}%` : t('actualSize')}
                                         </span>
                                         <Button
                                             size="sm"
@@ -408,7 +410,7 @@ export default function HomeGenerator() {
                                             style={{ fontSize: '0.75rem', padding: '0.25rem 0.5rem', height: 'auto' }}
                                         >
                                             {useScaledPreview ? <Maximize2 size={14} /> : <Minimize2 size={14} />}
-                                            {useScaledPreview ? ' Actual' : ' Scale'}
+                                            {useScaledPreview ? ` ${t('actual')}` : ` ${t('scale')}`}
                                         </Button>
                                     </div>
                                 )}
@@ -453,19 +455,19 @@ export default function HomeGenerator() {
                                 ) : (
                                     <div className={styles.emptyState}>
                                         <Monitor size={48} style={{ opacity: 0.2, marginBottom: '1rem' }} />
-                                        <p>Enter a URL to see the preview</p>
+                                        <p>{t('emptyState')}</p>
                                     </div>
                                 )}
                             </div>
                             <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', marginTop: '0.5rem', textAlign: 'center' }}>
-                                Note: If the preview doesn't load, the website might prohibit embedding (X-Frame-Options).
+                                {t('previewNote')}
                             </p>
                         </CardContent>
                     </Card>
 
                     <Card className="glass-card">
                         <CardHeader>
-                            <CardTitle>Generated Code</CardTitle>
+                            <CardTitle>{t('generatedCode')}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <CodeBlock code={generatedCode} language="html" />

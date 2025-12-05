@@ -3,13 +3,16 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Logo } from './Logo';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from './Button';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 
 export const Navbar = () => {
     const pathname = usePathname();
+    const t = useTranslations('nav');
     const [isDark, setIsDark] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,11 +51,18 @@ export const Navbar = () => {
     };
 
     const navItems = [
-        { name: 'Iframe Generator', path: '/' },
-        { name: 'Google Map Embed', path: '/google-maps-iframe-generator' },
-        { name: 'YouTube Embed Code', path: '/youtube-embed-code-generator' },
-        { name: 'Responsive', path: '/responsive-iframe-generator' },
+        { name: t('home'), path: '/' },
+        { name: t('googleMaps'), path: '/google-maps-iframe-generator' },
+        { name: t('youtube'), path: '/youtube-embed-code-generator' },
+        { name: t('responsive'), path: '/responsive-iframe-generator' },
     ];
+
+    // Check active state considering locale prefix in pathname
+    const isActive = (path: string) => {
+        // Remove locale prefix from pathname for comparison
+        const pathWithoutLocale = pathname.replace(/^\/(en|zh|es|ja|de|fr)/, '') || '/';
+        return pathWithoutLocale === path;
+    };
 
     return (
         <nav className={styles.navbar}>
@@ -61,7 +71,7 @@ export const Navbar = () => {
                     <div className={styles.logoIcon}>
                         <Logo size={24} />
                     </div>
-                    <span>Iframe Generator</span>
+                    <span>{t('home')}</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -70,11 +80,12 @@ export const Navbar = () => {
                         <Link
                             key={item.path}
                             href={item.path}
-                            className={`${styles.link} ${pathname === item.path ? styles.active : ''}`}
+                            className={`${styles.link} ${isActive(item.path) ? styles.active : ''}`}
                         >
                             {item.name}
                         </Link>
                     ))}
+                    <LanguageSwitcher />
                     <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
                         {isDark ? <Sun size={20} /> : <Moon size={20} />}
                     </Button>
@@ -95,13 +106,14 @@ export const Navbar = () => {
                         <Link
                             key={item.path}
                             href={item.path}
-                            className={`${styles.mobileLink} ${pathname === item.path ? styles.activeMobile : ''}`}
+                            className={`${styles.mobileLink} ${isActive(item.path) ? styles.activeMobile : ''}`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {item.name}
                         </Link>
                     ))}
-                    <div style={{ padding: '1rem' }}>
+                    <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                        <LanguageSwitcher />
                         <Button variant="outline" onClick={toggleTheme} style={{ width: '100%', justifyContent: 'flex-start' }}>
                             {isDark ? <Sun size={20} /> : <Moon size={20} />}
                             {isDark ? 'Light Mode' : 'Dark Mode'}

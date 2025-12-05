@@ -1,61 +1,47 @@
 import { MetadataRoute } from 'next';
+import { locales, defaultLocale } from '@/i18n/config';
+
+const baseUrl = 'https://www.iframegenerator.org';
+
+// Define all routes with their priorities and change frequencies
+const routes = [
+    // Core Tool Pages (Highest Priority)
+    { path: '', changeFrequency: 'weekly' as const, priority: 1 },
+    { path: '/google-maps-iframe-generator', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/youtube-embed-code-generator', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/responsive-iframe-generator', changeFrequency: 'weekly' as const, priority: 0.9 },
+
+    // Information Pages
+    { path: '/about', changeFrequency: 'monthly' as const, priority: 0.5 },
+    { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.5 },
+
+    // Legal Pages (Lower Priority)
+    { path: '/privacy-policy', changeFrequency: 'yearly' as const, priority: 0.3 },
+    { path: '/terms-of-service', changeFrequency: 'yearly' as const, priority: 0.3 },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.iframegenerator.org';
+    const sitemapEntries: MetadataRoute.Sitemap = [];
 
-    return [
-        // Core Tool Pages (Highest Priority)
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/google-maps-iframe-generator`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/youtube-embed-code-generator`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/responsive-iframe-generator`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
+    routes.forEach((route) => {
+        // Generate entries for all locales
+        locales.forEach((locale) => {
+            // For default locale (English), don't add prefix
+            const url = locale === defaultLocale
+                ? `${baseUrl}${route.path}`
+                : `${baseUrl}/${locale}${route.path}`;
 
-        // Information Pages
-        {
-            url: `${baseUrl}/about`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/contact`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5,
-        },
+            // Default locale gets slightly higher priority
+            const priorityMultiplier = locale === defaultLocale ? 1 : 0.9;
 
-        // Legal Pages (Lower Priority)
-        {
-            url: `${baseUrl}/privacy-policy`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.3,
-        },
-        {
-            url: `${baseUrl}/terms-of-service`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.3,
-        },
-    ];
+            sitemapEntries.push({
+                url,
+                lastModified: new Date(),
+                changeFrequency: route.changeFrequency,
+                priority: route.priority * priorityMultiplier,
+            });
+        });
+    });
+
+    return sitemapEntries;
 }

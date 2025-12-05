@@ -1,8 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Logo } from './Logo';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
+    const t = useTranslations('footer');
+    const tNav = useTranslations('nav');
     const currentYear = new Date().getFullYear();
 
     return (
@@ -16,40 +21,40 @@ export const Footer = () => {
                                 <Logo size={24} />
                             </div>
                             <span className={styles.brandName}>
-                                Iframe Generator
+                                {tNav('home')}
                             </span>
                         </Link>
                         <p className={styles.brandDescription}>
-                            The modern standard for generating responsive, SEO-friendly embed codes. Built for developers and creators.
+                            {t('description')}
                         </p>
                     </div>
 
                     {/* Tools Column */}
                     <div className={styles.section}>
-                        <h3 className={styles.sectionTitle}>Tools</h3>
+                        <h3 className={styles.sectionTitle}>{t('tools')}</h3>
                         <ul className={styles.linkList}>
                             <li className={styles.linkItem}>
                                 <Link href="/" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Iframe Generator
+                                    {tNav('home')}
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/google-maps-iframe-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Google Map Embed Generator
+                                    {tNav('googleMaps')}
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/youtube-embed-code-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    YouTube Embed Code Generator
+                                    {tNav('youtube')}
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/responsive-iframe-generator" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Responsive Iframe Generator
+                                    {tNav('responsive')}
                                 </Link>
                             </li>
                         </ul>
@@ -57,31 +62,12 @@ export const Footer = () => {
 
                     {/* Resources Column */}
                     <div className={styles.section}>
-                        <h3 className={styles.sectionTitle}>Resources</h3>
+                        <h3 className={styles.sectionTitle}>{t('resources')}</h3>
                         <ul className={styles.linkList}>
-                            {/* Blog links - commented out until content is ready */}
-                            {/* <li className={styles.linkItem}>
-                                <Link href="/blog" className={styles.link}>
-                                    <span className={styles.bullet}></span>
-                                    Blog & Guides
-                                </Link>
-                            </li>
-                            <li className={styles.linkItem}>
-                                <Link href="/blog/responsive-iframe-guide-2024" className={styles.link}>
-                                    <span className={styles.bullet}></span>
-                                    Responsive Guide
-                                </Link>
-                            </li>
-                            <li className={styles.linkItem}>
-                                <Link href="/blog/google-maps-embed-no-api-key" className={styles.link}>
-                                    <span className={styles.bullet}></span>
-                                    Maps No API Key
-                                </Link>
-                            </li> */}
                             <li className={styles.linkItem}>
                                 <Link href="/about" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    About Us
+                                    {t('about')}
                                 </Link>
                             </li>
                         </ul>
@@ -89,24 +75,24 @@ export const Footer = () => {
 
                     {/* Legal Column */}
                     <div className={styles.section}>
-                        <h3 className={styles.sectionTitle}>Legal</h3>
+                        <h3 className={styles.sectionTitle}>{t('legal')}</h3>
                         <ul className={styles.linkList}>
                             <li className={styles.linkItem}>
                                 <Link href="/privacy-policy" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Privacy Policy
+                                    {t('privacyPolicy')}
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/terms-of-service" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Terms of Service
+                                    {t('termsOfService')}
                                 </Link>
                             </li>
                             <li className={styles.linkItem}>
                                 <Link href="/contact" className={styles.link}>
                                     <span className={styles.bullet}></span>
-                                    Contact Us
+                                    {t('contact')}
                                 </Link>
                             </li>
                         </ul>
@@ -115,7 +101,7 @@ export const Footer = () => {
 
                 <div className={styles.bottomBar}>
                     <p className={styles.copyright}>
-                        &copy; {currentYear} Iframe Generator. All rights reserved.
+                        {t('copyright', { year: currentYear })}
                     </p>
                     <div className={styles.status}>
                         <span className={styles.statusIndicator}>

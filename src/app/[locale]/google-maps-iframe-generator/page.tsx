@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import GoogleMapsGenerator from '@/components/tools/GoogleMapsGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
 import { googleMapsContent } from '@/data/seo-content';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { routing } from '@/i18n/routing';
 
 const pageUrl = 'https://www.iframegenerator.org/google-maps-iframe-generator';
 
@@ -51,7 +53,18 @@ const webAppSchema = {
     ],
 };
 
-export default function Page() {
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export default async function Page({ params }: Props) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <>
             <StructuredData data={webAppSchema} />

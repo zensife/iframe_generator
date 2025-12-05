@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import ResponsiveGenerator from '@/components/tools/ResponsiveGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
 import { responsiveContent } from '@/data/seo-content';
+import { routing } from '@/i18n/routing';
 
 export const metadata: Metadata = {
     title: 'Responsive Iframe Generator - Mobile-Friendly Embed Code',
@@ -18,7 +20,18 @@ export const metadata: Metadata = {
     },
 };
 
-export default function Page() {
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
+
+type Props = {
+    params: Promise<{ locale: string }>;
+};
+
+export default async function Page({ params }: Props) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <>
             <ResponsiveGenerator />
