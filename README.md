@@ -6,7 +6,7 @@
 
  **The most comprehensive, free, and privacy-focused online iframe tool.**
  
- [Live Demo](https://www.iframegenerator.org) · [Report Bug](https://github.com/zen si fe/iframe-generator/issues) · [Request Feature](https://github.com/zensife/iframe-generator/issues)
+ [Live Demo](https://www.iframegenerator.org) · [Report Bug](https://github.com/zensife/iframe-generator/issues) · [Request Feature](https://github.com/zensife/iframe-generator/issues)
 
 </div>
 
