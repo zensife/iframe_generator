@@ -11,7 +11,7 @@
     },
     "home": {
         "title": "Iframe Generator",
-        "subtitle": "Der einfachste Weg, responsive, SEO-freundliche Iframe-Einbettungscodes für Ihre Website zu generieren.",
+        "subtitle": "Der einfachste Weg, responsive und SEO-optimierte Iframe-Codes für Ihre Website zu erstellen.",
         "settings": "Einstellungen",
         "preview": "Vorschau",
         "generatedCode": "Generierter Code",
@@ -21,7 +21,7 @@
         "height": "Höhe",
         "basicOptions": "Grundoptionen",
         "advancedOptions": "Erweiterte Optionen",
-        "makeResponsive": "Responsiv machen (Automatische Größenanpassung)",
+        "makeResponsive": "Responsiv machen (Auto-Anpassung)",
         "responsiveHint": "Generiert einen Container mit aspect-ratio basierend auf den aktuellen Abmessungen.",
         "scrolling": "Scrollen",
         "border": "Rahmen",

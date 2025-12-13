@@ -11,7 +11,7 @@
     },
     "home": {
         "title": "Iframeジェネレーター",
-        "subtitle": "あなたのウェブサイト用に、レスポンシブでSEO対応のiframe埋め込みコードを生成する最も簡単な方法。",
+        "subtitle": "Webサイト用に、レスポンシブかつSEOに最適化されたIframe埋め込みコードを瞬時に生成。",
         "settings": "設定",
         "preview": "プレビュー",
         "generatedCode": "生成されたコード",
@@ -22,7 +22,7 @@
         "basicOptions": "基本オプション",
         "advancedOptions": "詳細オプション",
         "makeResponsive": "レスポンシブにする（自動リサイズ）",
-        "responsiveHint": "現在のサイズに基づいてaspect-ratioを持つコンテナを生成します。",
+        "responsiveHint": "現在のサイズに基づいて、aspect-ratio属性を持つコンテナを生成します。",
         "scrolling": "スクロール",
         "border": "境界線",
         "borderNone": "なし",
@@ -63,7 +63,7 @@
     },
     "googleMaps": {
         "title": "Googleマップ埋め込みジェネレーター",
-        "subtitle": "Googleマップ埋め込みコードを即座に生成 - APIキー不要。",
+        "subtitle": "APIキー不要。Googleマップの埋め込みコードを即座に生成します。",
         "location": "場所",
         "locationPlaceholder": "住所または場所名を入力",
         "searchButton": "検索",

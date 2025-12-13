@@ -4,14 +4,14 @@
         "siteDescription": "为网站、Google 地图和 YouTube 视频生成响应式 iframe 代码。免费、SEO 友好、简单易用。"
     },
     "nav": {
-        "home": "Iframe 生成器",
+        "home": "通用 Iframe 生成器",
         "googleMaps": "Google 地图嵌入",
         "youtube": "YouTube 嵌入代码",
         "responsive": "响应式 Iframe"
     },
     "home": {
         "title": "Iframe 生成器",
-        "subtitle": "为您的网站生成响应式、SEO 友好的 iframe 嵌入代码的最简单方法。",
+        "subtitle": "为您的网站生成响应式且 SEO 友好的 Iframe 嵌入代码，简单高效。",
         "settings": "设置",
         "preview": "预览",
         "generatedCode": "生成的代码",
@@ -21,8 +21,8 @@
         "height": "高度",
         "basicOptions": "基本选项",
         "advancedOptions": "高级选项",
-        "makeResponsive": "设为响应式（自动调整大小）",
-        "responsiveHint": "根据当前尺寸生成具有 aspect-ratio 的容器。",
+        "makeResponsive": "开启响应式（自动适配）",
+        "responsiveHint": "基于当前尺寸生成带有 aspect-ratio 属性的容器。",
         "scrolling": "滚动条",
         "border": "边框",
         "borderNone": "无",
@@ -48,7 +48,7 @@
         "camera": "摄像头",
         "microphone": "麦克风",
         "emptyState": "输入 URL 以查看预览",
-        "previewNote": "注意：如果预览无法加载，该网站可能禁止嵌入（X-Frame-Options）。",
+        "previewNote": "注意：如果预览无法加载，可能是该目标网站禁止了 Iframe 嵌入 (X-Frame-Options)。",
         "mobile": "手机",
         "tablet": "平板",
         "desktop": "桌面",

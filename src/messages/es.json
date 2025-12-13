@@ -11,7 +11,7 @@
     },
     "home": {
         "title": "Generador de Iframe",
-        "subtitle": "La forma más fácil de generar códigos de inserción iframe responsivos y compatibles con SEO para tu sitio web.",
+        "subtitle": "La herramienta más sencilla para generar códigos Iframe responsivos y optimizados para SEO.",
         "settings": "Configuración",
         "preview": "Vista Previa",
         "generatedCode": "Código Generado",
@@ -21,7 +21,7 @@
         "height": "Alto",
         "basicOptions": "Opciones Básicas",
         "advancedOptions": "Opciones Avanzadas",
-        "makeResponsive": "Hacer Responsivo (Auto-redimensionar)",
+        "makeResponsive": "Hacer Responsivo (Auto-ajuste)",
         "responsiveHint": "Genera un contenedor con aspect-ratio basado en las dimensiones actuales.",
         "scrolling": "Desplazamiento",
         "border": "Borde",
