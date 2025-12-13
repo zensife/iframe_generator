@@ -93,7 +93,7 @@ export const Navbar = () => {
 
                 {/* Mobile Menu Button */}
                 <div className={styles.mobileMenuBtn}>
-                    <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </Button>
                 </div>
