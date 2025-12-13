@@ -520,6 +520,258 @@ export const homeContent_fr: SEOContent = {
   ]
 };
 
+// Portuguese content
+export const homeContent_pt: SEOContent = {
+  title: "Como Usar o Gerador de Iframe",
+  sections: [
+    {
+      title: "O que é um Iframe?",
+      content: `
+        <p>Um <strong>iframe</strong> (Inline Frame) é um elemento HTML que permite incorporar outro documento dentro do documento HTML atual. É essencialmente uma janela para outro site, permitindo exibir conteúdo externo como vídeos, mapas ou até páginas inteiras sem que os usuários saiam do seu site.</p>
+        <p>Casos de uso comuns incluem:</p>
+        <ul>
+          <li>Incorporar <strong>vídeos do YouTube</strong> ou outros players de mídia.</li>
+          <li>Exibir <strong>Google Maps</strong> para localizações de empresas.</li>
+          <li>Integrar widgets de terceiros como feeds de redes sociais ou formulários de pagamento.</li>
+          <li>Mostrar documentos externos ou PDFs.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Como Gerar Código Iframe",
+      content: `
+        <p>Usar nosso <strong>gerador de iframe</strong> gratuito é simples e não requer conhecimento de programação:</p>
+        <ol>
+          <li><strong>Insira a URL:</strong> Cole o endereço web (URL) do conteúdo que deseja incorporar no campo "URL de Origem".</li>
+          <li><strong>Ajuste as Configurações:</strong> Personalize a largura, altura, borda e opções de rolagem para se adequar ao design do seu site.</li>
+          <li><strong>Pré-visualização:</strong> Use a pré-visualização ao vivo para garantir que tudo pareça perfeito em desktops e dispositivos móveis.</li>
+          <li><strong>Copiar Código:</strong> Clique no botão "Copiar" para obter o código HTML gerado e cole-o no código-fonte do seu site.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Parâmetros do Iframe Explicados",
+      content: `
+        <p>Entender os principais parâmetros ajuda a otimizar suas incorporações:</p>
+        <ul>
+          <li><strong>Largura e Altura:</strong> Defina as dimensões do iframe. Use pixels (px) para tamanhos fixos ou porcentagens (%) para layouts responsivos.</li>
+          <li><strong>Sandbox:</strong> Um recurso de segurança que restringe o que o conteúdo incorporado pode fazer (ex: impedir scripts ou pop-ups). Ative permissões específicas apenas se necessário.</li>
+          <li><strong>Carregamento:</strong> Defina como "lazy" para adiar o carregamento do iframe até que ele esteja próximo da visualização, melhorando a velocidade da página e o SEO.</li>
+          <li><strong>Borda e Rolagem:</strong> Controle a aparência visual. Remover bordas geralmente parece mais limpo, enquanto as configurações de rolagem dependem do comprimento do conteúdo.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Tornando Iframes Responsivos",
+      content: `
+        <p>No mundo mobile-first de hoje, um <strong>iframe responsivo</strong> é crucial. Iframes padrão têm dimensões fixas, o que pode quebrar layouts em telas menores.</p>
+        <p>Nossa ferramenta oferece uma opção "Tornar Responsivo" que usa CSS moderno <code>aspect-ratio</code> ou o clássico "padding-hack" para garantir que seu conteúdo incorporado escale perfeitamente em todos os dispositivos, de desktops a smartphones.</p>
+      `
+    },
+    {
+      title: "Problemas Comuns de Iframe",
+      content: `
+        <p>Se seu iframe não estiver funcionando, verifique estes problemas comuns:</p>
+        <ul>
+          <li><strong>X-Frame-Options:</strong> Alguns sites (como Google ou Facebook) bloqueiam a incorporação via cabeçalhos. Se você vir um erro "refused to connect", o site provavelmente não permite iframes.</li>
+          <li><strong>Conteúdo Misto:</strong> Se seu site estiver em HTTPS, certifique-se de que a URL incorporada também seja HTTPS. Navegadores bloqueiam conteúdo HTTP inseguro em páginas seguras.</li>
+          <li><strong>Usabilidade Móvel:</strong> Certifique-se de que o próprio conteúdo incorporado seja compatível com dispositivos móveis, ou ele pode parecer pequeno ou quebrado dentro do iframe.</li>
+        </ul>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Este Gerador de Iframe é gratuito?",
+      answer: "Sim, esta ferramenta é 100% gratuita para gerar códigos iframe HTML para qualquer site."
+    },
+    {
+      question: "Como torno meu iframe responsivo?",
+      answer: "Simplesmente marque a caixa 'Tornar Responsivo' nas configurações. Isso gerará uma div wrapper com CSS que mantém a proporção em qualquer tamanho de tela."
+    },
+    {
+      question: "Por que meu iframe não está carregando?",
+      answer: "A razão mais comum é que o site de origem definiu um cabeçalho 'X-Frame-Options' como 'SAMEORIGIN' ou 'DENY', impedindo que ele seja incorporado em outros sites."
+    },
+    {
+      question: "Posso incorporar vídeos do YouTube com isso?",
+      answer: "Sim, mas para a melhor experiência, recomendamos usar nosso <a href='/pt/youtube-embed-code-generator'>Gerador de Código de Incorporação do YouTube</a> dedicado, que oferece opções específicas como reprodução automática e loop."
+    },
+    {
+      question: "É amigável para SEO?",
+      answer: "Sim. Incluímos opções para 'loading=\"lazy\"' para melhorar o desempenho e atributos 'title' para acessibilidade, ambos importantes para SEO."
+    }
+  ]
+};
+
+// Italian content
+export const homeContent_it: SEOContent = {
+  title: "Come Usare il Generatore di Iframe",
+  sections: [
+    {
+      title: "Cos'è un Iframe?",
+      content: `
+        <p>Un <strong>iframe</strong> (Inline Frame) è un elemento HTML che ti consente di incorporare un altro documento all'interno del documento HTML corrente. È essenzialmente una finestra su un altro sito web, che ti permette di mostrare contenuti esterni come video, mappe o anche intere pagine web senza che gli utenti lascino il tuo sito.</p>
+        <p>I casi d'uso comuni includono:</p>
+        <ul>
+          <li>Incorporare <strong>video di YouTube</strong> o altri lettori multimediali.</li>
+          <li>Mostrare <strong>Google Maps</strong> per le sedi aziendali.</li>
+          <li>Integrare widget di terze parti come feed di social media o moduli di pagamento.</li>
+          <li>Mostrare documenti esterni o PDF.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Come Generare Codice Iframe",
+      content: `
+        <p>Usare il nostro <strong>generatore di iframe</strong> gratuito è semplice e non richiede conoscenze di programmazione:</p>
+        <ol>
+          <li><strong>Inserisci l'URL:</strong> Incolla l'indirizzo web (URL) del contenuto che desideri incorporare nel campo "URL Sorgente".</li>
+          <li><strong>Regola le Impostazioni:</strong> Personalizza larghezza, altezza, bordo e opzioni di scorrimento per adattarle al design del tuo sito web.</li>
+          <li><strong>Anteprima:</strong> Usa l'anteprima dal vivo per assicurarti che tutto appaia perfetto su desktop e dispositivi mobili.</li>
+          <li><strong>Copia Codice:</strong> Clicca sul pulsante "Copia" per ottenere il codice HTML generato e incollalo nel codice sorgente del tuo sito web.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Parametri Iframe Spiegati",
+      content: `
+        <p>Capire i parametri chiave ti aiuta a ottimizzare i tuoi embed:</p>
+        <ul>
+          <li><strong>Larghezza & Altezza:</strong> Definiscono le dimensioni dell'iframe. Usa pixel (px) per dimensioni fisse o percentuali (%) per layout responsive.</li>
+          <li><strong>Sandbox:</strong> Una funzionalità di sicurezza che limita ciò che il contenuto incorporato può fare (es. impedire script o popup). Abilita permessi specifici solo se necessario.</li>
+          <li><strong>Caricamento:</strong> Imposta su "lazy" per differire il caricamento dell'iframe finché non è vicino alla viewport, migliorando la velocità della pagina e la SEO.</li>
+          <li><strong>Bordo & Scorrimento:</strong> Controllano l'aspetto visivo. Rimuovere i bordi di solito appare più pulito, mentre le impostazioni di scorrimento dipendono dalla lunghezza del contenuto.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Rendere gli Iframe Responsive",
+      content: `
+        <p>Nel mondo mobile-first di oggi, un <strong>iframe responsive</strong> è cruciale. Gli iframe standard hanno dimensioni fisse, che possono rompere i layout su schermi più piccoli.</p>
+        <p>Il nostro strumento offre un'opzione "Rendi Responsive" che usa CSS moderno <code>aspect-ratio</code> o il classico "padding-hack" per garantire che il tuo contenuto incorporato scalì perfettamente su tutti i dispositivi, dai desktop agli smartphone.</p>
+      `
+    },
+    {
+      title: "Problemi Comuni degli Iframe",
+      content: `
+        <p>Se il tuo iframe non funziona, controlla questi problemi comuni:</p>
+        <ul>
+          <li><strong>X-Frame-Options:</strong> Alcuni siti web (come Google o Facebook) bloccano l'incorporamento tramite intestazioni. Se vedi un errore "refused to connect", il sito probabilmente non consente gli iframe.</li>
+          <li><strong>Contenuto Misto:</strong> Se il tuo sito è su HTTPS, assicurati che l'URL incorporato sia anch'esso HTTPS. I browser bloccano i contenuti HTTP non sicuri su pagine sicure.</li>
+          <li><strong>Usabilità Mobile:</strong> Assicurati che il contenuto incorporato stesso sia mobile-friendly, o potrebbe apparire piccolo o rotto all'interno dell'iframe.</li>
+        </ul>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Questo Generatore di Iframe è gratuito?",
+      answer: "Sì, questo strumento è gratuito al 100% per generare codici iframe HTML per qualsiasi sito web."
+    },
+    {
+      question: "Come rendo il mio iframe responsive?",
+      answer: "Basta spuntare la casella 'Rendi Responsive' nelle impostazioni. Questo genererà un div wrapper con CSS che mantiene il rapporto d'aspetto su qualsiasi dimensione dello schermo."
+    },
+    {
+      question: "Perché il mio iframe non si carica?",
+      answer: "Il motivo più comune è che il sito web sorgente ha impostato un'intestazione 'X-Frame-Options' su 'SAMEORIGIN' o 'DENY', impedendo che venga incorporato su altri siti."
+    },
+    {
+      question: "Posso incorporare video di YouTube con questo?",
+      answer: "Sì, ma per la migliore esperienza, raccomandiamo di usare il nostro <a href='/it/youtube-embed-code-generator'>Generatore di Codice di Embed YouTube</a> dedicato che offre opzioni specifiche come autoplay e loop."
+    },
+    {
+      question: "È SEO friendly?",
+      answer: "Sì. Includiamo opzioni per 'loading=\"lazy\"' per migliorare le prestazioni e attributi 'title' per l'accessibilità, entrambi importanti per la SEO."
+    }
+  ]
+};
+
+// Russian content
+export const homeContent_ru: SEOContent = {
+  title: "Как использовать Генератор Iframe",
+  sections: [
+    {
+      title: "Что такое Iframe?",
+      content: `
+        <p><strong>Iframe</strong> (встроенный фрейм) — это HTML-элемент, который позволяет встроить один документ в текущий HTML-документ. По сути, это окно на другой веб-сайт, позволяющее отображать внешний контент, такой как видео, карты или даже целые веб-страницы, не покидая ваш сайт.</p>
+        <p>Распространенные варианты использования:</p>
+        <ul>
+          <li>Встраивание <strong>видео YouTube</strong> или других медиаплееров.</li>
+          <li>Отображение <strong>Google Карт</strong> для местоположения бизнеса.</li>
+          <li>Интеграция сторонних виджетов, таких как ленты соцсетей или формы оплаты.</li>
+          <li>Показ внешних документов или PDF.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Как создать код Iframe",
+      content: `
+        <p>Использовать наш бесплатный <strong>генератор iframe</strong> просто, и это не требует знаний программирования:</p>
+        <ol>
+          <li><strong>Введите URL:</strong> Вставьте веб-адрес (URL) контента, который вы хотите встроить, в поле "Исходный URL".</li>
+          <li><strong>Настройте параметры:</strong> Настройте ширину, высоту, границы и параметры прокрутки в соответствии с дизайном вашего сайта.</li>
+          <li><strong>Предпросмотр:</strong> Используйте живой предпросмотр, чтобы убедиться, что все выглядит идеально на настольных и мобильных устройствах.</li>
+          <li><strong>Копировать код:</strong> Нажмите кнопку "Копировать", чтобы получить сгенерированный HTML-код, и вставьте его в исходный код вашего сайта.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Объяснение параметров Iframe",
+      content: `
+        <p>Понимание ключевых параметров поможет вам оптимизировать встраивание:</p>
+        <ul>
+          <li><strong>Ширина и Высота:</strong> Определяют размеры iframe. Используйте пиксели (px) для фиксированных размеров или проценты (%) для адаптивных макетов.</li>
+          <li><strong>Песочница (Sandbox):</strong> Функция безопасности, ограничивающая действия встроенного контента (например, запрет скриптов или всплывающих окон). Включайте определенные разрешения только при необходимости.</li>
+          <li><strong>Загрузка:</strong> Установите "lazy", чтобы отложить загрузку iframe до тех пор, пока он не окажется рядом с областью просмотра, улучшая скорость загрузки страницы и SEO.</li>
+          <li><strong>Граница и Прокрутка:</strong> Управляют внешним видом. Удаление границ обычно выглядит чище, а настройки прокрутки зависят от длины контента.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Создание адаптивных Iframe",
+      content: `
+        <p>В современном мире mobile-first <strong>адаптивный iframe</strong> имеет решающее значение. Стандартные iframe имеют фиксированные размеры, что может нарушить верстку на небольших экранах.</p>
+        <p>Наш инструмент предлагает опцию "Сделать адаптивным", которая использует современный CSS <code>aspect-ratio</code> или классический "padding-hack", гарантируя, что ваш встроенный контент будет идеально масштабироваться на всех устройствах, от настольных компьютеров до смартфонов.</p>
+      `
+    },
+    {
+      title: "Распространенные проблемы с Iframe",
+      content: `
+        <p>Если ваш iframe не работает, проверьте эти распространенные проблемы:</p>
+        <ul>
+          <li><strong>X-Frame-Options:</strong> Некоторые сайты (например, Google или Facebook) блокируют встраивание через заголовки. Если вы видите ошибку "refused to connect", сайт, вероятно, не разрешает iframe.</li>
+          <li><strong>Смешанный контент:</strong> Если ваш сайт использует HTTPS, убедитесь, что встроенный URL также использует HTTPS. Браузеры блокируют небезопасный HTTP-контент на защищенных страницах.</li>
+          <li><strong>Мобильное юзабилити:</strong> Убедитесь, что встроенный контент сам по себе оптимизирован для мобильных устройств, иначе он может выглядеть мелким или сломанным внутри iframe.</li>
+        </ul>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Этот генератор Iframe бесплатен?",
+      answer: "Да, этот инструмент на 100% бесплатен для генерации HTML-кодов iframe для любого веб-сайта."
+    },
+    {
+      question: "Как сделать мой iframe адаптивным?",
+      answer: "Просто установите флажок 'Сделать адаптивным' в настройках. Это создаст обертку div с CSS, которая сохраняет соотношение сторон на любом размере экрана."
+    },
+    {
+      question: "Почему мой iframe не загружается?",
+      answer: "Самая частая причина — исходный сайт установил заголовок 'X-Frame-Options' в 'SAMEORIGIN' или 'DENY', запрещая встраивание на других сайтах."
+    },
+    {
+      question: "Могу ли я встраивать видео YouTube с помощью этого?",
+      answer: "Да, но для лучшего опыта мы рекомендуем использовать наш специализированный <a href='/ru/youtube-embed-code-generator'>Генератор кодов вставки YouTube</a>, который предлагает специальные опции, такие как автовоспроизведение и повтор."
+    },
+    {
+      question: "Это дружественно к SEO?",
+      answer: "Да. Мы включаем опции 'loading=\"lazy\"' для улучшения производительности и атрибуты 'title' для доступности, и то и другое важно для SEO."
+    }
+  ]
+};
+
 // Get content by locale
 export function getHomeContent(locale: Locale): SEOContent {
   switch (locale) {
@@ -533,6 +785,12 @@ export function getHomeContent(locale: Locale): SEOContent {
       return homeContent_de;
     case 'fr':
       return homeContent_fr;
+    case 'pt':
+      return homeContent_pt;
+    case 'it':
+      return homeContent_it;
+    case 'ru':
+      return homeContent_ru;
     case 'en':
     default:
       return homeContent_en;

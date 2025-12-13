@@ -535,6 +535,273 @@ export const googleMapsContent_fr: SEOContent = {
   ]
 };
 
+// Portuguese content
+export const googleMapsContent_pt: SEOContent = {
+  title: "Guia do Gerador de Embed do Google Maps",
+  sections: [
+    {
+      title: "Como Incorporar o Google Maps no seu Site",
+      content: `
+        <p>Incorporar um <strong>Google Map</strong> ajuda os clientes a encontrar sua localização mais rapidamente. O <strong>gerador de embed do Google Maps</strong> nesta página produz um código iframe limpo sem chave de API, para que você possa adicionar mapas a qualquer site em segundos.</p>
+      `
+    },
+    {
+      title: "Passos Rápidos para Incorporar o Google Map",
+      content: `
+        <ol>
+          <li><strong>Insira a Localização:</strong> Digite o endereço, nome ou coordenadas da sua empresa.</li>
+          <li><strong>Personalize o Mapa:</strong> Ajuste o nível de zoom (10-18) e escolha os tipos de mapa Roteiro, Satélite ou Híbrido.</li>
+          <li><strong>Defina as Dimensões:</strong> Escolha predefinições ou defina largura/altura personalizada para incorporações responsivas.</li>
+          <li><strong>Copiar Código:</strong> Copie seu código de incorporação do Google Map e cole-o no HTML do seu site.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Recursos do Código de Incorporação do Google Map",
+      content: `
+        <h3>Nenhuma Chave de API Necessária</h3>
+        <p>O gerador produz um iframe padrão, então você evita o faturamento do Google Cloud e a configuração da API.</p>
+        <h3>Embed de Mapa Responsivo</h3>
+        <p>Ative a opção responsiva para produzir um iframe de largura fluida que escala em dispositivos móveis, tablets e desktops.</p>
+        <h3>Zoom e Tipo de Mapa Personalizados</h3>
+        <ul>
+          <li><strong>Zoom 15-18:</strong> Mostre edifícios específicos e entradas.</li>
+          <li><strong>Zoom 10-12:</strong> Dê contexto da cidade ou distrito.</li>
+          <li><strong>Roteiro / Satélite / Híbrido:</strong> Escolha o estilo de mapa que corresponde ao seu caso de uso.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Por que Usar Nosso Gerador de Embed do Google Maps?",
+      content: `
+        <p>A opção "Compartilhar > Incorporar um mapa" do Google é básica. Nosso <strong>gerador de embed do google maps</strong> adiciona:</p>
+        <ul>
+          <li><strong>Sem chave de API:</strong> Implante mapas rapidamente sem configuração de faturamento.</li>
+          <li><strong>Dimensões personalizadas:</strong> Predefinições para celular/tablet/desktop ou redimensionamento manual.</li>
+          <li><strong>Embed responsivo:</strong> Opção responsiva de um clique para todas as telas.</li>
+          <li><strong>Carregamento lento:</strong> <code>loading="lazy"</code> adicionado para melhor desempenho.</li>
+          <li><strong>Código limpo:</strong> Iframe otimizado pronto para colar.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Melhores Práticas para Incorporar Google Maps",
+      content: `
+        <h3>Use Carregamento Lento</h3>
+        <p><code>loading="lazy"</code> mantém sua página rápida até que os usuários rolem até o mapa.</p>
+        <h3>Torne-o Responsivo</h3>
+        <p>Selecione a opção responsiva para que o <strong>embed do google map</strong> se ajuste a cada tela.</p>
+        <h3>Escolha o Zoom Certo</h3>
+        <ul>
+          <li><strong>15-18:</strong> Vitrines e pontos de interesse.</li>
+          <li><strong>12-14:</strong> Bairros e distritos.</li>
+          <li><strong>10-11:</strong> Contexto de toda a cidade ou regional.</li>
+        </ul>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Como incorporo um mapa do Google no meu site?",
+      answer: "Use o gerador de embed do Google Map: insira sua localização, escolha zoom e tamanho, depois copie o código iframe. Cole-o no HTML do seu site — nenhuma chave de API é necessária."
+    },
+    {
+      question: "Preciso de uma chave de API para incorporar o Google Maps?",
+      answer: "Não. As incorporações de iframe padrão deste gerador não requerem chaves de API ou faturamento, portanto, funcionam imediatamente."
+    },
+    {
+      question: "Como obtenho o código de incorporação do Google Map?",
+      answer: "Insira seu endereço, ajuste o zoom e as dimensões e clique em copiar. Você também pode usar \"Compartilhar > Incorporar um mapa\" do Google Maps, mas o gerador adiciona design responsivo e carregamento lento."
+    },
+    {
+      question: "Incorporar o Google Maps é gratuito?",
+      answer: "Sim. Usar código de incorporação iframe é gratuito e não requer uma chave de API. Nossa ferramenta permanece gratuita com uso ilimitado."
+    },
+    {
+      question: "Como torno meu mapa do Google incorporado responsivo?",
+      answer: "Ative a opção responsiva no gerador para que o iframe se adapte automaticamente às larguras de celular, tablet e desktop."
+    }
+  ]
+};
+
+// Italian content
+export const googleMapsContent_it: SEOContent = {
+  title: "Guida al Generatore di Embed di Google Maps",
+  sections: [
+    {
+      title: "Come Incorporare Google Maps sul Tuo Sito Web",
+      content: `
+        <p>Incorporare una <strong>Google Map</strong> aiuta i clienti a trovare la tua posizione più velocemente. Il <strong>generatore di embed di Google Maps</strong> su questa pagina produce un codice iframe pulito senza chiave API, così puoi aggiungere mappe a qualsiasi sito in pochi secondi.</p>
+      `
+    },
+    {
+      title: "Passaggi Rapidi per Incorporare Google Map",
+      content: `
+        <ol>
+          <li><strong>Inserisci Posizione:</strong> Digita l'indirizzo, il nome o le coordinate della tua attività.</li>
+          <li><strong>Personalizza Mappa:</strong> Regola il livello di zoom (10-18) e scegli i tipi di mappa Mappa stradale, Satellite o Ibrida.</li>
+          <li><strong>Imposta Dimensioni:</strong> Scegli preimpostazioni o imposta larghezza/altezza personalizzata per embed responsive.</li>
+          <li><strong>Copia Codice:</strong> Copia il tuo codice di incorporamento di Google Map e incollalo nell'HTML del tuo sito web.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Funzionalità del Codice di Incorporamento di Google Map",
+      content: `
+        <h3>Nessuna Chiave API Richiesta</h3>
+        <p>Il generatore produce un iframe standard, quindi eviti la fatturazione di Google Cloud e la configurazione dell'API.</p>
+        <h3>Embed di Mappa Responsive</h3>
+        <p>Abilita l'opzione responsive per produrre un iframe a larghezza fluida che scala su mobile, tablet e desktop.</p>
+        <h3>Zoom e Tipo di Mappa Personalizzati</h3>
+        <ul>
+          <li><strong>Zoom 15-18:</strong> Mostra edifici specifici e ingressi.</li>
+          <li><strong>Zoom 10-12:</strong> Fornisci contesto cittadino o distrettuale.</li>
+          <li><strong>Mappa stradale / Satellite / Ibrida:</strong> Scegli lo stile della mappa che corrisponde al tuo caso d'uso.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Perché Usare il Nostro Generatore di Embed di Google Maps?",
+      content: `
+        <p>L'opzione "Condividi > Incorpora una mappa" di Google è basilare. Il nostro <strong>generatore di embed di google maps</strong> aggiunge:</p>
+        <ul>
+          <li><strong>Nessuna chiave API:</strong> Distribuisci mappe velocemente senza configurazione di fatturazione.</li>
+          <li><strong>Dimensioni personalizzate:</strong> Preimpostazioni per mobile/tablet/desktop o ridimensionamento manuale.</li>
+          <li><strong>Embed responsive:</strong> Opzione responsive con un clic per tutti gli schermi.</li>
+          <li><strong>Caricamento lazy:</strong> <code>loading="lazy"</code> aggiunto per migliori prestazioni.</li>
+          <li><strong>Codice pulito:</strong> Iframe ottimizzato pronto da incollare.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Migliori Pratiche per Incorporare Google Maps",
+      content: `
+        <h3>Usa Caricamento Lazy</h3>
+        <p><code>loading="lazy"</code> mantiene la tua pagina veloce finché gli utenti non scorrono fino alla mappa.</p>
+        <h3>Rendilo Responsive</h3>
+        <p>Seleziona l'opzione responsive in modo che l'<strong>embed di google map</strong> si adatti a ogni schermo.</p>
+        <h3>Scegli lo Zoom Giusto</h3>
+        <ul>
+          <li><strong>15-18:</strong> Vetrine e punti di interesse.</li>
+          <li><strong>12-14:</strong> Quartieri e distretti.</li>
+          <li><strong>10-11:</strong> Contesto cittadino o regionale.</li>
+        </ul>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Come incorporo una mappa di Google sul mio sito web?",
+      answer: "Usa il generatore di embed di Google Map: inserisci la tua posizione, scegli zoom e dimensioni, quindi copia il codice iframe. Incollalo nell'HTML del tuo sito — nessuna chiave API richiesta."
+    },
+    {
+      question: "Ho bisogno di una chiave API per incorporare Google Maps?",
+      answer: "No. Gli embed iframe standard da questo generatore non richiedono chiavi API o fatturazione, quindi funzionano immediatamente."
+    },
+    {
+      question: "Come ottengo il codice di incorporamento di Google Map?",
+      answer: "Inserisci il tuo indirizzo, regola zoom e dimensioni e clicca su copia. Puoi anche usare \"Condividi > Incorpora una mappa\" di Google Maps, ma il generatore aggiunge design responsive e caricamento lazy."
+    },
+    {
+      question: "Incorporare Google Maps è gratuito?",
+      answer: "Sì. Usare codice di incorporamento iframe è gratuito e non richiede una chiave API. Il nostro strumento rimane gratuito con uso illimitato."
+    },
+    {
+      question: "Come rendo la mia mappa di Google incorporata responsive?",
+      answer: "Abilita l'opzione responsive nel generatore in modo che l'iframe si adatti automaticamente alle larghezze di mobile, tablet e desktop."
+    }
+  ]
+};
+
+// Russian content
+export const googleMapsContent_ru: SEOContent = {
+  title: "Руководство по генератору встраивания Google Maps",
+  sections: [
+    {
+      title: "Как встроить Google Maps на ваш сайт",
+      content: `
+        <p>Встраивание <strong>Google Map</strong> помогает клиентам быстрее находить ваше местоположение. <strong>Генератор встраивания Google Maps</strong> на этой странице создает чистый код iframe без ключа API, поэтому вы можете добавлять карты на любой сайт за секунды.</p>
+      `
+    },
+    {
+      title: "Быстрые шаги для встраивания Google Map",
+      content: `
+        <ol>
+          <li><strong>Введите местоположение:</strong> Введите адрес, название или координаты вашего бизнеса.</li>
+          <li><strong>Настройте карту:</strong> Отрегулируйте уровень масштабирования (10-18) и выберите типы карт: Дорожная карта, Спутник или Гибрид.</li>
+          <li><strong>Установите размеры:</strong> Выберите пресеты или установите пользовательскую ширину/высоту для адаптивных вставок.</li>
+          <li><strong>Копировать код:</strong> Скопируйте код вставки Google Map и вставьте его в HTML вашего сайта.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Особенности кода вставки Google Map",
+      content: `
+        <h3>Ключ API не требуется</h3>
+        <p>Генератор создает стандартный iframe, поэтому вы избегаете биллинга Google Cloud и настройки API.</p>
+        <h3>Адаптивная вставка карты</h3>
+        <p>Включите опцию адаптивности, чтобы получить iframe с резиновой шириной, который масштабируется на мобильных устройствах, планшетах и десктопах.</p>
+        <h3>Пользовательский масштаб и тип карты</h3>
+        <ul>
+          <li><strong>Масштаб 15-18:</strong> Показать конкретные здания и входы.</li>
+          <li><strong>Масштаб 10-12:</strong> Дать контекст города или района.</li>
+          <li><strong>Дорожная карта / Спутник / Гибрид:</strong> Выберите стиль карты, соответствующий вашему случаю использования.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Почему стоит использовать наш генератор встраивания Google Maps?",
+      content: `
+        <p>Опция Google "Поделиться > Встроить карту" является базовой. Наш <strong>генератор встраивания google maps</strong> добавляет:</p>
+        <ul>
+          <li><strong>Без ключа API:</strong> Развертывайте карты быстро без настройки биллинга.</li>
+          <li><strong>Пользовательские размеры:</strong> Пресеты для мобильных/планшетов/десктопов или ручное изменение размера.</li>
+          <li><strong>Адаптивная вставка:</strong> Опция адаптивности в один клик для всех экранов.</li>
+          <li><strong>Отложенная загрузка:</strong> <code>loading="lazy"</code> добавлен для лучшей производительности.</li>
+          <li><strong>Чистый код:</strong> Оптимизированный iframe, готовый к вставке.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Лучшие практики встраивания Google Maps",
+      content: `
+        <h3>Используйте отложенную загрузку</h3>
+        <p><code>loading="lazy"</code> сохраняет быструю загрузку страницы, пока пользователи не прокрутят до карты.</p>
+        <h3>Сделайте это адаптивным</h3>
+        <p>Выберите опцию адаптивности, чтобы <strong>вставка google map</strong> подходила для каждого экрана.</p>
+        <h3>Выберите правильный масштаб</h3>
+        <ul>
+          <li><strong>15-18:</strong> Витрины и точки интереса.</li>
+          <li><strong>12-14:</strong> Районы и округа.</li>
+          <li><strong>10-11:</strong> Контекст всего города или региона.</li>
+        </ul>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Как встроить карту Google на мой сайт?",
+      answer: "Используйте генератор встраивания Google Map: введите ваше местоположение, выберите масштаб и размер, затем скопируйте код iframe. Вставьте его в HTML вашего сайта — ключ API не требуется."
+    },
+    {
+      question: "Нужен ли мне ключ API для встраивания Google Maps?",
+      answer: "Нет. Стандартные вставки iframe от этого генератора не требуют ключей API или биллинга, поэтому они работают сразу."
+    },
+    {
+      question: "Как получить код вставки Google Map?",
+      answer: "Введите свой адрес, настройте масштаб и размеры и нажмите копировать. Вы также можете использовать \"Поделиться > Встроить карту\" от Google Maps, но генератор добавляет адаптивный дизайн и отложенную загрузку."
+    },
+    {
+      question: "Встраивание Google Maps бесплатно?",
+      answer: "Да. Использование кода вставки iframe бесплатно и не требует ключа API. Наш инструмент остается бесплатным с неограниченным использованием."
+    },
+    {
+      question: "Как сделать мою встроенную карту Google адаптивной?",
+      answer: "Включите опцию адаптивности в генераторе, чтобы iframe автоматически адаптировался к ширине мобильных устройств, планшетов и десктопов."
+    }
+  ]
+};
+
 // Get content by locale
 export function getGoogleMapsContent(locale: Locale): SEOContent {
   switch (locale) {
@@ -548,6 +815,12 @@ export function getGoogleMapsContent(locale: Locale): SEOContent {
       return googleMapsContent_de;
     case 'fr':
       return googleMapsContent_fr;
+    case 'pt':
+      return googleMapsContent_pt;
+    case 'it':
+      return googleMapsContent_it;
+    case 'ru':
+      return googleMapsContent_ru;
     case 'en':
     default:
       return googleMapsContent_en;

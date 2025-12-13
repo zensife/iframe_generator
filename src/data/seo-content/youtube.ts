@@ -517,6 +517,204 @@ export const youtubeContent_fr: SEOContent = {
   ]
 };
 
+// Portuguese content
+export const youtubeContent_pt: SEOContent = {
+  title: "Guia Completo para Incorporação do YouTube",
+  sections: [
+    {
+      title: "Por que Personalizar Seus Embeds do YouTube",
+      content: `
+        <p>A incorporação padrão do YouTube é boa, mas limitada. Nosso <strong>gerador de código de incorporação do YouTube</strong> desbloqueia recursos avançados como reprodução automática, loop e controles de privacidade aprimorados, proporcionando uma experiência de visualização superior no seu site.</p>
+      `
+    },
+    {
+      title: "Recursos em Destaque",
+      content: `
+        <p>Aprimore seus vídeos com estas configurações poderosas:</p>
+        <ul>
+          <li><strong>Reprodução Automática:</strong> Inicia o vídeo automaticamente quando carregado (nota: navegadores geralmente exigem 'Mudo' para que isso funcione).</li>
+          <li><strong>Modo de Privacidade Aprimorada:</strong> Impede o YouTube de rastrear os visitantes do seu site, a menos que eles cliquem em reproduzir. Ótimo para conformidade com o GDPR.</li>
+          <li><strong>Ocultar Controles:</strong> Crie uma aparência mais limpa removendo os controles do player.</li>
+          <li><strong>Loop e Modest Branding:</strong>  Faça o vídeo repetir ou reduza a desordem da marca YouTube.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Como Gerar o Código de Incorporação do YouTube",
+      content: `
+        <ol>
+          <li><strong>Cole a URL:</strong> Aceita links padrão (youtube.com/watch?v=...) ou links curtos (youtu.be/...).</li>
+          <li><strong>Selecione Opções:</strong> Marque caixas para reprodução automática, loop, controles e muito mais.</li>
+          <li><strong>Defina o Tamanho:</strong> Escolha 16:9 fixo ou torne-o totalmente responsivo.</li>
+          <li><strong>Obtenha o Código:</strong> Clique em copiar e adicione ao seu HTML.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Benefícios para SEO da Incorporação do YouTube",
+      content: `
+        <p>Incorporar vídeos pode aumentar significativamente o tempo de permanência na sua página, um sinal chave de classificação para o Google. Certifique-se de usar títulos descritivos e habilitar <code>loading="lazy"</code> (que nossa ferramenta faz automaticamente) para manter a velocidade da página alta.</p>
+      `
+    },
+    {
+      title: "Solução de Problemas de Reprodução Automática",
+      content: `
+        <p>O vídeo não está reproduzindo automaticamente? As políticas modernas dos navegadores bloqueiam vídeos de reprodução automática com som. Certifique-se de marcar a opção <strong>"Mudo"</strong> junto com "Reprodução Automática" para garantir que funcione no Chrome, Safari e Firefox.</p>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Como faço para um vídeo do YouTube reproduzir automaticamente?",
+      answer: "Use nosso gerador e marque 'Reprodução Automática' E 'Mudo'. A maioria dos navegadores exige que o vídeo esteja mudo para permitir a reprodução automática."
+    },
+    {
+      question: "O que é o Modo de Privacidade Aprimorada?",
+      answer: "É uma configuração (usando o domínio youtube-nocookie.com) que impede o YouTube de definir cookies de rastreamento no navegador do usuário até que ele realmente interaja com o vídeo."
+    },
+    {
+      question: "Posso fazer loop de um vídeo curto ou playlist?",
+      answer: "Sim, marque a opção 'Loop'. Para vídeos únicos, nosso gerador adiciona o ID da playlist necessário automaticamente para que o loop funcione."
+    },
+    {
+      question: "Isso é compatível com dispositivos móveis?",
+      answer: "Absolutamente. Selecione a caixa de seleção 'Tornar Responsivo' para gerar código que redimensiona perfeitamente em telas móveis."
+    }
+  ]
+};
+
+// Italian content
+export const youtubeContent_it: SEOContent = {
+  title: "Guida Completa all'Incorporamento di YouTube",
+  sections: [
+    {
+      title: "Perché Personalizzare i Tuoi Embed di YouTube",
+      content: `
+        <p>L'incorporamento predefinito di YouTube è buono, ma limitato. Il nostro <strong>generatore di codice di incorporamento YouTube</strong> sblocca funzionalità avanzate come autoplay, loop e controlli sulla privacy migliorati, offrendo un'esperienza di visualizzazione superiore sul tuo sito.</p>
+      `
+    },
+    {
+      title: "Funzionalità in Evidenza",
+      content: `
+        <p>Migliora i tuoi video con queste potenti impostazioni:</p>
+        <ul>
+          <li><strong>Autoplay:</strong> Avvia il video automaticamente al caricamento (nota: i browser richiedono spesso 'Muto' affinché funzioni).</li>
+          <li><strong>Modalità Privacy Migliorata:</strong> Impedisce a YouTube di tracciare i visitatori del tuo sito a meno che non clicchino su play. Ottimo per la conformità GDPR.</li>
+          <li><strong>Nascondi Controlli:</strong> Crea un aspetto più pulito rimuovendo i controlli del player.</li>
+          <li><strong>Loop e Branding Modesto:</strong> Fai ripetere il video o riduci il disordine del marchio YouTube.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Come Generare il Codice di Incorporamento di YouTube",
+      content: `
+        <ol>
+          <li><strong>Incolla l'URL:</strong> Accetta link standard (youtube.com/watch?v=...) o link brevi (youtu.be/...).</li>
+          <li><strong>Seleziona Opzioni:</strong> Spunta le caselle per autoplay, loop, controlli e altro.</li>
+          <li><strong>Imposta Dimensioni:</strong> Scegli 16:9 fisso o rendilo completamente responsive.</li>
+          <li><strong>Ottieni il Codice:</strong> Clicca su copia e aggiungi al tuo HTML.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Benefici SEO dell'Incorporamento di YouTube",
+      content: `
+        <p>Incorporare video può aumentare significativamente il tempo di permanenza sulla tua pagina, un segnale chiave di ranking per Google. Assicurati di usare titoli descrittivi e abilitare <code>loading="lazy"</code> (cosa che il nostro strumento fa automaticamente) per mantenere alta la velocità della pagina.</p>
+      `
+    },
+    {
+      title: "Risoluzione Problemi Autoplay",
+      content: `
+        <p>Il video non parte in automatico? Le moderne politiche dei browser bloccano i video in autoplay con audio. Assicurati di spuntare l'opzione <strong>"Muto"</strong> insieme ad "Autoplay" per garantire che funzioni su Chrome, Safari e Firefox.</p>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Come faccio partire un video YouTube in automatico?",
+      answer: "Usa il nostro generatore e spunta 'Autoplay' E 'Muto'. La maggior parte dei browser richiede che il video sia muto per consentire l'autoplay."
+    },
+    {
+      question: "Cos'è la Modalità Privacy Migliorata?",
+      answer: "È un'impostazione (usando il dominio youtube-nocookie.com) che impedisce a YouTube di impostare cookie di tracciamento nel browser dell'utente finché non interagisce effettivamente con il video."
+    },
+    {
+      question: "Posso mandare in loop un video o una playlist?",
+      answer: "Sì, spunta l'opzione 'Loop'. Per i video singoli, il nostro generatore aggiunge automaticamente l'ID playlist necessario affinché il loop funzioni."
+    },
+    {
+      question: "È compatibile con i dispositivi mobili?",
+      answer: "Assolutamente. Seleziona la casella 'Rendi Responsive' per generare codice che si ridimensiona perfettamente sugli schermi mobili."
+    }
+  ]
+};
+
+// Russian content
+export const youtubeContent_ru: SEOContent = {
+  title: "Полное руководство по встраиванию YouTube",
+  sections: [
+    {
+      title: "Зачем настраивать встраивание YouTube",
+      content: `
+        <p>Стандартное встраивание YouTube хорошо, но ограничено. Наш <strong>генератор кодов вставки YouTube</strong> открывает расширенные функции, такие как автовоспроизведение, повтор и улучшенный контроль конфиденциальности, обеспечивая превосходный опыт просмотра на вашем сайте.</p>
+      `
+    },
+    {
+      title: "Особенности",
+      content: `
+        <p>Улучшите свои видео с помощью этих мощных настроек:</p>
+        <ul>
+          <li><strong>Автовоспроизведение:</strong> Автоматически запускает видео при загрузке (примечание: браузеры часто требуют 'Без звука' для работы).</li>
+          <li><strong>Режим повышенной конфиденциальности:</strong> Запрещает YouTube отслеживать посетителей вашего сайта, пока они не нажмут кнопку воспроизведения. Отлично подходит для соответствия GDPR.</li>
+          <li><strong>Скрыть элементы управления:</strong> Создайте более чистый вид, удалив элементы управления плеером.</li>
+          <li><strong>Повтор и скромный брендинг:</strong> Зациклите видео или уменьшите количество логотипов YouTube.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Как сгенерировать код вставки YouTube",
+      content: `
+        <ol>
+          <li><strong>Вставьте URL:</strong> Принимает стандартные ссылки (youtube.com/watch?v=...) или короткие ссылки (youtu.be/...).</li>
+          <li><strong>Выберите опции:</strong> Отметьте флажки для автовоспроизведения, повтора, управления и многого другого.</li>
+          <li><strong>Установите размер:</strong> Выберите фиксированный 16:9 или сделайте его полностью адаптивным.</li>
+          <li><strong>Получите код:</strong> Нажмите копировать и добавьте в свой HTML.</li>
+        </ol>
+      `
+    },
+    {
+      title: "SEO-преимущества встраивания YouTube",
+      content: `
+        <p>Встраивание видео может значительно увеличить время пребывания на вашей странице, что является ключевым сигналом ранжирования для Google. Обязательно используйте описательные заголовки и включите <code>loading="lazy"</code> (что наш инструмент делает автоматически), чтобы поддерживать высокую скорость загрузки страницы.</p>
+      `
+    },
+    {
+      title: "Устранение неполадок с автовоспроизведением",
+      content: `
+        <p>Видео не воспроизводится автоматически? Современные политики браузеров блокируют автовоспроизведение видео со звуком. Убедитесь, что вы отметили опцию <strong>"Без звука"</strong> вместе с "Автовоспроизведением", чтобы гарантировать работу в Chrome, Safari и Firefox.</p>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Как сделать автовоспроизведение видео YouTube?",
+      answer: "Используйте наш генератор и отметьте 'Автовоспроизведение' И 'Без звука'. Большинству браузеров требуется, чтобы видео было без звука для разрешения автовоспроизведения."
+    },
+    {
+      question: "Что такое режим повышенной конфиденциальности?",
+      answer: "Это настройка (использующая домен youtube-nocookie.com), которая запрещает YouTube устанавливать файлы cookie отслеживания в браузере пользователя, пока он фактически не взаимодействует с видео."
+    },
+    {
+      question: "Могу ли я зациклить короткое видео или плейлист?",
+      answer: "Да, отметьте опцию 'Повтор'. Для одиночных видео наш генератор автоматически добавляет необходимый идентификатор плейлиста для работы цикла."
+    },
+    {
+      question: "Это совместимо с мобильными устройствами?",
+      answer: "Абсолютно. Выберите флажок 'Сделать адаптивным', чтобы сгенерировать код, который идеально масштабируется на мобильных экранах."
+    }
+  ]
+};
+
 // Get content by locale
 export function getYoutubeContent(locale: Locale): SEOContent {
   switch (locale) {
@@ -530,6 +728,12 @@ export function getYoutubeContent(locale: Locale): SEOContent {
       return youtubeContent_de;
     case 'fr':
       return youtubeContent_fr;
+    case 'pt':
+      return youtubeContent_pt;
+    case 'it':
+      return youtubeContent_it;
+    case 'ru':
+      return youtubeContent_ru;
     case 'en':
     default:
       return youtubeContent_en;

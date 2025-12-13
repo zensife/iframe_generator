@@ -403,6 +403,207 @@ export const responsiveContent_fr: SEOContent = {
   ]
 };
 
+// Portuguese content
+export const responsiveContent_pt: SEOContent = {
+  title: "Guia Completo para Iframes Responsivos",
+  sections: [
+    {
+      title: "Introdução",
+      content: `
+        <p>Num mundo mobile-first, <strong>iframes responsivos</strong> são inegociáveis. Com mais de 50% do tráfego web vindo de dispositivos móveis, um iframe de largura fixa quebrará seu layout e frustrará os usuários.</p>
+        <p>Nosso <strong>Gerador de Iframes Responsivos</strong> resolve isso criando códigos de incorporação que se adaptam automaticamente a qualquer tamanho de tela, mantendo a proporção correta.</p>
+      `
+    },
+    {
+      title: "Dois Métodos Explicados",
+      content: `
+        <p>Oferecemos duas maneiras de tornar os iframes responsivos:</p>
+        <ul>
+          <li><strong>CSS Moderno (aspect-ratio):</strong> Usa a nova propriedade CSS <code>aspect-ratio</code>. É limpo, requer menos código e é suportado por todos os navegadores modernos. Melhor para novos projetos.</li>
+          <li><strong>Hack Legado (padding-bottom):</strong> O clássico "padding-hack" usa uma div wrapper com um padding-bottom baseado em porcentagem para forçar uma proporção. É 100% compatível até com os navegadores mais antigos (como o Internet Explorer).</li>
+        </ul>
+      `
+    },
+    {
+      title: "Tutorial Passo a Passo",
+      content: `
+        <ol>
+          <li><strong>Escolha o Método:</strong> Selecione "CSS Moderno" para um código mais limpo ou "Hack Legado" para compatibilidade máxima.</li>
+          <li><strong>Defina a Proporção:</strong> As proporções comuns são 16:9 (vídeo), 4:3 (padrão), 1:1 (quadrado) ou 21:9 (ultrawide).</li>
+          <li><strong>Largura Máxima:</strong> Opcionalmente, defina uma largura máxima (ex: 800px) para evitar que o iframe fique muito grande em telas de desktop.</li>
+          <li><strong>Teste:</strong> Use a pré-visualização para ver como ele se comporta em diferentes tamanhos de tela.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Proporções Comuns",
+      content: `
+        <ul>
+          <li><strong>16:9:</strong> O padrão para vídeos do YouTube e a maioria das mídias modernas.</li>
+          <li><strong>4:3:</strong> Comum para vídeos mais antigos, apresentações ou documentos padrão.</li>
+          <li><strong>1:1:</strong> Perfeito para posts do Instagram, mapas ou widgets quadrados.</li>
+          <li><strong>21:9:</strong> Formato ultrawide, ótimo para conteúdo cinematográfico.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Solução de Problemas",
+      content: `
+        <p><strong>Transbordamento de Conteúdo:</strong> Se o conteúdo dentro do iframe for mais largo que o próprio iframe, você poderá ver barras de rolagem. Certifique-se de que o conteúdo de origem também seja responsivo.</p>
+        <p><strong>Rolagem em Móveis:</strong> No iOS, a rolagem dentro de um iframe às vezes pode ser complicada. Usar o "Hack Legado" muitas vezes proporciona uma experiência de rolagem mais estável em iPhones mais antigos.</p>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Qual a diferença entre os métodos Moderno e Legado?",
+      answer: "O moderno usa a propriedade CSS 'aspect-ratio' que é mais limpa, mas requer navegadores modernos. O legado usa um truque de preenchimento que funciona em qualquer lugar, mas requer mais código HTML."
+    },
+    {
+      question: "Como calculo a proporção?",
+      answer: "Divida a altura pela largura. Por exemplo, 9 / 16 = 0.5625 (56.25%). Nossa ferramenta calcula isso automaticamente para você."
+    },
+    {
+      question: "Posso limitar a largura do iframe?",
+      answer: "Sim, use a configuração 'Largura Máxima' para garantir que o iframe não estique demais em telas grandes de desktop."
+    }
+  ]
+};
+
+// Italian content
+export const responsiveContent_it: SEOContent = {
+  title: "Guida Completa agli Iframe Responsive",
+  sections: [
+    {
+      title: "Introduzione",
+      content: `
+        <p>In un mondo mobile-first, gli <strong>iframe responsive</strong> sono imprescindibili. Con oltre il 50% del traffico web proveniente da dispositivi mobili, un iframe a larghezza fissa romperà il tuo layout e frustrerà gli utenti.</p>
+        <p>Il nostro <strong>Generatore di Iframe Responsive</strong> risolve questo problema creando codici di embed che si adattano automaticamente a qualsiasi dimensione dello schermo mantenendo il corretto rapporto d'aspetto.</p>
+      `
+    },
+    {
+      title: "Due Metodi Spiegati",
+      content: `
+        <p>Offriamo due modi per rendere gli iframe responsive:</p>
+        <ul>
+          <li><strong>CSS Moderno (aspect-ratio):</strong> Usa la nuova proprietà CSS <code>aspect-ratio</code>. È pulito, richiede meno codice ed è supportato da tutti i browser moderni. Ideale per nuovi progetti.</li>
+          <li><strong>Hack Legacy (padding-bottom):</strong> Il classico "padding-hack" utilizza un div wrapper con un padding-bottom basato su percentuale per forzare un rapporto d'aspetto. È compatibile al 100% anche con i browser più vecchi (come Internet Explorer).</li>
+        </ul>
+      `
+    },
+    {
+      title: "Tutorial Passo-Passo",
+      content: `
+        <ol>
+          <li><strong>Scegli il Metodo:</strong> Seleziona "CSS Moderno" per un codice più pulito o "Hack Legacy" per la massima compatibilità.</li>
+          <li><strong>Imposta il Rapporto d'Aspetto:</strong> I rapporti comuni sono 16:9 (video), 4:3 (standard), 1:1 (quadrato) o 21:9 (ultrawide).</li>
+          <li><strong>Larghezza Massima:</strong> Opzionalmente imposta una larghezza massima (es. 800px) per evitare che l'iframe diventi troppo grande sugli schermi desktop.</li>
+          <li><strong>Test:</strong> Usa l'anteprima per vedere come si comporta su diverse dimensioni dello schermo.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Rapporti d'Aspetto Comuni",
+      content: `
+        <ul>
+          <li><strong>16:9:</strong> Lo standard per i video di YouTube e la maggior parte dei media moderni.
+          <li><strong>4:3:</strong> Comune per vecchi video, presentazioni o documenti standard.
+          <li><strong>1:1:</strong> Perfetto per post di Instagram, mappe o widget quadrati.
+          <li><strong>21:9:</strong> Formato ultrawide, ottimo per contenuti cinematografici.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Risoluzione dei Problemi",
+      content: `
+        <p><strong>Overflow del Contenuto:</strong> Se il contenuto all'interno dell'iframe è più largo dell'iframe stesso, potresti vedere barre di scorrimento. Assicurati che anche il contenuto sorgente sia responsive.</p>
+        <p><strong>Scorrimento su Mobile:</strong> Su iOS, lo scorrimento all'interno di un iframe può a volte essere complicato. L'uso dell'"Hack Legacy" fornisce spesso un'esperienza di scorrimento più stabile sui vecchi iPhone.</p>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "Qual è la differenza tra i metodi Moderno e Legacy?",
+      answer: "Il moderno usa la proprietà CSS 'aspect-ratio' che è più pulita ma richiede browser moderni. Il legacy usa un trucco di padding che funziona ovunque ma richiede più codice HTML."
+    },
+    {
+      question: "Come calcolo il rapporto d'aspetto?",
+      answer: "Dividi l'altezza per la larghezza. Ad esempio, 9 / 16 = 0.5625 (56.25%). Il nostro strumento lo calcola automaticamente per te."
+    },
+    {
+      question: "Posso limitare la larghezza dell'iframe?",
+      answer: "Sì, usa l'impostazione 'Larghezza Massima' per assicurarti che l'iframe non si estenda troppo su grandi schermi desktop."
+    }
+  ]
+};
+
+// Russian content
+export const responsiveContent_ru: SEOContent = {
+  title: "Полное руководство по адаптивным Iframe",
+  sections: [
+    {
+      title: "Введение",
+      content: `
+        <p>В мире, ориентированном на мобильные устройства, <strong>адаптивные (responsive) iframe</strong> обязательны. Поскольку более 50% веб-трафика поступает с мобильных устройств, iframe с фиксированной шириной нарушит вашу верстку и разочарует пользователей.</p>
+        <p>Наш <strong>Генератор адаптивных Iframe</strong> решает эту проблему, создавая коды для вставки, которые автоматически адаптируются к любому размеру экрана, сохраняя правильное соотношение сторон.</p>
+      `
+    },
+    {
+      title: "Объяснение двух методов",
+      content: `
+        <p>Мы предлагаем два способа сделать iframe адаптивными:</p>
+        <ul>
+          <li><strong>Современный CSS (aspect-ratio):</strong> Использует новое CSS-свойство <code>aspect-ratio</code>. Это чисто, требует меньше кода и поддерживается всеми современными браузерами. Лучше всего подходит для новых проектов.</li>
+          <li><strong>Традиционный хак (padding-bottom):</strong> Классический "padding-hack" использует обертку div с процентным padding-bottom для принудительного задания соотношения сторон. Он на 100% совместим даже со старейшими браузерами (такими как Internet Explorer).</li>
+        </ul>
+      `
+    },
+    {
+      title: "Пошаговое руководство",
+      content: `
+        <ol>
+          <li><strong>Выберите метод:</strong> Выберите "Современный CSS" для более чистого кода или "Традиционный хак" для максимальной совместимости.</li>
+          <li><strong>Установите соотношение сторон:</strong> Распространенные пропорции - 16:9 (видео), 4:3 (стандарт), 1:1 (квадрат) или 21:9 (ультраширокий).</li>
+          <li><strong>Максимальная ширина:</strong> Опционально установите максимальную ширину (например, 800px), чтобы iframe не становился слишком большим на экранах настольных ПК.</li>
+          <li><strong>Тест:</strong> Используйте предпросмотр, чтобы увидеть, как он ведет себя на экранах разных размеров.</li>
+        </ol>
+      `
+    },
+    {
+      title: "Распространенные соотношения сторон",
+      content: `
+        <ul>
+          <li><strong>16:9:</strong> Стандарт для видео YouTube и большинства современных медиа.</li>
+          <li><strong>4:3:</strong> Обычно для старых видео, презентаций или стандартных документов.</li>
+          <li><strong>1:1:</strong> Идеально подходит для постов Instagram, карт или квадратных виджетов.</li>
+          <li><strong>21:9:</strong> Ультраширокий формат, отлично подходит для кинематографического контента.</li>
+        </ul>
+      `
+    },
+    {
+      title: "Устранение неполадок",
+      content: `
+        <p><strong>Переполнение контента:</strong> Если контент внутри iframe шире, чем сам iframe, вы можете увидеть полосы прокрутки. Убедитесь, что исходный контент также адаптивен.</li>
+        <p><strong>Прокрутка на мобильных:</strong> На iOS прокрутка внутри iframe иногда может быть сложной. Использование "Традиционного хака" часто обеспечивает более стабильную прокрутку на старых iPhone.</p>
+      `
+    }
+  ],
+  faq: [
+    {
+      question: "В чем разница между современным и традиционным методами?",
+      answer: "Современный использует свойство CSS 'aspect-ratio', которое чище, но требует современных браузеров. Традиционный использует трюк с отступами, который работает везде, но требует больше HTML-кода."
+    },
+    {
+      question: "Как рассчитать соотношение сторон?",
+      answer: "Разделите высоту на ширину. Например, 9 / 16 = 0.5625 (56.25%). Наш инструмент рассчитывает это автоматически для вас."
+    },
+    {
+      question: "Могу ли я ограничить ширину iframe?",
+      answer: "Да, используйте настройку 'Максимальная ширина', чтобы iframe не растягивался слишком широко на больших экранах."
+    }
+  ]
+};
+
 // Get content by locale
 export function getResponsiveContent(locale: Locale): SEOContent {
   switch (locale) {
@@ -416,6 +617,12 @@ export function getResponsiveContent(locale: Locale): SEOContent {
       return responsiveContent_de;
     case 'fr':
       return responsiveContent_fr;
+    case 'pt':
+      return responsiveContent_pt;
+    case 'it':
+      return responsiveContent_it;
+    case 'ru':
+      return responsiveContent_ru;
     case 'en':
     default:
       return responsiveContent_en;
