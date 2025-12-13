@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { setRequestLocale, getTranslations } from 'next-intl/server';
 import ResponsiveGenerator from '@/components/tools/ResponsiveGenerator';
 import { ContentSection } from '@/components/content/ContentSection';
 import { FAQSection } from '@/components/content/FAQSection';
@@ -7,6 +7,7 @@ import { getResponsiveContent } from '@/data/seo-content';
 import { getResponsiveMetadata } from '@/data/seo-metadata';
 import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
+import styles from '@/styles/page.module.css';
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
@@ -43,9 +44,15 @@ export default async function Page({ params }: Props) {
     setRequestLocale(locale);
 
     const content = getResponsiveContent(locale as Locale);
+    const t = await getTranslations({ locale, namespace: 'responsive' });
 
     return (
         <>
+            <section className={styles.hero}>
+                <h1 className={styles.title}>{t('title')}</h1>
+                <p className={styles.subtitle}>{t('subtitle')}</p>
+            </section>
+
             <ResponsiveGenerator />
             <div className="container mx-auto px-4 max-w-4xl">
                 <ContentSection title={content.title}>

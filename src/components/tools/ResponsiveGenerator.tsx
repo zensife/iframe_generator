@@ -6,8 +6,13 @@ import styles from '@/styles/page.module.css';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
-import { CodeBlock } from '@/components/ui/CodeBlock';
+import dynamic from 'next/dynamic';
 import { Smartphone, Monitor, Layout, Code, Tablet, Laptop, Maximize2, Minimize2 } from 'lucide-react';
+
+const CodeBlock = dynamic(() => import('@/components/ui/CodeBlock').then(mod => mod.CodeBlock), {
+    loading: () => <div className="h-40 bg-gray-100 dark:bg-gray-800 animate-pulse rounded-md" />,
+    ssr: false
+});
 
 export default function ResponsiveGenerator() {
     const t = useTranslations('responsive');
@@ -64,22 +69,18 @@ export default function ResponsiveGenerator() {
     }, [url, aspectRatio, method, maxWidth]);
 
     // Calculate scale factor for mobile preview
+    // Calculate scale factor for mobile preview
     useEffect(() => {
         const calculateScale = () => {
             if (!previewContainerRef.current || typeof window === 'undefined') return;
 
-            const containerWidth = previewContainerRef.current.offsetWidth;
-            // For responsive iframe, the width is 100% of container, so we don't need scaling unless we want to simulate a wider screen?
-            // Actually, for responsive iframes, they adapt to the container. 
-            // But if the user wants to see how it looks on a "Desktop" size while on mobile, scaling might be useful?
-            // However, the current logic for other tools was based on fixed pixel widths.
-            // For responsive, let's just keep it simple: it fills the container.
-            // But if maxWidth is set to something larger than container, we might want to scale?
-
-            // Let's implement scaling if maxWidth is in pixels and larger than container
+            // Only measure if maxWidth implies scaling is needed (e.g. pixels). 
+            // Percentage widths (default) don't need scaling logic that forces reflow.
             if (maxWidth.endsWith('px')) {
+                const containerWidth = previewContainerRef.current.offsetWidth;
                 const targetWidth = parseFloat(maxWidth);
                 const isMobile = window.innerWidth < 1024;
+
                 if (isMobile && targetWidth > containerWidth - 100) {
                     const scale = Math.max(0.2, Math.min(1, (containerWidth - 100) / targetWidth));
                     setScaleFactor(scale);
@@ -91,9 +92,14 @@ export default function ResponsiveGenerator() {
             }
         };
 
-        calculateScale();
-        window.addEventListener('resize', calculateScale);
-        return () => window.removeEventListener('resize', calculateScale);
+        // Don't recalculate on every render, only when maxWidth changes
+        if (maxWidth.endsWith('px')) {
+            calculateScale();
+            window.addEventListener('resize', calculateScale);
+            return () => window.removeEventListener('resize', calculateScale);
+        } else {
+            setScaleFactor(1);
+        }
     }, [maxWidth]);
 
 
@@ -101,12 +107,8 @@ export default function ResponsiveGenerator() {
         <main className={styles.main}>
             <div className="gradient-bg" />
 
-            <section className={styles.hero}>
-                <h1 className={styles.title}>{t('title')}</h1>
-                <p className={styles.subtitle}>
-                    {t('subtitle')}
-                </p>
-            </section>
+            <div className="gradient-bg" />
+            {/* Header moved to page.tsx for better LCP */}
 
             <div className={styles.grid}>
                 {/* Controls */}
