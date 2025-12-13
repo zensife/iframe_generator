@@ -13,6 +13,9 @@ const languageNames: Record<Locale, string> = {
     ja: '日本語',
     de: 'Deutsch',
     fr: 'Français',
+    pt: 'Português',
+    it: 'Italiano',
+    ru: 'Русский',
 };
 
 const languageFlags: Record<Locale, string> = {
@@ -22,6 +25,9 @@ const languageFlags: Record<Locale, string> = {
     ja: '🇯🇵',
     de: '🇩🇪',
     fr: '🇫🇷',
+    pt: '🇧🇷',
+    it: '🇮🇹',
+    ru: '🇷🇺',
 };
 
 export function LanguageSwitcher() {
