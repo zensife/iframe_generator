@@ -61,6 +61,36 @@ const metadata_fr: PageMetadata = {
     }
 };
 
+const metadata_pt: PageMetadata = {
+    title: 'Gerador de Iframe - Ferramentas Gratuitas de Código de Incorporação',
+    description: 'Gere códigos iframe responsivos para sites, Google Maps e vídeos do YouTube. Gerador de código de incorporação gratuito e amigável para SEO com pré-visualização ao vivo.',
+    keywords: 'gerador de iframe, incorporar google maps, código de incorporação youtube, iframe responsivo, gerador de código de incorporação',
+    openGraph: {
+        title: 'Gerador de Iframe - Ferramentas Gratuitas de Código de Incorporação',
+        description: 'Gere códigos iframe responsivos para sites, Google Maps e vídeos do YouTube. Gerador de código de incorporação gratuito e amigável para SEO com pré-visualização ao vivo.',
+    }
+};
+
+const metadata_it: PageMetadata = {
+    title: 'Generatore di Iframe - Strumenti Gratuiti per Codici di Incorporamento',
+    description: 'Genera codici iframe responsive per siti web, Google Maps e video di YouTube. Generatore di codice di incorporamento gratuito e SEO friendly con anteprima dal vivo.',
+    keywords: 'generatore iframe, incorpora google maps, codice incorporamento youtube, iframe responsive, generatore codice incorporamento',
+    openGraph: {
+        title: 'Generatore di Iframe - Strumenti Gratuiti per Codici di Incorporamento',
+        description: 'Genera codici iframe responsive per siti web, Google Maps e video di YouTube. Generatore di codice di incorporamento gratuito e SEO friendly con anteprima dal vivo.',
+    }
+};
+
+const metadata_ru: PageMetadata = {
+    title: 'Генератор Iframe - Бесплатные инструменты для встраивания кода',
+    description: 'Создавайте адаптивные коды iframe для веб-сайтов, Google Maps и видео YouTube. Бесплатный, SEO-дружественный генератор кодов вставки с живым предпросмотром.',
+    keywords: 'генератор iframe, вставка google maps, код вставки youtube, адаптивный iframe, генератор кода вставки',
+    openGraph: {
+        title: 'Генератор Iframe - Бесплатные инструменты для встраивания кода',
+        description: 'Создавайте адаптивные коды iframe для веб-сайтов, Google Maps и видео YouTube. Бесплатный, SEO-дружественный генератор кодов вставки с живым предпросмотром.',
+    }
+};
+
 export function getHomeMetadata(locale: Locale): PageMetadata {
     switch (locale) {
         case 'zh': return metadata_zh;
@@ -68,6 +98,9 @@ export function getHomeMetadata(locale: Locale): PageMetadata {
         case 'ja': return metadata_ja;
         case 'de': return metadata_de;
         case 'fr': return metadata_fr;
+        case 'pt': return metadata_pt;
+        case 'it': return metadata_it;
+        case 'ru': return metadata_ru;
         case 'en':
         default: return metadata_en;
     }

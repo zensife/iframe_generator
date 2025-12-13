@@ -61,6 +61,36 @@ const metadata_fr: PageMetadata = {
     }
 };
 
+const metadata_pt: PageMetadata = {
+    title: 'Gerador de Embed do Google Maps - Ferramenta Iframe Gratuita (Sem Chave API)',
+    description: 'Gere código de incorporação do Google Maps instantaneamente. Ferramenta gratuita para incorporar Google Maps em seu site sem chave API. Crie códigos iframe responsivos com zoom personalizado e tipos de mapa.',
+    keywords: ['incorporação google map', 'gerador de incorporação google maps', 'incorporar google map', 'gerador de código de incorporação google map', 'incorporar google map no site', 'código iframe google map'],
+    openGraph: {
+        title: 'Gerador de Embed do Google Maps - Ferramenta Iframe Gratuita (Sem Chave API)',
+        description: 'Gere código de incorporação do Google Maps instantaneamente. Ferramenta gratuita para incorporar Google Maps em seu site sem chave API. Crie códigos iframe responsivos com zoom personalizado e tipos de mapa.',
+    }
+};
+
+const metadata_it: PageMetadata = {
+    title: 'Generatore di Embed di Google Maps - Strumento Iframe Gratuito (Nessuna Chiave API)',
+    description: 'Genera codice di incorporamento di Google Maps istantaneamente. Strumento gratuito per incorporare Google Maps sul tuo sito web senza chiave API. Crea codici iframe responsive con zoom e tipi di mappa personalizzati.',
+    keywords: ['incorporamento google map', 'generatore di incorporamento google maps', 'incorpora google map', 'generatore codice incorporamento google map', 'incorpora google map su sito web', 'codice iframe google map'],
+    openGraph: {
+        title: 'Generatore di Embed di Google Maps - Strumento Iframe Gratuito (Nessuna Chiave API)',
+        description: 'Genera codice di incorporamento di Google Maps istantaneamente. Strumento gratuito per incorporare Google Maps sul tuo sito web senza chiave API. Crea codici iframe responsive con zoom e tipi di mappa personalizzati.',
+    }
+};
+
+const metadata_ru: PageMetadata = {
+    title: 'Генератор встраивания Google Maps - Бесплатный инструмент Iframe (без ключа API)',
+    description: 'Мгновенно создавайте код встраивания Google Maps. Бесплатный инструмент для встраивания Google Maps на ваш веб-сайт без ключа API. Создавайте адаптивные коды iframe с настраиваемым масштабом и типами карт.',
+    keywords: ['встраивание google map', 'генератор встраивания google maps', 'встроить google map', 'генератор кода вставки google map', 'встроить google map на сайт', 'код iframe google map'],
+    openGraph: {
+        title: 'Генератор встраивания Google Maps - Бесплатный инструмент Iframe (без ключа API)',
+        description: 'Мгновенно создавайте код встраивания Google Maps. Бесплатный инструмент для встраивания Google Maps на ваш веб-сайт без ключа API. Создавайте адаптивные коды iframe с настраиваемым масштабом и типами карт.',
+    }
+};
+
 export function getGoogleMapsMetadata(locale: Locale): PageMetadata {
     switch (locale) {
         case 'zh': return metadata_zh;
@@ -68,6 +98,9 @@ export function getGoogleMapsMetadata(locale: Locale): PageMetadata {
         case 'ja': return metadata_ja;
         case 'de': return metadata_de;
         case 'fr': return metadata_fr;
+        case 'pt': return metadata_pt;
+        case 'it': return metadata_it;
+        case 'ru': return metadata_ru;
         case 'en':
         default: return metadata_en;
     }

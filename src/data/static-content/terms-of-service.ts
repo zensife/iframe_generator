@@ -195,6 +195,99 @@ const terms_fr: TermsOfServiceContent = {
     ]
 };
 
+const terms_pt: TermsOfServiceContent = {
+    title: 'Termos de Serviço',
+    lastUpdated: 'Última atualização: Dezembro de 2025',
+    sections: [
+        {
+            title: '1. Acordo com os Termos',
+            content: 'Ao acessar nosso site no Iframe Generator, você concorda em ficar vinculado a estes termos de serviço, todas as leis e regulamentos aplicáveis, e concorda que é responsável pelo cumprimento de quaisquer leis locais aplicáveis. Se você não concordar com algum destes termos, está proibido de usar ou acessar este site.'
+        },
+        {
+            title: '2. Licença de Uso',
+            content: 'É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site do Iframe Generator apenas para visualização transitória pessoal e não comercial.'
+        },
+        {
+            title: '3. Isenção de Responsabilidade',
+            content: 'Os materiais no site do Iframe Generator são fornecidos "como estão". O Iframe Generator não oferece garantias, expressas ou implícitas, e por meio deste isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a uma finalidade específica ou não violação de propriedade intelectual ou outra violação de direitos.'
+        },
+        {
+            title: '4. Limitações',
+            content: 'Em nenhum caso o Iframe Generator ou seus fornecedores serão responsáveis por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro, ou devido à interrupção dos negócios) decorrentes do uso ou incapacidade de usar os materiais no site do Iframe Generator.'
+        },
+        {
+            title: '5. Precisão dos Materiais',
+            content: 'Os materiais exibidos no site do Iframe Generator podem incluir erros técnicos, tipográficos ou fotográficos. O Iframe Generator não garante que qualquer um dos materiais em seu site seja preciso, completo ou atual.'
+        },
+        {
+            title: '6. Modificações',
+            content: 'O Iframe Generator pode revisar estes termos de serviço para seu site a qualquer momento sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.'
+        }
+    ]
+};
+
+const terms_it: TermsOfServiceContent = {
+    title: 'Termini di Servizio',
+    lastUpdated: 'Ultimo aggiornamento: Dicembre 2025',
+    sections: [
+        {
+            title: '1. Accettazione dei Termini',
+            content: 'Accedendo al nostro sito web Iframe Generator, accetti di essere vincolato da questi termini di servizio, da tutte le leggi e normative applicabili e accetti di essere responsabile della conformità a qualsiasi legge locale applicabile. Se non sei d\'accordo con uno qualsiasi di questi termini, ti è proibito utilizzare o accedere a questo sito.'
+        },
+        {
+            title: '2. Licenza d\'Uso',
+            content: 'È concesso il permesso di scaricare temporaneamente una copia dei materiali (informazioni o software) sul sito web di Iframe Generator solo per la visualizzazione transitoria personale e non commerciale.'
+        },
+        {
+            title: '3. Dichiarazione di limitazione di responsabilità',
+            content: 'I materiali sul sito web di Iframe Generator sono forniti "così come sono". Iframe Generator non fornisce alcuna garanzia, esplicita o implicita, e con la presente declina e nega tutte le altre garanzie, incluse, senza limitazioni, garanzie implicite o condizioni di commerciabilità, idoneità per uno scopo particolare o non violazione della proprietà intellettuale o altra violazione dei diritti.'
+        },
+        {
+            title: '4. Limitazioni',
+            content: 'In nessun caso Iframe Generator o i suoi fornitori saranno responsabili per eventuali danni (inclusi, senza limitazioni, danni per perdita di dati o profitti, o dovuti a interruzione dell\'attività) derivanti dall\'uso o dall\'impossibilità di utilizzare i materiali sul sito web di Iframe Generator.'
+        },
+        {
+            title: '5. Accuratezza dei Materiali',
+            content: 'I materiali che appaiono sul sito web di Iframe Generator potrebbero includere errori tecnici, tipografici o fotografici. Iframe Generator non garantisce che nessuno dei materiali sul suo sito web sia accurato, completo o aggiornato.'
+        },
+        {
+            title: '6. Modifiche',
+            content: 'Iframe Generator può rivedere questi termini di servizio per il suo sito web in qualsiasi momento senza preavviso. Utilizzando questo sito web accetti di essere vincolato dalla versione in vigore al momento di questi termini di servizio.'
+        }
+    ]
+};
+
+const terms_ru: TermsOfServiceContent = {
+    title: 'Условия использования',
+    lastUpdated: 'Последнее обновление: Декабрь 2025',
+    sections: [
+        {
+            title: '1. Согласие с условиями',
+            content: 'Заходя на наш веб-сайт Iframe Generator, вы соглашаетесь соблюдать эти условия использования, все применимые законы и правила, а также соглашаетесь с тем, что вы несете ответственность за соблюдение любых применимых местных законов. Если вы не согласны с каким-либо из этих условий, вам запрещено использовать этот сайт или получать к нему доступ.'
+        },
+        {
+            title: '2. Лицензия на использование',
+            content: 'Разрешается временно загрузить одну копию материалов (информации или программного обеспечения) на веб-сайте Iframe Generator только для личного, некоммерческого временного просмотра.'
+        },
+        {
+            title: '3. Отказ от ответственности',
+            content: 'Материалы на веб-сайте Iframe Generator предоставляются на условиях «как есть». Iframe Generator не дает никаких гарантий, явных или подразумеваемых, и настоящим отказывается от всех других гарантий и отрицает их, включая, помимо прочего, подразумеваемые гарантии или условия товарной пригодности, пригодности для определенной цели или ненарушения прав интеллектуальной собственности или других прав.'
+        },
+        {
+            title: '4. Ограничения',
+            content: 'Ни при каких обстоятельствах Iframe Generator или его поставщики не несут ответственности за любой ущерб (включая, помимо прочего, ущерб от потери данных или прибыли или из-за прерывания деятельности), возникший в результате использования или невозможности использования материалов на веб-сайте Iframe Generator.'
+        },
+        {
+            title: '5. Точность материалов',
+            content: 'Материалы, появляющиеся на веб-сайте Iframe Generator, могут содержать технические, типографские или фотографические ошибки. Iframe Generator не гарантирует, что какие-либо материалы на его веб-сайте являются точными, полными или актуальными.'
+        },
+        {
+            title: '6. Модификации',
+            content: 'Iframe Generator может пересматривать эти условия использования для своего веб-сайта в любое время без предварительного уведомления. Используя этот веб-сайт, вы соглашаетесь соблюдать текущую версию этих условий использования.'
+        }
+    ]
+};
+
 export function getTermsOfServiceContent(locale: Locale): TermsOfServiceContent {
     switch (locale) {
         case 'zh': return terms_zh;
@@ -202,6 +295,9 @@ export function getTermsOfServiceContent(locale: Locale): TermsOfServiceContent 
         case 'ja': return terms_jp;
         case 'de': return terms_de;
         case 'fr': return terms_fr;
+        case 'pt': return terms_pt;
+        case 'it': return terms_it;
+        case 'ru': return terms_ru;
         case 'en':
         default: return terms_en;
     }

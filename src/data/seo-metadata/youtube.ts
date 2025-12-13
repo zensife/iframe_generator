@@ -61,6 +61,36 @@ const metadata_fr: PageMetadata = {
     }
 };
 
+const metadata_pt: PageMetadata = {
+    title: 'Gerador de Código de Incorporação do YouTube - Ferramenta Iframe Gratuita',
+    description: 'Gere código de incorporação do YouTube instantaneamente. Gerador gratuito com reprodução automática, loop, modo de privacidade, horários de início personalizados e código iframe responsivo para qualquer site.',
+    keywords: ['gerador de código de incorporação youtube', 'código de incorporação youtube', 'incorporar vídeo youtube', 'obter código de incorporação youtube', 'gerador iframe youtube', 'ferramenta de código de incorporação youtube'],
+    openGraph: {
+        title: 'Gerador de Código de Incorporação do YouTube - Ferramenta Iframe Gratuita',
+        description: 'Crie códigos de incorporação personalizados do YouTube com reprodução automática, loop, modo de privacidade aprimorada e opções de iframe responsivo.',
+    }
+};
+
+const metadata_it: PageMetadata = {
+    title: 'Generatore di Codice di Incorporamento YouTube - Strumento Iframe Gratuito',
+    description: 'Genera codice di incorporamento di YouTube istantaneamente. Generatore gratuito con autoplay, loop, modalità privacy, orari di inizio personalizzati e codice iframe responsive per qualsiasi sito web.',
+    keywords: ['generatore codice incorporamento youtube', 'codice incorporamento youtube', 'incorpora video youtube', 'ottieni codice incorporamento youtube', 'generatore iframe youtube', 'strumento codice incorporamento youtube'],
+    openGraph: {
+        title: 'Generatore di Codice di Incorporamento YouTube - Strumento Iframe Gratuito',
+        description: 'Crea codici di incorporamento YouTube personalizzati con autoplay, loop, modalità privacy avanzata e opzioni iframe responsive.',
+    }
+};
+
+const metadata_ru: PageMetadata = {
+    title: 'Генератор кода вставки YouTube - Бесплатный инструмент Iframe',
+    description: 'Мгновенно создавайте код вставки YouTube. Бесплатный генератор с автовоспроизведением, повтором, режимом конфиденциальности, настраиваемым временем начала и адаптивным кодом iframe для любого веб-сайта.',
+    keywords: ['генератор кода вставки youtube', 'код вставки youtube', 'встроить видео youtube', 'получить код вставки youtube', 'генератор iframe youtube', 'инструмент кода вставки youtube'],
+    openGraph: {
+        title: 'Генератор кода вставки YouTube - Бесплатный инструмент Iframe',
+        description: 'Создавайте собственные коды вставки YouTube с автовоспроизведением, повтором, режимом повышенной конфиденциальности и опциями адаптивного iframe.',
+    }
+};
+
 export function getYoutubeMetadata(locale: Locale): PageMetadata {
     switch (locale) {
         case 'zh': return metadata_zh;
@@ -68,6 +98,9 @@ export function getYoutubeMetadata(locale: Locale): PageMetadata {
         case 'ja': return metadata_ja;
         case 'de': return metadata_de;
         case 'fr': return metadata_fr;
+        case 'pt': return metadata_pt;
+        case 'it': return metadata_it;
+        case 'ru': return metadata_ru;
         case 'en':
         default: return metadata_en;
     }

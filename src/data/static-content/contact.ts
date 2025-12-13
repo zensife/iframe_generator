@@ -70,6 +70,36 @@ const contact_fr: ContactContent = {
     }
 };
 
+const contact_pt: ContactContent = {
+    title: 'Fale Conosco',
+    description: 'Entre em contato com a equipe do Gerador de Iframe para suporte, feedback ou dúvidas.',
+    intro: 'Tem alguma dúvida, sugestão ou encontrou um bug? Gostaríamos muito de ouvir você! Embora sejamos uma equipe pequena, fazemos o possível para responder a todas as perguntas dentro de 24 a 48 horas.',
+    email: {
+        title: 'Envie-nos um e-mail',
+        description: 'Para suporte, feedback, solicitações de recursos e dúvidas gerais.'
+    }
+};
+
+const contact_it: ContactContent = {
+    title: 'Contattaci',
+    description: 'Mettiti in contatto con il team di Iframe Generator per supporto, feedback o richieste.',
+    intro: 'Hai una domanda, un suggerimento o hai trovato un bug? Ci piacerebbe sentirti! Anche se siamo un piccolo team, facciamo del nostro meglio per rispondere a tutte le richieste entro 24-48 ore.',
+    email: {
+        title: 'Inviaci un\'e-mail',
+        description: 'Per supporto, feedback, richieste di funzionalità e domande generali.'
+    }
+};
+
+const contact_ru: ContactContent = {
+    title: 'Свяжитесь с нами',
+    description: 'Свяжитесь с командой Генератора Iframe для поддержки, отзывов или запросов.',
+    intro: 'У вас есть вопрос, предложение или вы нашли ошибку? Мы будем рады услышать от вас! Несмотря на то, что мы небольшая команда, мы стараемся отвечать на все запросы в течение 24-48 часов.',
+    email: {
+        title: 'Напишите нам',
+        description: 'Для поддержки, отзывов, запросов функций и общих вопросов.'
+    }
+};
+
 export function getContactContent(locale: Locale): ContactContent {
     switch (locale) {
         case 'zh': return contact_zh;
@@ -77,6 +107,9 @@ export function getContactContent(locale: Locale): ContactContent {
         case 'ja': return contact_jp;
         case 'de': return contact_de;
         case 'fr': return contact_fr;
+        case 'pt': return contact_pt;
+        case 'it': return contact_it;
+        case 'ru': return contact_ru;
         case 'en':
         default: return contact_en;
     }

@@ -244,6 +244,123 @@ const privacy_fr: PrivacyPolicyContent = {
     ]
 };
 
+const privacy_pt: PrivacyPolicyContent = {
+    title: 'Política de Privacidade',
+    lastUpdated: 'Última atualização: Dezembro de 2025',
+    sections: [
+        {
+            title: '1. Introdução',
+            content: 'Bem-vindo ao Gerador de Iframe ("nós", "nosso" ou "nos"). Respeitamos sua privacidade e estamos comprometidos em proteger seus dados pessoais. Esta política de privacidade irá informá-lo sobre como cuidamos de seus dados pessoais quando você visita nosso site e lhe informará sobre seus direitos de privacidade e como a lei o protege.'
+        },
+        {
+            title: '2. Dados que Coletamos',
+            content: 'Atualmente não exigimos que você crie uma conta para usar nossas ferramentas. Podemos coletar:',
+            list: [
+                'Dados de Uso: Informações sobre como você usa nosso site, produtos e serviços.',
+                'Dados Técnicos: Endereço de protocolo de internet (IP), tipo e versão do navegador, configuração de fuso horário e localização, tipos e versões de plug-ins do navegador, sistema operacional e plataforma.'
+            ]
+        },
+        {
+            title: '3. Como Usamos Seus Dados',
+            content: 'Só usaremos seus dados pessoais quando a lei nos permitir. Mais comumente, usamos seus dados pessoais nas seguintes circunstâncias:',
+            list: [
+                'Para melhorar nosso site e serviços.',
+                'Para analisar como os usuários usam nosso site.'
+            ]
+        },
+        {
+            title: '4. Cookies',
+            content: 'Usamos cookies para distingui-lo de outros usuários do nosso site. Isso nos ajuda a fornecer a você uma boa experiência ao navegar em nosso site e também nos permite melhorar nosso site.'
+        },
+        {
+            title: '5. Links de Terceiros',
+            content: 'Este site pode incluir links para sites, plug-ins e aplicativos de terceiros. Clicar nesses links ou habilitar essas conexões pode permitir que terceiros coletem ou compartilhem dados sobre você. Não controlamos esses sites de terceiros e não somos responsáveis por suas declarações de privacidade.'
+        },
+        {
+            title: '6. Fale Conosco',
+            content: 'Se você tiver alguma dúvida sobre esta política de privacidade ou sobre nossas práticas de privacidade, entre em contato conosco.'
+        }
+    ]
+};
+
+const privacy_it: PrivacyPolicyContent = {
+    title: 'Informativa sulla Privacy',
+    lastUpdated: 'Ultimo aggiornamento: Dicembre 2025',
+    sections: [
+        {
+            title: '1. Introduzione',
+            content: 'Benvenuto su Iframe Generator ("noi", "nostro" o "ci"). Rispettiamo la tua privacy e ci impegniamo a proteggere i tuoi dati personali. Questa informativa sulla privacy ti informerà su come gestiamo i tuoi dati personali quando visiti il nostro sito web e ti informerà sui tuoi diritti alla privacy e su come la legge ti protegge.'
+        },
+        {
+            title: '2. Dati che Raccogliamo',
+            content: 'Attualmente non richiediamo la creazione di un account per utilizzare i nostri strumenti. Potremmo raccogliere:',
+            list: [
+                'Dati di Utilizzo: Informazioni su come utilizzi il nostro sito web, prodotti e servizi.',
+                'Dati Tecnici: Indirizzo IP (Internet Protocol), tipo e versione del browser, impostazione del fuso orario e posizione, tipi e versioni dei plug-in del browser, sistema operativo e piattaforma.'
+            ]
+        },
+        {
+            title: '3. Come Utilizziamo i Tuoi Dati',
+            content: 'Utilizzeremo i tuoi dati personali solo quando la legge ce lo consente. Più comunemente, utilizziamo i tuoi dati personali nelle seguenti circostanze:',
+            list: [
+                'Per migliorare il nostro sito web e i nostri servizi.',
+                'Per analizzare come gli utenti utilizzano il nostro sito web.'
+            ]
+        },
+        {
+            title: '4. Cookie',
+            content: 'Utilizziamo i cookie per distinguerti dagli altri utenti del nostro sito web. Questo ci aiuta a fornirti una buona esperienza quando navighi sul nostro sito web e ci consente anche di migliorare il nostro sito.'
+        },
+        {
+            title: '5. Link di Terze Parti',
+            content: 'Questo sito web può includere link a siti web, plug-in e applicazioni di terze parti. Cliccare su quei link o abilitare quelle connessioni può consentire a terze parti di raccogliere o condividere dati su di te. Non controlliamo questi siti web di terze parti e non siamo responsabili delle loro informative sulla privacy.'
+        },
+        {
+            title: '6. Contattaci',
+            content: 'Se hai domande su questa politica sulla privacy o sulle nostre pratiche sulla privacy, ti preghiamo di contattarci.'
+        }
+    ]
+};
+
+const privacy_ru: PrivacyPolicyContent = {
+    title: 'Политика конфиденциальности',
+    lastUpdated: 'Последнее обновление: Декабрь 2025',
+    sections: [
+        {
+            title: '1. Введение',
+            content: 'Добро пожаловать в Генератор Iframe («мы», «наш» или «нас»). Мы уважаем вашу конфиденциальность и обязуемся защищать ваши персональные данные. Эта политика конфиденциальности проинформирует вас о том, как мы заботимся о ваших персональных данных, когда вы посещаете наш веб-сайт, и расскажет вам о ваших правах на конфиденциальность и о том, как закон защищает вас.'
+        },
+        {
+            title: '2. Данные, которые мы собираем',
+            content: 'В настоящее время мы не требуем создания учетной записи для использования наших инструментов. Мы можем собирать:',
+            list: [
+                'Данные об использовании: Информация о том, как вы используете наш веб-сайт, продукты и услуги.',
+                'Технические данные: IP-адрес, тип и версия браузера, настройки часового пояса и местоположение, типы и версии плагинов браузера, операционная система и платформа.'
+            ]
+        },
+        {
+            title: '3. Как мы используем ваши данные',
+            content: 'Мы будем использовать ваши персональные данные только в тех случаях, когда это разрешено законом. Чаще всего мы используем ваши персональные данные в следующих обстоятельствах:',
+            list: [
+                'Для улучшения нашего веб-сайта и услуг.',
+                'Для анализа того, как пользователи используют наш веб-сайт.'
+            ]
+        },
+        {
+            title: '4. Файлы cookie',
+            content: 'Мы используем файлы cookie, чтобы отличать вас от других пользователей нашего веб-сайта. Это помогает нам обеспечивать вам удобство при просмотре нашего веб-сайта, а также позволяет нам улучшать наш сайт.'
+        },
+        {
+            title: '5. Сторонние ссылки',
+            content: 'Этот веб-сайт может содержать ссылки на сторонние веб-сайты, плагины и приложения. Нажатие на эти ссылки или включение этих соединений может позволить третьим лицам собирать или передавать данные о вас. Мы не контролируем эти сторонние веб-сайты и не несем ответственности за их заявления о конфиденциальности.'
+        },
+        {
+            title: '6. Свяжитесь с нами',
+            content: 'Если у вас есть какие-либо вопросы об этой политике конфиденциальности или нашей практике конфиденциальности, пожалуйста, свяжитесь с нами.'
+        }
+    ]
+};
+
 export function getPrivacyPolicyContent(locale: Locale): PrivacyPolicyContent {
     switch (locale) {
         case 'zh': return privacy_zh;
@@ -251,6 +368,9 @@ export function getPrivacyPolicyContent(locale: Locale): PrivacyPolicyContent {
         case 'ja': return privacy_jp;
         case 'de': return privacy_de;
         case 'fr': return privacy_fr;
+        case 'pt': return privacy_pt;
+        case 'it': return privacy_it;
+        case 'ru': return privacy_ru;
         case 'en':
         default: return privacy_en;
     }

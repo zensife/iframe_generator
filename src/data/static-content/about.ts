@@ -177,6 +177,84 @@ const about_fr: AboutContent = {
     }
 };
 
+const about_pt: AboutContent = {
+    title: 'Sobre Nós',
+    description: 'Saiba mais sobre o Gerador de Iframe, nossa missão e por que criamos as melhores ferramentas gratuitas de iframe online.',
+    sections: {
+        intro: 'Bem-vindo ao <strong>Gerador de Iframe</strong>, a ferramenta mais abrangente e fácil de usar para criar códigos de incorporação de iframe responsivos.',
+        mission: {
+            title: 'Nossa Missão',
+            content: 'Acreditamos que incorporar conteúdo na web deve ser simples, acessível e responsivo por padrão. Seja você um desenvolvedor, criador de conteúdo ou proprietário de uma empresa, não deveria ter que lutar com HTML ou CSS complexos apenas para compartilhar um mapa ou um vídeo. Nossa missão é fornecer ferramentas gratuitas e de alta qualidade que resolvam esses desafios comuns de desenvolvimento web.'
+        },
+        whyBuilt: {
+            title: 'Por que Construímos Isso',
+            content: 'A web está evoluindo, e o tráfego móvel agora representa mais da metade de todo o uso da internet. Iframes tradicionais geralmente são estáticos e quebram em telas menores. Vimos a necessidade de uma ferramenta que priorize a <strong>responsividade</strong> e as <strong>melhores práticas de SEO</strong> desde o início.'
+        },
+        offer: {
+            title: 'O Que Oferecemos',
+            items: [
+                '<strong>Gerador de Iframe:</strong> Crie iframes personalizados para qualquer URL.',
+                '<strong>Incorporação do Google Maps:</strong> Gere incorporações de mapas sem uma chave de API.',
+                '<strong>Incorporação do YouTube:</strong> Personalize players do YouTube com opções avançadas.',
+                '<strong>Verificador de Responsividade:</strong> Verifique se suas incorporações ficam ótimas em todos os dispositivos.'
+            ]
+        },
+        conclusion: 'Obrigado por usar nossas ferramentas. Estamos constantemente melhorando e adicionando novos recursos com base no seu feedback.'
+    }
+};
+
+const about_it: AboutContent = {
+    title: 'Chi Siamo',
+    description: 'Scopri di più su Iframe Generator, la nostra missione e perché abbiamo creato i migliori strumenti iframe online gratuiti.',
+    sections: {
+        intro: 'Benvenuto su <strong>Iframe Generator</strong>, lo strumento più completo e facile da usare per creare codici di incorporamento iframe responsive.',
+        mission: {
+            title: 'La Nostra Missione',
+            content: 'Crediamo che l\'incorporamento di contenuti sul web debba essere semplice, accessibile e responsive per impostazione predefinita. Che tu sia uno sviluppatore, un creatore di contenuti o un imprenditore, non dovresti dover combattere con HTML o CSS complessi solo per condividere una mappa o un video. La nostra missione è fornire strumenti gratuiti e di alta qualità che risolvano queste comuni sfide di sviluppo web.'
+        },
+        whyBuilt: {
+            title: 'Perché Abbiamo Costruito Questo',
+            content: 'Il web si sta evolvendo e il traffico mobile rappresenta ora oltre la metà di tutto l\'utilizzo di Internet. Gli iframe tradizionali sono spesso statici e si rompono su schermi più piccoli. Abbiamo visto la necessità di uno strumento che dia priorità alla <strong>responsività</strong> e alle <strong>migliori pratiche SEO</strong> fin dall\'inizio.'
+        },
+        offer: {
+            title: 'Cosa Offriamo',
+            items: [
+                '<strong>Generatore Iframe:</strong> Crea iframe personalizzati per qualsiasi URL.',
+                '<strong>Incorporamento Google Maps:</strong> Genera incorporamenti di mappe senza una chiave API.',
+                '<strong>Incorporamento YouTube:</strong> Personalizza i player di YouTube con opzioni avanzate.',
+                '<strong>Controllo Responsività:</strong> Verifica che i tuoi incorporamenti appaiano fantastici su tutti i dispositivi.'
+            ]
+        },
+        conclusion: 'Grazie per aver utilizzato i nostri strumenti. Stiamo costantemente migliorando e aggiungendo nuove funzionalità in base al tuo feedback.'
+    }
+};
+
+const about_ru: AboutContent = {
+    title: 'О Нас',
+    description: 'Узнайте больше о Генераторе Iframe, нашей миссии и о том, почему мы создали лучшие бесплатные онлайн-инструменты iframe.',
+    sections: {
+        intro: 'Добро пожаловать в <strong>Генератор Iframe</strong>, самый полный и удобный инструмент для создания адаптивных кодов вставки iframe.',
+        mission: {
+            title: 'Наша Миссия',
+            content: 'Мы считаем, что встраивание контента в Интернете должно быть простым, доступным и адаптивным по умолчанию. Будь вы разработчик, создатель контента или владелец бизнеса, вам не нужно бороться со сложным HTML или CSS только для того, чтобы поделиться картой или видео. Наша цель — предоставить бесплатные, качественные инструменты, решающие эти распространенные задачи веб-разработки.'
+        },
+        whyBuilt: {
+            title: 'Почему мы создали это',
+            content: 'Интернет развивается, и мобильный трафик теперь составляет более половины всего использования Интернета. Традиционные iframe часто статичны и ломаются на маленьких экранах. Мы увидели потребность в инструменте, который с самого начала ставит во главу угла <strong>адаптивность</strong> и <strong>лучшие практики SEO</strong>.'
+        },
+        offer: {
+            title: 'Что мы предлагаем',
+            items: [
+                '<strong>Генератор Iframe:</strong> Создавайте пользовательские iframe для любого URL.',
+                '<strong>Вставка Google Maps:</strong> Генерируйте вставки карт без ключа API.',
+                '<strong>Вставка YouTube:</strong> Настраивайте плееры YouTube с расширенными опциями.',
+                '<strong>Проверка адаптивности:</strong> Проверьте, как ваши вставки выглядят на всех устройствах.'
+            ]
+        },
+        conclusion: 'Спасибо за использование наших инструментов. Мы постоянно совершенствуемся и добавляем новые функции на основе ваших отзывов.'
+    }
+};
+
 export function getAboutContent(locale: Locale): AboutContent {
     switch (locale) {
         case 'zh': return about_zh;
@@ -184,6 +262,9 @@ export function getAboutContent(locale: Locale): AboutContent {
         case 'ja': return about_jp;
         case 'de': return about_de;
         case 'fr': return about_fr;
+        case 'pt': return about_pt;
+        case 'it': return about_it;
+        case 'ru': return about_ru;
         case 'en':
         default: return about_en;
     }

@@ -61,6 +61,36 @@ const metadata_fr: PageMetadata = {
     }
 };
 
+const metadata_pt: PageMetadata = {
+    title: 'Gerador de Iframe Responsivo - Código de Incorporação Otimizado para Mobile',
+    description: 'Crie códigos iframe responsivos que se adaptam a qualquer tamanho de tela. Métodos CSS modernos aspect-ratio e padding-bottom legado. Ferramenta gratuita com pré-visualização ao vivo.',
+    keywords: 'gerador de iframe responsivo, gerador de código iframe responsivo, iframe responsivo, iframe mobile friendly',
+    openGraph: {
+        title: 'Gerador de Iframe Responsivo - Código de Incorporação Otimizado para Mobile',
+        description: 'Crie códigos iframe responsivos que se adaptam a qualquer tamanho de tela. Métodos CSS modernos aspect-ratio e padding-bottom legado. Ferramenta gratuita com pré-visualização ao vivo.',
+    }
+};
+
+const metadata_it: PageMetadata = {
+    title: 'Generatore di Iframe Responsive - Codice di Embed Mobile-Friendly',
+    description: 'Crea codici iframe responsive che si adattano a qualsiasi dimensione dello schermo. Metodi CSS moderni aspect-ratio e legacy padding-bottom. Strumento gratuito con anteprima dal vivo.',
+    keywords: 'generatore iframe responsive, generatore codice iframe responsive, iframe responsive, iframe mobile friendly',
+    openGraph: {
+        title: 'Generatore di Iframe Responsive - Codice di Embed Mobile-Friendly',
+        description: 'Crea codici iframe responsive che si adattano a qualsiasi dimensione dello schermo. Metodi CSS moderni aspect-ratio e legacy padding-bottom. Strumento gratuito con anteprima dal vivo.',
+    }
+};
+
+const metadata_ru: PageMetadata = {
+    title: 'Генератор адаптивных Iframe - Мобильно-дружественный код прошивки',
+    description: 'Создавайте адаптивные коды iframe, которые подстраиваются под любой размер экрана. Современные методы CSS aspect-ratio и классический padding-bottom. Бесплатный инструмент с живым предпросмотром.',
+    keywords: 'генератор адаптивных iframe, генератор кода адаптивного iframe, адаптивный iframe, мобильно-дружественный iframe',
+    openGraph: {
+        title: 'Генератор адаптивных Iframe - Мобильно-дружественный код прошивки',
+        description: 'Создавайте адаптивные коды iframe, которые подстраиваются под любой размер экрана. Современные методы CSS aspect-ratio и классический padding-bottom. Бесплатный инструмент с живым предпросмотром.',
+    }
+};
+
 export function getResponsiveMetadata(locale: Locale): PageMetadata {
     switch (locale) {
         case 'zh': return metadata_zh;
@@ -68,6 +98,9 @@ export function getResponsiveMetadata(locale: Locale): PageMetadata {
         case 'ja': return metadata_ja;
         case 'de': return metadata_de;
         case 'fr': return metadata_fr;
+        case 'pt': return metadata_pt;
+        case 'it': return metadata_it;
+        case 'ru': return metadata_ru;
         case 'en':
         default: return metadata_en;
     }
