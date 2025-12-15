@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import '../globals.css';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/ui/Footer';
+import { GoogleAdsense } from '@/components/seo/GoogleAdsense';
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://www.iframegenerator.org'),
@@ -15,6 +16,9 @@ export const metadata: Metadata = {
     keywords: 'iframe generator, google maps embed, youtube embed code, responsive iframe, embed code generator',
     alternates: {
         canonical: '/',
+    },
+    other: {
+        'google-adsense-account': 'ca-pub-3436817029283304',
     },
     openGraph: {
         title: 'Iframe Generator - Free Online Embed Code Tools',
@@ -99,6 +103,7 @@ export default async function LocaleLayout({ children, params }: Props) {
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
+                <GoogleAdsense pId="ca-pub-3436817029283304" />
                 <NextIntlClientProvider messages={messages}>
                     <div className="flex flex-col min-h-screen">
                         <Navbar />
