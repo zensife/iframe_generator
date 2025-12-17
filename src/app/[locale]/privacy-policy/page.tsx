@@ -14,10 +14,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `${content.title} - Iframe Generator`,
         description: 'Privacy Policy for Iframe Generator. Learn how we handle your data.',
-        robots: {
-            index: false,
-            follow: true,
-        },
     };
 }
 
