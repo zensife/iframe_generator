@@ -9,24 +9,22 @@ import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
 import styles from '@/styles/page.module.css';
 
+import { getSEOTags } from '@/lib/seo';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     const metadata = getResponsiveMetadata(locale as Locale);
-    const baseUrl = 'https://www.iframegenerator.org';
-    const path = '/responsive-iframe-generator';
-    const canonicalUrl = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
+    const alternates = getSEOTags('/responsive-iframe-generator', locale);
 
     return {
         title: metadata.title,
         description: metadata.description,
         keywords: metadata.keywords,
-        alternates: {
-            canonical: canonicalUrl,
-        },
+        alternates,
         openGraph: {
             title: metadata.openGraph.title,
             description: metadata.openGraph.description,
-            url: canonicalUrl,
+            url: alternates.canonical,
         },
     };
 }

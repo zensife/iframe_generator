@@ -7,13 +7,17 @@ type Props = {
     params: Promise<{ locale: string }>;
 };
 
+import { getSEOTags } from '@/lib/seo';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     const content = getPrivacyPolicyContent(locale as Locale);
+    const alternates = getSEOTags('/privacy-policy', locale);
 
     return {
         title: `${content.title} - Iframe Generator`,
         description: 'Privacy Policy for Iframe Generator. Learn how we handle your data.',
+        alternates,
     };
 }
 

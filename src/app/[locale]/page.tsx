@@ -8,23 +8,22 @@ import { getHomeMetadata } from '@/data/seo-metadata';
 import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
 
+import { getSEOTags } from '@/lib/seo';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const metadata = getHomeMetadata(locale as Locale);
-  const baseUrl = 'https://www.iframegenerator.org';
-  const canonicalUrl = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+  const alternates = getSEOTags('/', locale);
 
   return {
     title: metadata.title,
     description: metadata.description,
     keywords: metadata.keywords,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates,
     openGraph: {
       title: metadata.openGraph.title,
       description: metadata.openGraph.description,
-      url: canonicalUrl,
+      url: alternates.canonical,
       type: 'website',
     },
   };

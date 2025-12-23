@@ -9,13 +9,17 @@ type Props = {
     params: Promise<{ locale: string }>;
 };
 
+import { getSEOTags } from '@/lib/seo';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     const content = getContactContent(locale as Locale);
+    const alternates = getSEOTags('/contact', locale);
 
     return {
         title: `${content.title} - Iframe Generator`,
         description: content.description,
+        alternates,
     };
 }
 

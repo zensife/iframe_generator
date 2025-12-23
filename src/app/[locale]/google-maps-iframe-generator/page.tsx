@@ -9,24 +9,22 @@ import { StructuredData } from '@/components/seo/StructuredData';
 import { routing } from '@/i18n/routing';
 import { Locale } from '@/i18n/config';
 
+import { getSEOTags } from '@/lib/seo';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale } = await params;
     const metadata = getGoogleMapsMetadata(locale as Locale);
-    const baseUrl = 'https://www.iframegenerator.org';
-    const path = '/google-maps-iframe-generator';
-    const canonicalUrl = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
+    const alternates = getSEOTags('/google-maps-iframe-generator', locale);
 
     return {
         title: metadata.title,
         description: metadata.description,
         keywords: metadata.keywords,
-        alternates: {
-            canonical: canonicalUrl,
-        },
+        alternates,
         openGraph: {
             title: metadata.openGraph.title,
             description: metadata.openGraph.description,
-            url: canonicalUrl,
+            url: alternates.canonical,
             type: 'website',
         },
     };
