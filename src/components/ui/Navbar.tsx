@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { Logo } from './Logo';
 import { Moon, Sun, Menu, X } from 'lucide-react';
@@ -57,12 +56,9 @@ export const Navbar = () => {
         { name: t('responsive'), path: '/responsive-iframe-generator' },
     ];
 
-    // Check active state considering locale prefix in pathname
-    const isActive = (path: string) => {
-        // Remove locale prefix from pathname for comparison
-        const pathWithoutLocale = pathname.replace(/^\/(en|zh|es|ja|de|fr)/, '') || '/';
-        return pathWithoutLocale === path;
-    };
+    // Check active state
+    // usePathname from @/i18n/navigation already removes the locale prefix
+    const isActive = (path: string) => pathname === path;
 
     return (
         <nav className={styles.navbar}>
