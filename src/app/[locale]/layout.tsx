@@ -10,7 +10,7 @@ import { Footer } from '@/components/ui/Footer';
 import { GoogleAdsense } from '@/components/seo/GoogleAdsense';
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://www.iframegenerator.org'),
+    metadataBase: new URL('https://iframegenerator.org'),
     title: 'Iframe Generator - Free Online Embed Code Tools',
     description: 'Generate responsive iframe codes for websites, Google Maps, and YouTube videos. Free, SEO-friendly, and easy to use.',
     keywords: 'iframe generator, google maps embed, youtube embed code, responsive iframe, embed code generator',

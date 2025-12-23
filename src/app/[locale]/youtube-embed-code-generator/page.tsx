@@ -34,7 +34,7 @@ const webAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'YouTube Embed Code Generator',
-    url: 'https://www.iframegenerator.org/youtube-embed-code-generator',
+    url: 'https://iframegenerator.org/youtube-embed-code-generator',
     description: 'Generate custom YouTube embed codes with autoplay, loop, privacy mode, and responsive iframe settings.',
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Any',

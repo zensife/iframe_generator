@@ -9,7 +9,7 @@ type HrefLangProps = {
  * Should be used in the <head> section of each page
  */
 export function HrefLangTags({ pathname }: HrefLangProps) {
-    const baseUrl = 'https://www.iframegenerator.org';
+    const baseUrl = 'https://iframegenerator.org';
     const path = pathname === '/' ? '' : pathname;
 
     return (

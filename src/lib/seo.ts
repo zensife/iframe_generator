@@ -6,7 +6,7 @@ type SEOTags = {
 };
 
 export function getSEOTags(path: string, currentLocale: string): SEOTags {
-    const baseUrl = 'https://www.iframegenerator.org';
+    const baseUrl = 'https://iframegenerator.org';
 
     // Ensure path starts with /
     const cleanPath = path.startsWith('/') ? path : `/${path}`;

@@ -34,7 +34,7 @@ const webAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Google Map Embed Generator',
-    url: 'https://www.iframegenerator.org/google-maps-iframe-generator',
+    url: 'https://iframegenerator.org/google-maps-iframe-generator',
     description: 'Free tool to embed Google Maps on websites without API key. Generate responsive iframe code with custom zoom and map types.',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any',

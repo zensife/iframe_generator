@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://www.iframegenerator.org';
+    const baseUrl = 'https://iframegenerator.org';
 
     return {
         rules: {

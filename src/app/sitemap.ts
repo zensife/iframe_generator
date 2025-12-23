@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { locales, defaultLocale } from '@/i18n/config';
 
-const baseUrl = 'https://www.iframegenerator.org';
+const baseUrl = 'https://iframegenerator.org';
 
 // Define all routes with their priorities and change frequencies
 const routes = [
