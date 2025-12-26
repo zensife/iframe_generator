@@ -4,10 +4,23 @@ import { ContentSection } from '@/components/content/ContentSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { blogPosts } from '@/data/blog-posts';
 
-export const metadata: Metadata = {
-    title: 'Blog - Iframe Generator',
-    description: 'Read our latest guides and tutorials on iframes, embedding, and web development.',
-};
+import { locales } from '@/i18n/config';
+
+export function generateMetadata(): Metadata {
+    const languages: Record<string, string> = {};
+    locales.forEach((locale) => {
+        languages[locale] = locale === 'en' ? '/blog' : `/${locale}/blog`;
+    });
+
+    return {
+        title: 'Blog - Iframe Generator',
+        description: 'Read our latest guides and tutorials on iframes, embedding, and web development.',
+        alternates: {
+            canonical: '/blog',
+            languages,
+        },
+    };
+}
 
 export default function BlogIndex() {
     return (
