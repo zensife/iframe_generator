@@ -402,3 +402,53 @@ pre[class*="language-"] {
 .dark .content-text {
   color: hsl(var(--foreground) / 0.8);
 }
+
+/* Blog Post Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.prose th {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid hsl(var(--border));
+}
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+}
+
+.prose tr:nth-child(even) {
+  background-color: hsl(var(--muted) / 0.3);
+}
+
+/* Blog Callout / CTA - Enhanced Styling */
+.blog-cta {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: hsl(var(--secondary) / 0.3);
+  border: 1px solid hsl(var(--border));
+  border-left: 4px solid hsl(var(--primary));
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.blog-cta h3 {
+  margin-top: 0;
+  color: hsl(var(--foreground));
+}
+
+.blog-cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none !important;
+  font-weight: 600;
+}

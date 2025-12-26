@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ContentSection } from '@/components/content/ContentSection';
 import { blogPosts } from '@/data/blog-posts';
 import { ArrowLeft } from 'lucide-react';
+import { SyntaxHighlighter } from '@/components/blog/SyntaxHighlighter';
 
 interface Props {
     params: Promise<{
@@ -51,6 +52,7 @@ export default async function BlogPost({ params }: Props) {
 
     return (
         <div className="container mx-auto px-4 max-w-4xl py-8">
+            <SyntaxHighlighter />
             <Link
                 href="/blog"
                 className="inline-flex items-center text-muted-foreground hover:text-foreground mb-6 transition-colors"
