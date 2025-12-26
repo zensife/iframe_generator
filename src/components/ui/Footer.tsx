@@ -65,6 +65,12 @@ export const Footer = () => {
                         <h3 className={styles.sectionTitle}>{t('resources')}</h3>
                         <ul className={styles.linkList}>
                             <li className={styles.linkItem}>
+                                <Link href="/blog" className={styles.link}>
+                                    <span className={styles.bullet}></span>
+                                    {t('blog')}
+                                </Link>
+                            </li>
+                            <li className={styles.linkItem}>
                                 <Link href="/about" className={styles.link}>
                                     <span className={styles.bullet}></span>
                                     {t('about')}

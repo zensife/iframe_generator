@@ -6,13 +6,15 @@ import { blogPosts } from '@/data/blog-posts';
 import { ArrowLeft } from 'lucide-react';
 
 interface Props {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+        locale: string;
+    }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+    const { slug } = await params;
+    const post = blogPosts.find((p) => p.slug === slug);
 
     if (!post) {
         return {
@@ -39,8 +41,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function BlogPost({ params }: Props) {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function BlogPost({ params }: Props) {
+    const { slug } = await params;
+    const post = blogPosts.find((p) => p.slug === slug);
 
     if (!post) {
         notFound();
