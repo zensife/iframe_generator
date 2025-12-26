@@ -13,6 +13,8 @@ interface Props {
     }>;
 }
 
+import { locales } from '@/i18n/config';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = blogPosts.find((p) => p.slug === slug);
@@ -23,9 +25,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
+    // Best Practice for Non-Localized Content in Multilingual Site:
+    // 1. Canonical points to the 'master' version (English) to consolidate ranking signals.
+    // 2. alternate languages point to their respective URLs so users are directed to the correct nav language.
+    const languages: Record<string, string> = {};
+    locales.forEach((locale) => {
+        // Assuming 'en' is default and has no prefix (as-needed strategy)
+        languages[locale] = locale === 'en' ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`;
+    });
+
     return {
         title: `${post.title} - Iframe Generator`,
         description: post.excerpt,
+        alternates: {
+            canonical: `/blog/${post.slug}`,
+            languages,
+        },
         openGraph: {
             title: post.title,
             description: post.excerpt,
